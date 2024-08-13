@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-900 text-center py-4">
+      <div className="bg-gray-900 text-center mt-5 py-4">
         <p className="text-sm">&copy; {new Date().getFullYear()} Anfords Bangladesh limited. All rights reserved.</p>
       </div>
     </footer>
