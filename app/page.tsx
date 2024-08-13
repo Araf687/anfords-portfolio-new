@@ -25,7 +25,9 @@ export default function Home() {
         <CarouselContent>
           {[img1, img2, img3].map((item, index) => (
             <CarouselItem key={index}>
-              <div className="relative bg-black-100 w-full h-[400px]"> {/* Adjust height as needed */}
+              <div className="relative bg-black-100 w-full h-[400px]">
+                {" "}
+                {/* Adjust height as needed */}
                 <Image
                   src={item}
                   alt={`Slide ${index + 1}`}
@@ -39,15 +41,21 @@ export default function Home() {
         </CarouselContent>
 
         {/* //page body  */}
+
         <section className="max-w-6xl mx-auto my-10">
+          <div className="text-center mb-6">
+            <h1 className="text-3xl font-semibold mb-2">Our Concern</h1>
+            <div
+              className="h-[5px] bg-gray-700 mx-auto w-[6%] rounded"
+              
+            ></div>
+          </div>
           <section className="grid grid-cols-4 gap-4">
             {cardData.map((card, index) => (
-              <AboutCard key={index} data={card}/>
+              <AboutCard key={index} data={card} />
             ))}
           </section>
-
         </section>
-
       </Carousel>
     </main>
   );
