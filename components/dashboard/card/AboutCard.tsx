@@ -14,7 +14,7 @@ import Image from "next/image";
 
 export function AboutCard({ data }: { data: AboutCardProps }): JSX.Element {
   return (
-    <Card className="text-center bg-green-50">
+    <Card className="text-center" style={{background: "linear-gradient(115deg, #ffffff, #d4dfed)"}}>
       <CardHeader className="flex items-center pb-3">
         <Image
           src={data?.image}

@@ -60,9 +60,9 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "z-50 transition-all sticky duration-300 w-full px-10",
+        "z-50 transition-all duration-300 w-full px-10",
         isLandingPage
-          ? "absolute py-2 bg-[#ffffffc2]"
+          ? "absolute py-2 top-0 sticky bg-[#ffffffc2]"
           : "py-2 top-0 bg-white shadow-md"
       )}
     >
@@ -74,7 +74,7 @@ export function Navbar() {
             </a>
           </div>
           <div className="hidden md:flex md:space-x-8">
-            {" "}
+      
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
