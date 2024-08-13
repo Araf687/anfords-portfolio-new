@@ -16,6 +16,8 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from "next/image";
 import { cardData } from "@/helpers/data/about-card-data";
 import { AboutCard } from "@/components/dashboard/card/AboutCard";
+import SectionHeading from "@/components/dashboard/heading/SectionHeading";
+import Footer from "@/components/dashboard/footer";
 
 export default function Home() {
   const plugin = React.useRef(Autoplay({ delay: 3000 }));
@@ -39,24 +41,27 @@ export default function Home() {
             </CarouselItem>
           ))}
         </CarouselContent>
+      </Carousel>
 
+      <main className="w-full">
         {/* //page body  */}
-
         <section className="max-w-6xl mx-auto my-10">
-          <div className="text-center mb-6">
-            <h1 className="text-3xl font-semibold mb-2">Our Concern</h1>
-            <div
-              className="h-[5px] bg-gray-700 mx-auto w-[6%] rounded"
-              
-            ></div>
-          </div>
+          <SectionHeading title="Product Feature" />
           <section className="grid grid-cols-4 gap-4">
             {cardData.map((card, index) => (
               <AboutCard key={index} data={card} />
             ))}
           </section>
         </section>
-      </Carousel>
+
+        {/* Our product section */}
+        <section className="bg-blue-50 p-10 mb-10">
+          <SectionHeading title="Our Product" />
+        </section>
+
+        {/* footer  */}
+        <Footer />
+      </main>
     </main>
   );
 }
