@@ -71,7 +71,7 @@ export default function Home() {
             {" "}
             <Carousel className="w-full">
               <CarouselContent className="-ml-1">
-                {[img1, , img1, img2, img2, img3].map((item, index) => (
+                {[img1, img1, img2, img2, img3].map((item, index) => (
                   <CarouselItem
                     key={index}
                     className="pl-1 md:basis-1/2 lg:basis-1/3"
@@ -111,7 +111,7 @@ export default function Home() {
                     alt="icon-store"
                   />
                   <div>
-                   
+
                     <p className="text-[20px] font-semibold">Store Location</p>
                     <p className="text-gray-600">New Eskaton, karwan bazar</p>
                     <p className="text-gray-600">Dhaka</p>

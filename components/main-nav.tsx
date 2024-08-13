@@ -1,4 +1,4 @@
-"use client";
+import logo from "@/assets/image/logo.png";
 
 import * as React from "react";
 import Link from "next/link";
@@ -14,7 +14,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { usePathname, useRouter } from "next/navigation";
+import { headers } from "next/headers";
+import Image from "next/image";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -55,14 +56,15 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
-  const isLandingPage = pathname === "/";
+  const heads = headers();
+  const pathname: string = heads.get("x-invoke-path") || "";
+  const isLandingPage: boolean = pathname === "/";
   return (
     <nav
       className={cn(
         "z-50 transition-all duration-300 w-full px-10",
         isLandingPage
-          ? "absolute py-2 top-0 sticky bg-[#ffffffc2]"
+          ? "absolute py-2 top-0 bg-[#ffffffc2]"
           : "py-2 top-0 bg-white shadow-md"
       )}
     >
@@ -70,11 +72,11 @@ export function Navbar() {
         <div className="flex justify-between align-center h-15">
           <div className="flex-shrink-0 align-center">
             <a href="/" className="text-xl font-bold text-gray-800">
-              Logo
+              <Image src={logo} alt={'logo'} height={50} width={100} />
             </a>
           </div>
           <div className="hidden md:flex md:space-x-8">
-      
+
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
@@ -136,7 +138,7 @@ export function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="bg-transparent">
-                  <Link href="/docs" legacyBehavior passHref>
+                  <Link href="/about" legacyBehavior passHref>
                     <NavigationMenuLink
                       className={navigationMenuTriggerStyle()}
                       style={{ background: "transparent" }}
