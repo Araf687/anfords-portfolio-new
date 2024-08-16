@@ -139,8 +139,7 @@ export default function Home() {
           </section>
         </section>
 
-        {/* footer  */}
-        <Footer />
+       
       </main>
     </main>
   );

@@ -6,7 +6,7 @@ import React from "react";
 const AllProducts = () => {
   return (
     <>
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto mb-10">
         <p className="font-semibold text-xl my-5">All Products</p>
         <div className="grid grid-cols-4 gap-6">
           {allProducts &&
