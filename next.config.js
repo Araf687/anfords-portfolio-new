@@ -19,6 +19,9 @@ const nextConfig = {
             'Content-Security-Policy': 'frame-ancestors \'none\';',
         },
     },
+    images: {
+        domains: ['dummyimage.com','i5.walmartimages.com','assets.unileversolutions.com'], // Add your image domains here
+    },
 }
 
 module.exports = withPWA(nextConfig)

@@ -19,8 +19,8 @@ import Image from "next/image";
 
 const components: { title: string; href: string; description: string }[] = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "All Product",
+    href: "/products/all",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
@@ -62,7 +62,7 @@ export function Navbar() {
   return (
     <nav
       className={cn(
-        "z-50 transition-all duration-300 w-full px-10",
+        "z-50 transition-all sticky duration-300 w-full px-10",
         isLandingPage
           ? "absolute py-2 top-0 bg-[#ffffffc2]"
           : "py-2 top-0 bg-white shadow-md"
