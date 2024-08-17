@@ -153,7 +153,7 @@ export function Navbar() {
                       className={navigationMenuTriggerStyle()}
                       style={{ background: "transparent" }}
                     >
-                      Carrier
+                      Career
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>

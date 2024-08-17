@@ -31,7 +31,7 @@ const ContactForm: React.FC = () => {
     <div className="max-w-6xl mx-auto p-8">
       <p className="text-2xl mb-3">Contact Us</p>
       <div >
-      <div className="relative h-[250px] w-full mb-3">
+      <div className="relative h-[300px] w-full mb-3">
           <Image
             src={contactUsImg} // replace with your image path or variable
             alt="Contact Us"

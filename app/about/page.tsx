@@ -5,7 +5,7 @@ import logo from "@/assets/image/logo.png";
 function About(): React.JSX.Element {
 
     return (
-        <main className="mx-20 mt-10 grid grid-cols-12 gap-2">
+        <main className="mx-20 mt-10 grid grid-cols-12 gap-2 pb-10">
             <div className="col-span-9">
                 <h1 className="scroll-m-20 py-3 text-4xl font-extrabold tracking-tight lg:text-5xl">
                     About Us
