@@ -124,7 +124,7 @@ export default function Home() {
         <section className="my-10">
           <section className="max-w-6xl mx-auto">
             <div className="flex p-10">
-              <div className="w-1/3  text-center">
+              <div className="w-1/3 text-center">
                 <div>
                   {" "}
                   <Image
