@@ -19,7 +19,7 @@ const ProductDemonstrationSection = () => {
           <TabsTrigger value="description">Desciption</TabsTrigger>
           <TabsTrigger value="ingredient">Ingredient</TabsTrigger>
           <TabsTrigger value="direction_of_use">Use</TabsTrigger>
-          <TabsTrigger value="colors">Colors</TabsTrigger>
+          <TabsTrigger value="varients">Varients</TabsTrigger>
         </TabsList>
         <TabsContent value="description">
           <CardContent>
@@ -117,7 +117,7 @@ const ProductDemonstrationSection = () => {
             <CardHeader>
               <CardTitle>Product Varients</CardTitle>
               <CardDescription>
-                Shows different varients of the product
+                Shows different varients of the productg
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2">
