@@ -8,11 +8,10 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 // images import
-import img1 from "@/assets/image/slider1.jpg";
-import img2 from "@/assets/image/slider2.jpg";
-import img3 from "@/assets/image/slider3.jpg";
-import storeIcon from "@/assets/icons/store-location.png";
-import contactUS from "@/assets/icons/contact-us.png";
+import img1 from "@/assets/image/sliders/sleekbg3.png";
+import img2 from "@/assets/image/sliders/envy1.png";
+import img3 from "@/assets/image/sliders/foam.png";
+import img4 from "@/assets/image/sliders/mediplusgroup3.png";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import mission from "@/assets/icons/mission2.png";
@@ -24,12 +23,10 @@ import Image from "next/image";
 import { cardData } from "@/helpers/data/about-card-data";
 import { AboutCard } from "@/components/dashboard/card/AboutCard";
 import SectionHeading from "@/components/dashboard/heading/SectionHeading";
-import Footer from "@/components/dashboard/footer";
-import { Card, CardContent } from "@/components/ui/card";
+
 import Link from "next/link";
-import { allProducts } from "@/helpers/data/all-products-data";
-import { Button, buttonVariants } from "@/components/ui/button";
 import FadeIn from "@/components/gsap/FadeIn";
+import BrandSection from "@/components/dashboard/landing-page/BrandSection";
 
 
 export default function Home() {
@@ -41,12 +38,13 @@ export default function Home() {
   const [embla] = useEmblaCarousel({ loop: true }, [Autoplay(autoplayOptions)]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between">
+ 
+    <main className="flex min-h-screen  bg-gradient-to-r from-gray-200 to-blue-300 flex-col items-center justify-between">
       <Carousel className="w-full" plugins={[plugin.current]}>
         <CarouselContent>
-          {[img1, img2, img3].map((item, index) => (
+          {[img1, img2, img3,img4].map((item, index) => (
             <CarouselItem key={index}>
-              <div className="relative w-full h-[300px] md:h-[400px] lg:h-[500px]">
+              <div className="relative w-full h-[72vh] md:h-[400px] lg:h-[78vh]">
                 <Image
                   src={item}
                   alt={`Slide ${index + 1}`}
@@ -54,16 +52,19 @@ export default function Home() {
                   objectFit="cover"
                   className="rounded-lg"
                 />
+                
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
+          {/* <div className="w-full h-[78vh] backdrop-blur-xs absolute top-0">
+                </div> */}
       </Carousel>
 
       <main className="w-full">
         {/* Product Feature Section */}
         <section className="max-w-6xl mx-auto my-10">
-          <SectionHeading title="Product Feature" />
+          <SectionHeading title="Product Feature" color="#06a950"/>
           <section>
             <FadeIn stagger={0.2} x={100} ref={animation}>
               {cardData.map((card, index) => (
@@ -74,53 +75,7 @@ export default function Home() {
         </section>
 
         {/* Our Products Section */}
-        <section className="bg-blue-50 p-6 sm:p-8 md:p-10">
-          <SectionHeading title="Our Products" />
-          <section className="max-w-6xl mx-auto my-10">
-            <Carousel className="w-full">
-              <CarouselContent className="-ml-1">
-                {allProducts.map((item, index) => (
-                  <CarouselItem
-                    key={index}
-                    className="pl-1 basis-2/3 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 rounded-lg"
-                  >
-                    <div className="p-1">
-                      <Card className="h-full relative overflow-hidden">
-                        <CardContent className="flex aspect-square bg-white items-center justify-center p-4 sm:p-6 md:p-10 relative">
-                          {/* Container for the image and zoom effect */}
-                          <div className="relative w-full h-full overflow-hidden rounded-lg">
-                            <Image
-                              src={item?.image}
-                              alt={`Slide ${index + 1}`}
-                              layout="fill"
-                              objectFit="cover"
-                              className="transition-transform duration-300 transform hover:scale-105"
-                            />
-                          </div>
-
-                          {/* Overlay Content */}
-                          <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 rounded-lg">
-                            <h3 className="text-white text-lg sm:text-xl text-center mb-2 sm:mb-4 px-2">
-                              {item?.product_name}
-                            </h3>
-                            <Link
-                              href={`/products/${item?.id}`}
-                              className={buttonVariants({ variant: "outline" })}
-                            >
-                              View details
-                            </Link>
-                          </div>
-                        </CardContent>
-                      </Card>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </section>
-        </section>
+        <BrandSection/>
 
         {/* Mission, Vision, and Commitment Section */}
         <section className="my-10">
@@ -135,8 +90,8 @@ export default function Home() {
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold">Mission</p>
-                  <p className="text-gray-600">
+                  <p className="text-lg sm:text-xl font-semibold mb-3">Mission</p>
+                  <p className="text-gray-900">
                     To provide the best quality products to our customers
                   </p>
                 </div>
@@ -150,8 +105,8 @@ export default function Home() {
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold">Vision</p>
-                  <p className="text-gray-600">
+                  <p className="text-lg sm:text-xl font-semibold mb-3">Vision</p>
+                  <p className="text-gray-900">
                     To be the best in the industry
                   </p>
                 </div>
@@ -165,8 +120,8 @@ export default function Home() {
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold">Commitment</p>
-                  <p className="text-gray-600">
+                  <p className="text-lg sm:text-xl font-semibold mb-3">Commitment</p>
+                  <p className="text-gray-900">
                     To provide the best quality products to our customers
                   </p>
                 </div>

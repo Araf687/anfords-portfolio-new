@@ -2,13 +2,14 @@ import React from "react";
 
 interface SectionHeadingProps {
   title: string;
+  color?:string
 }
 
-const SectionHeading: React.FC<SectionHeadingProps> = ({ title }) => {
+const SectionHeading: React.FC<SectionHeadingProps> = ({ title,color }) => {
   return (
     <div className="text-center mb-7">
-      <h1 className="text-3xl text-[#1f2937] font-semibold mb-2">{title}</h1>
-      <div className="h-[5px] bg-[#1f2937] mx-auto w-[6%] rounded"></div>
+      <h1 className={`text-3xl ${color?`text-[${color}]`:"text-black"} mb-2`}>{title}</h1>
+      <div className="h-[2px] bg-black mx-auto w-[3%] rounded"></div>
     </div>
   );
 };

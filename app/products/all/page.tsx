@@ -8,11 +8,13 @@ const AllProducts = () => {
     <>
       <div className="max-w-6xl mx-auto mb-10">
         <p className="font-semibold text-xl my-5">All Products</p>
-        <div className="grid grid-cols-4 gap-6">
-          {allProducts &&
-            allProducts.map((item: ProductCardProps, index: number) => (
-              <ProductCard data={item} key={index} />
-            ))}
+        <div className="container mx-auto">
+          <div className="grid grid-cols-4 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xs:grid-cols-1">
+            {allProducts &&
+              allProducts.map((item: ProductCardProps, index: number) => (
+                <ProductCard data={item} key={index} />
+              ))}
+          </div>
         </div>
       </div>
     </>

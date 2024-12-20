@@ -17,7 +17,6 @@ function About(): React.JSX.Element {
   const storyImageContentref = useRef(null);
 
   useEffect(() => {
-    console.log(storyImageref.current);
     // Logo animation
     gsap.to(logo2ref.current, {
       rotation: "+=360",
@@ -63,114 +62,104 @@ function About(): React.JSX.Element {
   return (
     <div>
       <section className="bg-gray-50">
-        <section className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between py-16">
-          <div className="text-center lg:text-left w-2/3">
+        <section className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center justify-between py-16 mb-10 px-4 sm:px-6">
+          <div className="text-center lg:text-left w-full lg:w-2/3">
             <h2 className="text-4xl font-bold text-gray-800 mb-4">About Us</h2>
-            <p
-              className="text-gray-600 text-lg text-justify"
-              id="about_us_quote"
-            >
+            <p className="text-gray-600 text-lg text-justify">
               ANFORDS, a consumer goods company with some of the most
               recognizable brand names under its portfolio functions on the
               foundation of understanding and meeting consumer needs.
             </p>
           </div>
-          <div className="mt-8 lg:mt-0 lg:ml-12 w-1/3 flex items-end gap-1">
+          <div className="mt-8 lg:mt-0 lg:ml-12 flex justify-center lg:justify-end items-center space-x-4">
             <Image
               src={logo1}
-              alt="About Us Image"
-              width={150}
-              height={100}
+              alt="Logo 1"
+              width={100}
+              height={60}
               className="rounded-lg"
             />
             <Image
               ref={logo2ref}
               src={logo2}
-              alt="About Us Image"
-              style={{ width: "55px", height: "55px" }}
-              className="rounded-lg mb-3.5"
+              alt="Logo 2"
+              className="rounded-lg"
+              width={55}
+              height={55}
             />
             <Image
               src={logo3}
-              alt="About Us Image"
-              width={150}
-              height={100}
+              alt="Logo 3"
+              width={100}
+              height={60}
               className="rounded-lg"
             />
           </div>
         </section>
       </section>
 
-      <main className="mx-20 mt-10 grid grid-cols-12 max-w-6xl mx-auto pb-10 gap-10">
-        <div className="col-span-6 flex items-center">
+      <main className="px-4 sm:px-6 md:px-8 lg:px-0 max-w-6xl mx-auto grid gap-8 sm:gap-10 grid-cols-1 md:grid-cols-2">
+        <div className="flex items-center">
           <div ref={storyImageref} className="h-full w-full overflow-hidden">
             <Image
               src={ourStory}
-              alt="Our Story Image"
-              className="rounded-lg object-cover w-full h-full"
+              alt="Our Story"
+              className="rounded-lg object-cover w-full h-auto"
             />
           </div>
         </div>
-        <div className="col-span-6 flex items-center">
+        <div className="flex items-center">
           <div ref={storyImageContentref}>
             <h2 className="text-2xl font-semibold text-gray-800">Our Story</h2>
-            <h5 className="scroll-m-20 py-3 mt-2 text-gray-600 text-justify">
+            <p className="mt-2 text-gray-600 text-justify">
               The company initially started as a pharmaceutical but switched to
               the production of FMCG products in the 1980s. By the 1990s, it
               launched its very first gel toothpaste by the name of Crystal
               Toothpaste in Bangladesh. The product was met by huge success, and
               ANFORDS has since then built a legacy of quality and natural
-              products for over 30 years. In 2003, ANFORDS added another success
-              to its increasing list of quality products, namely Doctor
-              Toothpaste, followed by Mr. White in 2004, which was launched
-              under three variants, much to the delight of consumers.
-            </h5>
+              products for over 30 years.
+            </p>
           </div>
         </div>
-        <div className="col-span-6 flex items-center">
+        <div className="flex items-center">
           <div>
             <h2 className="text-2xl font-semibold text-gray-800">Our Goal</h2>
-            <h5 className="scroll-m-20 py-3 mt-2 text-gray-600 text-justify">
-              The company initially started as a pharmaceutical but switched to
-              the production of FMCG products in the 1980s. By the 1990s, it
-              launched its very first gel toothpaste by the name of Crystal
-              Toothpaste in Bangladesh. The product was met by huge success, and
-              ANFORDS has since then built a legacy of quality and natural
-              products for over 30 years. In 2003, ANFORDS added another success
-              to its increasing list of quality products, namely Doctor
-              Toothpaste, followed by Mr. White in 2004, which was launched
-              under three variants, much to the delight of consumers.
-            </h5>
+            <p className="mt-2 text-gray-600 text-justify">
+              ANFORDS added another success to its list of quality products,
+              namely Doctor Toothpaste in 2003, followed by Mr. White in 2004,
+              which was launched under three variants, much to the delight of
+              consumers.
+            </p>
           </div>
         </div>
-        <div className="col-span-6 flex justify-center items-center">
+        <div className="flex justify-center items-center">
           <Image
             src={goal}
-            alt="Our Goal Image"
-            className="rounded-lg object-cover w-full h-full"
+            alt="Our Goal"
+            className="rounded-lg object-cover w-full h-auto"
           />
         </div>
       </main>
 
-      <section className="bg-gray-50">
-        <div className="max-w-6xl mx-auto p-10">
-          <h2 className="text-4xl text-center font-bold text-gray-800 mb-10">
+      <section className="mt-6 mb-8 px-4 sm:px-6 md:px-8">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-4xl text-center text-gray-800 mb-10">
             Anfords By The Numbers
           </h2>
-          <div className="grid grid-cols-3 gap-6">
-            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center shadow">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center">
               <Image src={factory} alt="factory" height={100} width={100} />
               <h3 className="text-2xl text-[#213343] font-bold mt-4">
                 3 Factories
               </h3>
             </div>
-            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center shadow">
+            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center">
               <Image src={employees} alt="employees" height={100} width={100} />
               <h3 className="text-2xl text-[#213343] font-bold mt-4">
                 1300+ Employees
               </h3>
             </div>
-            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center shadow">
+            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center">
               <Image src={customers} alt="customers" height={100} width={100} />
               <h3 className="text-2xl text-[#213343] font-bold mt-4">
                 228,000+ Customers

@@ -14,7 +14,7 @@ import Image from "next/image";
 
 export function AboutCard({ data }: { data: AboutCardProps }): JSX.Element {
   return (
-    <Card className="text-center" style={{background: "linear-gradient(115deg, #ffffff, #d4dfed)"}}>
+    <Card className="text-center">
       <CardHeader className="flex items-center pb-3">
         <Image
           src={data?.image}
@@ -26,7 +26,7 @@ export function AboutCard({ data }: { data: AboutCardProps }): JSX.Element {
          <CardTitle className="font-semibold text-md">{data?.title.toUpperCase()}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-gray-700 text-wrap">{data?.description}</p>
+        <p className="text-gray-800 text-xs text-wrap pt-2">{data?.description}</p>
       </CardContent>
     </Card>
   );

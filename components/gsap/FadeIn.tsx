@@ -1,3 +1,4 @@
+/* eslint-disable react/display-name */
 import * as React from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";

@@ -25,7 +25,6 @@ export default function RootLayout({
           inter.className
         )}
       >
-        {" "}
         <Navbar />
         <div>{children}</div>
          {/* footer  */}

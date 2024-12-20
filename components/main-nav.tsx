@@ -1,5 +1,7 @@
+'use client'
+ 
+import { usePathname } from 'next/navigation'
 import logo from "@/assets/image/logo.png";
-
 import * as React from "react";
 import Link from "next/link";
 
@@ -14,7 +16,6 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { headers } from "next/headers";
 import Image from "next/image";
 
 const components: { title: string; href: string; description: string }[] = [
@@ -56,24 +57,26 @@ const components: { title: string; href: string; description: string }[] = [
 ];
 
 export function Navbar() {
-  const heads = headers();
-  const pathname: string = heads.get("x-invoke-path") || "";
+  
+  const pathname: string =usePathname();
   const isLandingPage: boolean = pathname === "/";
+
   return (
     <nav
-      className={cn(
-        "z-50 transition-all sticky duration-300 w-full px-10",
-        isLandingPage
-          ? "absolute py-2 top-0 bg-[#ffffffc2]"
-          : "py-2 top-0 bg-white shadow-md"
-      )}
+    className={cn(
+      "z-50 transition-all  duration-300 w-full px-10",
+      isLandingPage
+        ? "py-2 fixed top-0 bg-[#ffffffc2] backdrop-blur-lg"
+        : "py-2 sticky top-0 bg-white shadow-md"
+    )}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 ">
         <div className="flex justify-between align-center h-15">
           <div className="flex-shrink-0 align-center">
             <a href="/" className="text-xl font-bold text-gray-800">
-              <Image src={logo} alt={'logo'} height={50} width={100} />
+              <Image src={logo} alt={'logo'} height={50} width={120} />
             </a>
+          
           </div>
           <div className="hidden md:flex md:space-x-8">
 

@@ -19,12 +19,19 @@ interface ProductCardComponentProps {
 }
 
 const ProductCard: React.FC<ProductCardComponentProps> = ({ data }) => {
-  const { id, product_name, image, description, rating } = data;
+  const { id, product_name, image, width, description, rating } = data;
   return (
     <>
-      <Card className="w-full">
-        <CardHeader className="flex justify-center">
-          <Image src={image} alt="product_image" width={200} height={200} />
+      <Card className="w-full rounded-xl">
+        <CardHeader className=" bg-blue-200 h-[35vh] rounded">
+          <div className="w-full h-full flex flex-row justify-center items-center">
+            <Image
+              src={image}
+              alt="product_image"
+              height={100}
+              width={width ? width : 100}
+            />
+          </div>
         </CardHeader>
         <CardContent>
           <div>
