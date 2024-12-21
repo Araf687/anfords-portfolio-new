@@ -47,7 +47,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                 <h1 className="text-2xl md:text-4xl text-blue-900 font-semibold mb-4">
                   {productData?.product_name}
                 </h1>
-                <p className="font-semibold flex items-center mb-2">
+                {/* <p className="font-semibold flex items-center mb-2">
                   Rating:{" "}
                   {[1, 2, 3, 4, 5].map((item: number) => (
                     <Star
@@ -59,7 +59,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                       key={item}
                     />
                   ))}
-                </p>
+                </p> */}
                 <p className="mb-2">Category: Shampoo</p>
                 <p className="mb-2 text-justify lg:text-lg">
                   In publishing and graphic design, Lorem ipsum is a placeholder

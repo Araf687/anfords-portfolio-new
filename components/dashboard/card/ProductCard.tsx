@@ -23,7 +23,7 @@ const ProductCard: React.FC<ProductCardComponentProps> = ({ data }) => {
   return (
     <>
       <Card className="w-full rounded-xl">
-        <CardHeader className=" bg-blue-200 h-[35vh] rounded">
+        <CardHeader className=" bg-[#eaf1fb] h-[35vh] rounded">
           <div className="w-full h-full flex flex-row justify-center items-center">
             <Image
               src={image}
@@ -40,7 +40,7 @@ const ProductCard: React.FC<ProductCardComponentProps> = ({ data }) => {
                 {product_name.split(" ")[0]}
               </Link>
             </p>
-            <div className="flex gap-1 justify-center mt-2">
+            {/* <div className="flex gap-1 justify-center mt-2">
               {[1, 2, 3, 4, 5].map((item: number) => (
                 <Star
                   className={`w-6 h-6 ${
@@ -51,7 +51,7 @@ const ProductCard: React.FC<ProductCardComponentProps> = ({ data }) => {
                   key={item}
                 />
               ))}
-            </div>
+            </div> */}
           </div>
         </CardContent>
       </Card>

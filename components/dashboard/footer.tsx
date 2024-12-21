@@ -2,13 +2,13 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-blue-800 py-20" style={{ background: "#dedde1" }}>
-      <div className="container px-4">
-        <div className="flex flex-wrap justify-between w-3/4 mx-auto">
+    <footer className="text-blue-800 py-20 " style={{ background: "#dedde1" }}>
+      <div className="container px-4 ">
+        <div className="flex flex-wrap justify-between w-3/4 mx-auto font-semibold">
           {/* Company Information */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-4">Company</h3>
-            <div className="text-xs space-y-3">
+            <div className="lg:text-xs xs:text-md space-y-3">
               {" "}
               <p>1234 Street Name</p>
               <p>City, State, 56789</p>
@@ -20,24 +20,29 @@ const Footer: React.FC = () => {
           {/* Navigation Links */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="text-xs space-y-3">
+            <ul className="lg:text-xs xs:text-md font-semibold space-y-3">
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/" className="hover:underline">
                   Home
                 </a>
               </li>
               <li>
                 <a href="#" className="hover:underline">
-                  Shop
+                  Our Brands
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/products/all" className="hover:underline">
+                  Products
+                </a>
+              </li>
+              <li>
+                <a href="/about" className="hover:underline">
                   About Us
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:underline">
+                <a href="/contact-us" className="hover:underline">
                   Contact
                 </a>
               </li>
@@ -50,7 +55,7 @@ const Footer: React.FC = () => {
             <div className="flex space-x-4">
               <a
                 href="#"
-                className="text-gray-400 hover:text-white"
+                className="text-gray-400 hover:text-blue-800"
                 aria-label="Facebook"
               >
                 <svg
@@ -63,7 +68,7 @@ const Footer: React.FC = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white"
+                className="text-gray-400 hover:text-blue-800"
                 aria-label="Twitter"
               >
                 <svg
@@ -76,7 +81,7 @@ const Footer: React.FC = () => {
               </a>
               <a
                 href="#"
-                className="text-gray-400 hover:text-white"
+                className="text-gray-400 hover:text-blue-800"
                 aria-label="Instagram"
               >
                 <svg
@@ -93,7 +98,7 @@ const Footer: React.FC = () => {
           {/* Newsletter Sign-Up */}
           <div className="w-full md:w-1/4">
             <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-            <p className="text-sm mb-4">
+            <p className="lg:text-xs xs:text-md font-semibold mb-4">
               Sign up for our newsletter to get the latest updates and offers.
             </p>
             <form>

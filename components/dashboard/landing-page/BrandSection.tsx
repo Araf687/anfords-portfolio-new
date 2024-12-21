@@ -27,7 +27,7 @@ const BrandSection = () => {
               {allProducts.map((item, index) => (
                 <CarouselItem
                   key={index}
-                  className="pl-1 basis-2/3 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 rounded-lg"
+                  className="pl-1 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 rounded-lg"
                  
                 >
                   <div className="h-[40vh] border border-rounded">
@@ -63,8 +63,8 @@ const BrandSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="xs:start-10"/>
+            <CarouselNext className="xs:end-[-10]"/>
           </Carousel>
         </section>
       </section>

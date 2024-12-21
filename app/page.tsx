@@ -12,6 +12,7 @@ import img1 from "@/assets/image/sliders/sleekbg3.png";
 import img2 from "@/assets/image/sliders/envy1.png";
 import img3 from "@/assets/image/sliders/foam.png";
 import img4 from "@/assets/image/sliders/mediplusgroup3.png";
+import img5 from "@/assets/image/sliders/alProductGroup.png";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import mission from "@/assets/icons/mission2.png";
@@ -42,7 +43,7 @@ export default function Home() {
     <main className="flex min-h-screen  bg-gradient-to-r from-gray-200 to-blue-300 flex-col items-center justify-between">
       <Carousel className="w-full" plugins={[plugin.current]}>
         <CarouselContent>
-          {[img1, img2, img3,img4].map((item, index) => (
+          {[img5,img1, img2, img3,img4].map((item, index) => (
             <CarouselItem key={index}>
               <div className="relative w-full h-[72vh] md:h-[400px] lg:h-[78vh]">
                 <Image

@@ -65,7 +65,7 @@ const CareersPage: React.FC = () => {
       <div className="p-6 space-y-10 max-w-6xl mx-auto">
         <section className="space-y-8">
           <h2 className="text-3xl text-center">Open Positions</h2>
-          {jobPositions.map((job) => (
+          {jobPositions.length<0?jobPositions.map((job) => (
             <Card key={job.id} className="bg-white shadow-md">
               <CardHeader>
                 <CardTitle className="text-xl font-bold">{job.title}</CardTitle>
@@ -81,7 +81,7 @@ const CareersPage: React.FC = () => {
                 </Link>
               </CardContent>
             </Card>
-          ))}
+          )):<div className="sm:h-[30vh] lg:[40vh] flex justify-center items-center">No open positions are availabe right now</div>}
         </section>
       </div>
     </div>
