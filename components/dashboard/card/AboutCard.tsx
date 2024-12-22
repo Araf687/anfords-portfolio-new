@@ -9,7 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { AboutCardProps } from "@/types/main";
+import { AboutCardProps } from "@/types/data";
 import Image from "next/image";
 
 export function AboutCard({ data }: { data: AboutCardProps }): JSX.Element {

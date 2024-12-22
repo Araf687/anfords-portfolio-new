@@ -8,7 +8,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { cardData } from "@/helpers/data/about-card-data";
-import { ProductCardProps } from "@/types/main";
+import { ProductCardProps } from "@/types/data";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

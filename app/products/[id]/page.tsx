@@ -6,7 +6,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { getProductDetails } from "@/helpers/functions/main";
-import { ProductCardProps } from "@/types/main";
+import { ProductCardProps } from "@/types/data";
 import { Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
@@ -62,14 +62,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                 </p> */}
                 <p className="mb-2">Category: Shampoo</p>
                 <p className="mb-2 text-justify lg:text-lg">
-                  In publishing and graphic design, Lorem ipsum is a placeholder
-                  text commonly used to demonstrate the visual form of a
-                  document or a typeface without relying on meaningful content.
-                  Lorem ipsum may be used as a placeholder before final copy is
-                  available. It is also used to temporarily replace text in a
-                  process called greeking, which allows designers to consider
-                  the form of a webpage or publication, without the meaning of
-                  the text influencing the design.
+                  {productData?.shortDescription}
                 </p>
                 <p className="mb-2 text-lg">Price: BDT 312</p>
               </div>
@@ -100,7 +93,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                 </AccordionContent>
               </AccordionItem>
             </Accordion> */}
-          <ProductDemonstrationSection />
+          <ProductDemonstrationSection productData={productData}/>
         </section>
       </div>
     )

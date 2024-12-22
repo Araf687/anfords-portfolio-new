@@ -21,6 +21,8 @@ import { allProducts } from "@/helpers/data/all-products-data";
 import { Item } from "@radix-ui/react-navigation-menu";
 import { Menu } from "lucide-react";
 import { ResponsiveNavMenu } from "./ResponsiveNavMenu";
+import { allBrands } from "@/lib/constants";
+import { Brand } from "@/types/data";
 
 export function Navbar() {
   const pathname: string = usePathname();
@@ -67,9 +69,16 @@ export function Navbar() {
                         </NavigationMenuLink>
                       </li>
                       <li className="h-[30vh] overflow-y-auto">
-                        <ListItem href="/docs" title="Mediplus">
-                          Oral and skin care products
-                        </ListItem>
+                        {allBrands &&
+                          allBrands.map((item: Brand, index: number) => (
+                            <ListItem
+                              key={index}
+                              href="/docs"
+                              title={item.brandName}
+                            >
+                              {item.description}
+                            </ListItem>
+                          ))}
                       </li>
                     </ul>
                   </NavigationMenuContent>
@@ -98,7 +107,7 @@ export function Navbar() {
                                 : 50
                             }
                           />
-                          {component.description}
+                          {component.shortDescription}
                         </ListItem>
                       ))}
                     </ul>
@@ -144,7 +153,7 @@ export function Navbar() {
           </div>
           <div className="lg:hidden md:hidden">
             {/* <Menu size={20} /> */}
-            <ResponsiveNavMenu/>
+            <ResponsiveNavMenu />
           </div>
         </div>
       </div>

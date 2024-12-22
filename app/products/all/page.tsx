@@ -1,6 +1,6 @@
 import ProductCard from "@/components/dashboard/card/ProductCard";
 import { allProducts } from "@/helpers/data/all-products-data";
-import { ProductCardProps } from "@/types/main";
+import { ProductCardProps } from "@/types/data";
 import React from "react";
 import allProductBanner from "@/assets/image/sliders/alProductGroup.png";
 import Image from "next/image";

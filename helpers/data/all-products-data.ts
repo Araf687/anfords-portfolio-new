@@ -2,7 +2,7 @@ import brush from "@/assets/image/products/ADV 04.jpg";
 import toothpaste from "@/assets/image/products/B UP.png";
 import floss from "@/assets/image/products/D Floss.png";
 import DSTube from "@/assets/image/products/DSl Pack & Tube.png";
-import shampoo from "@/assets/image/products/English Pack.png";
+import shampoo from "@/assets/image/products/web-images/english-shampu1.png";
 import sleek from "@/assets/image/products/Sleek-5.png";
 import envy from "@/assets/image/products/envy.png";
 
@@ -10,59 +10,75 @@ export const allProducts = [
   {
     id: 1,
     product_name: "Mavik",
-    image:brush,
-    description: "Total ostectomy, other bones",
+    image: brush,
+    shortDescription:
+    "Microscopic examination of specimen from nervous system and of spinal fluid, other microscopic examination",
+    longDescription:
+    "Microscopic examination of specimen from nervous system and of spinal fluid, other microscopic examination",
     rating: "361",
-    width:130
+    width: 130,
   },
   {
     id: 2,
     product_name: "Rash Relief Antifungal",
-    image:toothpaste,
-    description: "Incision of gum or alveolar bone",
+    image: toothpaste,
+    shortDescription:
+    "Microscopic examination of specimen from nervous system and of spinal fluid, other microscopic examination",
+    longDescription:
+    "Microscopic examination of specimen from nervous system and of spinal fluid, other microscopic examination",
     rating: "75152",
-    width:260
+    width: 260,
   },
   {
     id: 3,
     product_name: "Broccoli",
-    image:floss,
-    description: "Administration of diphtheria-tetanus-pertussis, combined",
+    image: floss,
+    shortDescription:
+    "Microscopic examination of specimen from nervous system and of spinal fluid, other microscopic examination",
+    longDescription:
+    "Microscopic examination of specimen from nervous system and of spinal fluid, other microscopic examination",
     rating: "58244",
-    width:150
+    width: 150,
   },
   {
     id: 4,
     product_name: "Saline Refills",
     image: DSTube,
-    description:
+    shortDescription:
+      "Microscopic examination of specimen from nervous system and of spinal fluid, other microscopic examination",
+      longDescription:
       "Microscopic examination of specimen from nervous system and of spinal fluid, other microscopic examination",
     rating: "280",
-    width:260,
+    width: 260,
   },
   {
     id: 5,
-    product_name: "Budesonide",
-    image:shampoo,
-    description: "Exploration of tendon sheath",
+    product_name: "English shampoo",
+    image: shampoo,
+    shortDescription:"Struggling with hair lice?<br><br>Our English shampoo is here to help! Designed to effectively remove head lice while being gentle on your scalp, it’s packed with nourishing ingredients that leave your hair fresh and smooth. Get rid of lice and enjoy healthy, beautiful hair with every wash!",
+    longDescription:"Our specially formulated anti-lice shampoo targets lice, gently cleansing your scalp and hair while leaving it fresh, clean, and lice-free. It’s a hassle-free, easy solution that works for both kids and adults. Simply apply, massage, rinse—and let English Shampoo do the rest! Say goodbye to lice and hello to confidence! Available at leading stores near you.",
     rating: "73477",
-    width:80
+    width: 350,
   },
   {
     id: 6,
-    product_name: "Ferrum Quartz Headache Relief Pellets",
-    image:sleek,
-    description: "Thoracoscopic total excision of thymus",
+    product_name: "Sleek (Air freshener)",
+    image: sleek,
+    shortDescription:"Freshen up your space with Sleek Air Freshener!<br><br>Transform your home, office, or car with delightful fragrances that last all day long. Whether you're looking to relax or impress, Sleek has the perfect scent for every mood. Say goodbye to odors and hello to freshness!",
+    longDescription: "Elevate your surroundings with the enchanting fragrances of Sleek Sir Freshener. Designed to create an inviting atmosphere, this air freshener comes in seven delightful flavors:\n\n• Lavender: For a calming and soothing experience.\n• Lime: A burst of citrusy freshness to energize your space.\n• Rose: The timeless elegance of blooming roses.\n• Anti-Tobacco: Specially formulated to neutralize and refresh smoky odors.\n• Bakhoor: An exotic, woody aroma for a luxurious vibe.\n• Jasmine: The soft, floral essence of freshly picked jasmine.\n• Orchid: A unique, sophisticated fragrance to uplift your mood.\n\nPerfect for homes, offices, or cars, Sleek Sir Freshener combines long-lasting scents with an easy-to-use design, ensuring your space remains fragrant and inviting all day long. Choose your favorite scent and refresh your environment with Sleek!",
     rating: "6",
-    width:50
+    width: 50,
   },
   {
     id: 7,
-    product_name: "SohMed Pain Relief PM",
-    image:envy,
-    description: "Limited eye examination",
+    product_name: "Envy (Uptan soap)",
+    image: envy,
+    shortDescription:
+      "Experience the traditional essence of glowing skin with Envy Uptan Soap. Enriched with natural ingredients, it gently cleanses and nourishes your skin, leaving it refreshed every day.",
+    longDescription:
+      "Discover the secret to radiant and naturally glowing skin with Envy Uptan Soap. Crafted with a blend of traditional ingredients such as turmeric, uptan, and coconut oil, this soap is a luxurious treat for your skin. It deeply cleanses while preserving your skin’s natural moisture, promoting a soft, smooth, and even-toned complexion. Ideal for all skin types, Envy Uptan Soap works as a gentle exfoliant, removing impurities and dead skin cells while restoring your skin’s natural glow. Say goodbye to dullness and hello to a fresh look every time. Embrace the timeless beauty of nature with Envy Uptan Soap.",
     rating: "3",
-    width:200
+    width: 200,
   },
   // {
   //   id: 8,
@@ -163,5 +179,4 @@ export const allProducts = [
   //   description: "Other destructive procedures on conjunctiva",
   //   rating: "306",
   // },
-
 ];

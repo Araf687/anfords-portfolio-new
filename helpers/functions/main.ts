@@ -1,4 +1,4 @@
-import { ProductCardProps } from "@/types/main"
+import { ProductCardProps } from "@/types/data"
 import { allProducts } from "../data/all-products-data"
 
 const getProductDetails=(productId:number)=>{
