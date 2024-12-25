@@ -28,6 +28,12 @@ export function Navbar() {
   const pathname: string = usePathname();
   const isLandingPage: boolean = pathname === "/";
 
+  const calculateImageWidth = (width: number) => {
+    if (width < 100) return 20;
+    if (width > 130) return 100;
+    return 50;
+  };
+
   return (
     <nav
       className={cn(
@@ -88,34 +94,33 @@ export function Navbar() {
                     Products
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="h-[50vh] overflow-y-auto">
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                      {allProducts.slice(0, 4).map((component, index) => (
+                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+                      {allProducts.slice(0, 4).map((component) => (
                         <ListItem
                           key={component.id}
                           title={component.product_name}
-                          href={"/products/" + component.id}
+                          href={`/products/${component.id}`}
                         >
                           <Image
-                            src={component.image}
-                            alt="product_image"
+                            src={component.image || "/placeholder.png"} // Fallback image if `component.image` is empty
+                            alt={`${component.product_name} image`}
                             height={50}
-                            width={
-                              component.width < 100
-                                ? 20
-                                : component.width > 130
-                                ? 100
-                                : 50
-                            }
+                            width={calculateImageWidth(component.width)}
                           />
-                          {component.shortDescription}
+                          {/* <div
+                            dangerouslySetInnerHTML={{
+                              __html: component.shortDescription,
+                            }}
+                            className="text-sm text-gray-700"
+                          /> */}
                         </ListItem>
                       ))}
                     </ul>
-                    <p className="text-center p-3">
-                      <Link href={"/products/all"} className="text-blue-600">
-                        See more..
-                      </Link>
-                    </p>
+                    <p className="text-center p-3 font-semibold">
+                        <Link href="/products/all" className="text-blue-700">
+                          See more..
+                        </Link>
+                      </p>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="bg-transparent">

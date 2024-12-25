@@ -19,11 +19,11 @@ interface ProductCardComponentProps {
 }
 
 const ProductCard: React.FC<ProductCardComponentProps> = ({ data }) => {
-  const { id, product_name, image, width, description, rating } = data;
+  const { id, product_name, image, width, rating } = data;
   return (
     <>
       <Card className="w-full rounded-xl">
-        <CardHeader className=" bg-[#eaf1fb] h-[35vh] rounded">
+        <CardHeader className=" bg-[#f8ffff] h-[35vh] rounded">
           <div className="w-full h-full flex flex-row justify-center items-center">
             <Image
               src={image}
@@ -37,7 +37,7 @@ const ProductCard: React.FC<ProductCardComponentProps> = ({ data }) => {
           <div>
             <p className="text-center font-semibold mt-3">
               <Link href={`/products/${id}`} className="hover:text-blue-500">
-                {product_name.split(" ")[0]}
+                {product_name}
               </Link>
             </p>
             {/* <div className="flex gap-1 justify-center mt-2">

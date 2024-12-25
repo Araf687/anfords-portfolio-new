@@ -9,12 +9,14 @@ export type AboutCardProps = {
 
 export interface ProductCardProps {
   id: number;
+  brand_name:string;
   product_name: string;
-  image: StaticImageData; // Allow either a URL string or an imported image
+  image: StaticImageData | string; // Allow either a URL string or an imported image
   shortDescription: string;
   longDescription:string;
   rating: string;
   width?: number | undefined;
+  height?:number |undefined;
 }
 
 export interface Brand {

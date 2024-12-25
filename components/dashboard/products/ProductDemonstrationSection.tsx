@@ -9,11 +9,11 @@ import {
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Product } from "@/types/data";
+import { Product, ProductCardProps } from "@/types/data";
 import React from "react";
 
 interface SingleProductProps {
-  productData: Product;
+  productData: ProductCardProps;
 }
 
 const ProductDemonstrationSection: React.FC<SingleProductProps> = ({
@@ -37,7 +37,8 @@ const ProductDemonstrationSection: React.FC<SingleProductProps> = ({
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-2 text-justify">
-              {productData.longDescription}
+              <div dangerouslySetInnerHTML={{__html:productData.longDescription}}></div>
+     
             </CardContent>
             {/* <CardFooter>
               <Button>Save changes</Button>

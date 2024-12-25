@@ -18,17 +18,17 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
   if (!productData) {
     return <p>Product not found</p>; // Handle case where product data is not available
   }
-
+  
   return (
     productData && (
       <div>
-        <div className="lg:bg-[#eaf1fb]">
-          <div className="max-w-6xl mx-auto py-10 px-4">
-            <div className="flex flex-col md:flex-row items-center gap-8">
+        <div className="lg:bg-[#f8ffff]">
+          <div className="max-w-6xl mx-auto py-10 ">
+            <div className="flex flex-col md:flex-row items-center">
               {/* Image Section */}
-              <div className="md:w-1/3 w-full text-center flex justify-center">
+              <div className="md:w-2/3 w-full text-center flex justify-center">
                 <Image
-                  src={productData.image}
+                  src={productData?.image}
                   alt="product-image"
                   width={
                     productData.width
@@ -37,7 +37,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                         : productData.width + 200
                       : 100
                   }
-                  height={200}
+                  height={productData.height?productData.height:200}
                   className="rounded-lg"
                 />
               </div>
@@ -47,30 +47,17 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                 <h1 className="text-2xl md:text-4xl text-blue-900 font-semibold mb-4">
                   {productData?.product_name}
                 </h1>
-                {/* <p className="font-semibold flex items-center mb-2">
-                  Rating:{" "}
-                  {[1, 2, 3, 4, 5].map((item: number) => (
-                    <Star
-                      className={`w-4 h-4 ms-1 ${
-                        item > parseInt(productData?.rating[0])
-                          ? "text-gray-700"
-                          : "text-yellow-700"
-                      }`}
-                      key={item}
-                    />
-                  ))}
-                </p> */}
-                <p className="mb-2">Category: Shampoo</p>
-                <p className="mb-2 text-justify lg:text-lg">
-                  {productData?.shortDescription}
-                </p>
+                <p className="mb-2 font-semibold">Brand: {productData?.brand_name}</p>
+                <div className="mb-2 text-justify lg:text-lg" dangerouslySetInnerHTML={{ __html: productData.shortDescription|| "" }}>
+               
+                </div>
                 <p className="mb-2 text-lg">Price: BDT 312</p>
               </div>
             </div>
           </div>
         </div>
 
-        <section className="px-2 my-10">
+        <section className="px-2 mb-10">
           {/* <Accordion type="single" collapsible className="w-full">
               <AccordionItem value="item-1">
                 <AccordionTrigger>About this product?</AccordionTrigger>
