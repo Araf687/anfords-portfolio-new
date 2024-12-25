@@ -16,7 +16,7 @@ const AllProducts = () => {
       className="object-cover" 
     />
   </div>
-  <div className="max-w-6xl mx-auto px-4">
+  <div className="max-w-6xl mx-auto pb-10 px-4">
     <p className="font-semibold text-xl my-5">All Products</p>
     <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
       {allProducts &&

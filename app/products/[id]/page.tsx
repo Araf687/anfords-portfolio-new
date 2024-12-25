@@ -18,7 +18,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
   if (!productData) {
     return <p>Product not found</p>; // Handle case where product data is not available
   }
-  
+
   return (
     productData && (
       <div>
@@ -37,50 +37,41 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                         : productData.width + 200
                       : 100
                   }
-                  height={productData.height?productData.height:200}
+                  height={productData.height ? productData.height : 200}
                   className="rounded-lg"
                 />
               </div>
 
               {/* Product Details Section */}
-              <div className="md:w-2/3 w-full text-black">
+              <div className="sm:p-10 xs:p-10 md:w-2/3 w-full text-black">
                 <h1 className="text-2xl md:text-4xl text-blue-900 font-semibold mb-4">
                   {productData?.product_name}
                 </h1>
-                <p className="mb-2 font-semibold">Brand: {productData?.brand_name}</p>
-                <div className="mb-2 text-justify lg:text-lg" dangerouslySetInnerHTML={{ __html: productData.shortDescription|| "" }}>
-               
-                </div>
-                <p className="mb-2 text-lg">Price: BDT 312</p>
+                <p className="mb-2 font-semibold">
+                  Brand: {productData?.brand_name}
+                </p>
+                <div
+                  className="mb-2 text-justify lg:text-lg"
+                  dangerouslySetInnerHTML={{
+                    __html: productData.shortDescription || "",
+                  }}
+                ></div>
+                {/* <p className="mb-2 text-lg">Price: BDT 312</p> */}
               </div>
             </div>
           </div>
         </div>
 
-        <section className="px-2 mb-10">
-          {/* <Accordion type="single" collapsible className="w-full">
-              <AccordionItem value="item-1">
-                <AccordionTrigger>About this product?</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It adheres to the WAI-ARIA design pattern.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-2">
-                <AccordionTrigger>Ingredients?</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It comes with default styles that match the other
-                  components&apos; aesthetic.
-                </AccordionContent>
-              </AccordionItem>
-              <AccordionItem value="item-3">
-                <AccordionTrigger>Perfect for?</AccordionTrigger>
-                <AccordionContent>
-                  Yes. It&apos;s animated by default, but you can disable it if
-                  you prefer.
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion> */}
-          <ProductDemonstrationSection productData={productData}/>
+        <section className="rounded my-10 lg:max-w-5xl lg:mx-auto">
+          {/* <div> <ProductDemonstrationSection productData={productData}/></div> */}
+          <div>
+            {/* <p className="sm:text-lg lg:text-3xl mb-3 ">Description</p> */}
+            <div
+              dangerouslySetInnerHTML={{
+                __html: productData.longDescription,
+              }}
+            ></div>
+          </div>
         </section>
       </div>
     )
