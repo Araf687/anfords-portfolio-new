@@ -9,48 +9,7 @@ import florideGel from "@/assets/image/products/Fgel Pack & Tube.png";
 import mediplusToothpaste from "@/assets/image/products/mediplusResize2.png";
 
 export const allProducts = [
-  {
-    id: 1,
-    brand_id:4,
-    brand_name: "Mediplus",
-    product_name: "Mediplus Toothpaste",
-    image: mediplusToothpaste,
-    shortDescription: `<div >
-  <h2 class="text-xl font-semibold mb-4">
-    Achieve a Healthier Smile with Mediplus Toothpaste!
-  </h2>
-  <p class="text-lg">
-    Maintain your dental health with <span class="font-semibold">Mediplus Toothpaste</span>, designed to fight cavities, freshen breath, and strengthen enamel for a healthier, brighter smile.
-  </p>
-</div>
-`,
-    longDescription: `<div>
-  <h2 class="text-3xl font-semibold text-blue-900 mb-4">
-    Mediplus Toothpaste: Your Daily Oral Care Solution
-  </h2>
-  <p class="text-lg leading-relaxed mb-4">
-    Mediplus Toothpaste was introduced as a daily oral care solution, focusing
-    on maintaining overall dental health. The formula helps combat cavities,
-    plaque, and gum issues. It was designed to provide long-lasting freshness
-    and strengthen enamel.
-  </p>
-  <ul class=" pl-5 space-y-2 text-lg">
-    <li><strong >Reduces Sensitivity</strong></li>
-    <li><strong >Freshens Breath</strong></li>
-    <li><strong >Stops Gum Bleeding</strong></li>
-    <li><strong >Reduces Toothache</strong></li>
-  </ul>
-  <p class="text-lg leading-relaxed mt-4">
-    The perfect choice for everyday oral care. It fights plaque, freshens
-    breath, and protects against cavities, ensuring a clean and healthy mouth
-    with every use.
-  </p>
-</div>
-`,
-    rating: "4.5",
-    width: 250,
-    height: undefined,
-  },
+
   {
     id: 2,
     brand_id:5,
@@ -364,5 +323,47 @@ export const allProducts = [
 `,
     rating: "73477",
     width: 120,
+  },
+  {
+    id: 1,
+    brand_id:4,
+    brand_name: "Mediplus",
+    product_name: "Mediplus Toothpaste",
+    image: mediplusToothpaste,
+    shortDescription: `<div >
+  <h2 class="text-xl font-semibold mb-4">
+    Achieve a Healthier Smile with Mediplus Toothpaste!
+  </h2>
+  <p class="text-lg">
+    Maintain your dental health with <span class="font-semibold">Mediplus Toothpaste</span>, designed to fight cavities, freshen breath, and strengthen enamel for a healthier, brighter smile.
+  </p>
+</div>
+`,
+    longDescription: `<div>
+  <h2 class="text-3xl font-semibold text-blue-900 mb-4">
+    Mediplus Toothpaste: Your Daily Oral Care Solution
+  </h2>
+  <p class="text-lg leading-relaxed mb-4">
+    Mediplus Toothpaste was introduced as a daily oral care solution, focusing
+    on maintaining overall dental health. The formula helps combat cavities,
+    plaque, and gum issues. It was designed to provide long-lasting freshness
+    and strengthen enamel.
+  </p>
+  <ul class=" pl-5 space-y-2 text-lg">
+    <li><strong >Reduces Sensitivity</strong></li>
+    <li><strong >Freshens Breath</strong></li>
+    <li><strong >Stops Gum Bleeding</strong></li>
+    <li><strong >Reduces Toothache</strong></li>
+  </ul>
+  <p class="text-lg leading-relaxed mt-4">
+    The perfect choice for everyday oral care. It fights plaque, freshens
+    breath, and protects against cavities, ensuring a clean and healthy mouth
+    with every use.
+  </p>
+</div>
+`,
+    rating: "4.5",
+    width: 250,
+    height: undefined,
   },
 ];
