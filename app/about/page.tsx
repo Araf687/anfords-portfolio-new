@@ -192,19 +192,19 @@ const logo2ref = useRef<HTMLImageElement>(null);
             Anfords By The Numbers
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center shadow">
+            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center border">
               <Image src={factory} alt="factory" height={100} width={100} />
               <h3 className="text-2xl text-[#213343] font-bold mt-4">
                 3 Factories
               </h3>
             </div>
-            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center shadow">
+            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center border ">
               <Image src={employees} alt="employees" height={100} width={100} />
               <h3 className="text-2xl text-[#213343] font-bold mt-4">
                 1300+ Employees
               </h3>
             </div>
-            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center shadow">
+            <div className="rounded-lg bg-white p-10 text-center flex flex-col items-center border">
               <Image src={customers} alt="customers" height={100} width={100} />
               <h3 className="text-2xl text-[#213343] font-bold mt-4">
                 228,000+ Customers
