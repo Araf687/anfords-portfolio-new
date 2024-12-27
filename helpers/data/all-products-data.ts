@@ -4,7 +4,7 @@ import floss from "@/assets/image/products/D Floss.png";
 import DSTube from "@/assets/image/products/DSl Pack & Tube.png";
 import shampoo from "@/assets/image/products/web-images/english-shampu1_crop.png";
 import sleek from "@/assets/image/products/Sleek-5.png";
-import envy from "@/assets/image/products/envy.png";
+import envy from "@/assets/image/products/Envy.png";
 import florideGel from "@/assets/image/products/Fgel Pack & Tube.png";
 import mediplusToothpaste from "@/assets/image/products/mediplusResize2.png";
 

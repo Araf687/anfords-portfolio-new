@@ -11,7 +11,7 @@ import {
 import img1 from "@/assets/image/sliders/sleekbg3.png";
 import img2 from "@/assets/image/sliders/envy1.png";
 import img3 from "@/assets/image/sliders/foam.png";
-import img4 from "@/assets/image/sliders/mediplusgroup3.png";
+import img4 from "@/assets/image/sliders/mediplusGroup3.png";
 import img5 from "@/assets/image/sliders/allProductGroup2.png";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
