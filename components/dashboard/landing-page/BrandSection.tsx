@@ -16,55 +16,41 @@ import { buttonVariants } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 
 const BrandSection = () => {
-  const router=useRouter();
+  const router = useRouter();
   return (
     <div>
       <section className="bg-[#eef9fb] p-6 sm:p-8 md:p-10">
         <SectionHeading title="Our Products" />
         <section className="max-w-6xl mx-auto my-10">
-          <Carousel className="w-full">
+          <Carousel className="w-full relative">
             <CarouselContent className="ml-1">
               {allProducts.map((item, index) => (
                 <CarouselItem
                   key={index}
                   className="pl-1 sm:basis-1/2 md:basis-1/3 lg:basis-1/4 rounded-lg"
-                 
                 >
                   <div className="h-[40vh] border border-rounded">
-                    <div className=" flex justify-center items-center w-full h-full overflow-hidden rounded-lg">
+                    <div className="flex justify-center items-center w-full h-full overflow-hidden rounded-lg">
                       <Image
                         src={item.image}
                         alt={`Slide ${index + 1}`}
-                        // layout="fill"
-                        // objectFit="cover"
                         height={100}
                         width={item?.width}
                         className="transition-transform duration-1000 transform hover:scale-150 mb-0"
-                        onClick={()=>{router.push("/products/"+item.id)}}
+                        onClick={() => {
+                          router.push("/products/" + item.id);
+                        }}
                       />
-                      
                     </div>
                     <p className="bg-red-100">{item.product_name}</p>
-                    
-
-                    {/* Overlay Content */}
-                    {/* <div className="absolute inset-0 bg-black bg-opacity-60 flex flex-col items-center justify-center opacity-0 transition-opacity duration-300 hover:opacity-100 rounded-lg">
-                          <h3 className="text-white text-lg sm:text-xl text-center mb-2 sm:mb-4 px-2">
-                            {item?.product_name}
-                          </h3>
-                          <Link
-                            href={`/products/${item?.id}`}
-                            className={buttonVariants({ variant: "outline" })}
-                          >
-                            View details
-                          </Link>
-                        </div> */}
                   </div>
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="xs:start-10"/>
-            <CarouselNext className="xs:end-[-10]"/>
+
+            {/* Position Previous and Next Buttons */}
+            <CarouselPrevious className="absolute top-1/2 -translate-y-1/2 left-2 sm:left-4 md:left-6 lg:left-8 z-10" />
+            <CarouselNext className="absolute top-1/2 -translate-y-1/2 right-2 sm:right-4 md:right-6 lg:right-8 z-10" />
           </Carousel>
         </section>
       </section>

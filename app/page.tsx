@@ -144,8 +144,9 @@ export default function Home() {
             layout="fill"
             objectFit="cover"
             className="rounded-lg"
+            
           />
-          <div className="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black bg-opacity-45 flex items-center justify-center">
             <div className="text-white text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 sm:mb-4">
                 Contact Us

@@ -129,6 +129,7 @@ export const allProducts = [
   },
   {
     id: 5,
+    brand_id:4,
     brand_name: "Mediplus",
     product_name: "Mediplus DS",
     image: DSTube,
@@ -254,6 +255,7 @@ export const allProducts = [
   // {
   //   id: 8,
   //   brand_name: "Everyday",
+  //   brand_id:1,
   //   product_name: "Shaving Foam",
   //   image: "",
   //   shortDescription: `<p>Enjoy a smooth, irritation-free shave with Everyday Shaving Foam, designed for all skin types, including sensitive skin.</p>`,

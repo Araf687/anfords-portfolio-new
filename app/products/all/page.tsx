@@ -7,8 +7,8 @@ import React, { useState } from "react";
 import allProductBanner from "@/assets/image/sliders/alProductGroup.png";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
-import { Select } from "@radix-ui/react-select";
 import {
+  Select,
   SelectContent,
   SelectGroup,
   SelectItem,
@@ -24,7 +24,7 @@ const AllProducts = () => {
   const [searchTerm, setSearchTerm] = useState<string>(""); // Search term for input
 
   const onSelectBrand = (selectedBrandId: string) => {
-    setSelectedBrand(selectedBrandId);
+    setSelectedBrand(selectedBrandId === "all" ? null : selectedBrandId);
     console.log("Selected Brand ID:", selectedBrandId);
   };
 
@@ -33,7 +33,7 @@ const AllProducts = () => {
   };
 
   // Filter products based on selected brand and search term
-  const filteredProducts = allProducts.filter((product: any) => {
+  const filteredProducts = allProducts.filter((product: ProductCardProps) => {
     const matchesBrand = selectedBrand ? product.brand_id.toString() === selectedBrand : true;
     const matchesSearch = searchTerm
       ? product.product_name.toLowerCase().includes(searchTerm.toLowerCase())
@@ -72,7 +72,8 @@ const AllProducts = () => {
               <SelectContent>
                 <SelectGroup>
                   <SelectLabel>Brands</SelectLabel>
-                  {brandList.map((item: Brand,index:number) => (
+                  <SelectItem value="all">All</SelectItem>
+                  {brandList.map((item: Brand, index: number) => (
                     <SelectItem key={index} value={`${item.id}`}>
                       {item.brandName}
                     </SelectItem>
@@ -83,9 +84,15 @@ const AllProducts = () => {
           </div>
         </div>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {filteredProducts.map((item: any, index: number) => (
-            <ProductCard data={item} key={index} />
-          ))}
+          {filteredProducts.length > 0 ? (
+            filteredProducts.map((item: ProductCardProps, index: number) => (
+              <ProductCard data={item} key={index} />
+            ))
+          ) : (
+            <div className="h-[40vh] col-span-full flex justify-center items-center">
+              <p className="font-semibold">No Items to show</p>
+            </div>
+          )}
         </div>
       </div>
     </div>
