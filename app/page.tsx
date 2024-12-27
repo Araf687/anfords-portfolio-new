@@ -12,7 +12,7 @@ import img1 from "@/assets/image/sliders/sleekbg3.png";
 import img2 from "@/assets/image/sliders/envy1.png";
 import img3 from "@/assets/image/sliders/foam.png";
 import img4 from "@/assets/image/sliders/mediplusgroup3.png";
-import img5 from "@/assets/image/sliders/alProductGroup.png";
+import img5 from "@/assets/image/sliders/allProductGroup2.png";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
 import mission from "@/assets/icons/bullseye.png";
@@ -146,7 +146,7 @@ export default function Home() {
             className="rounded-lg"
             
           />
-          <div className="absolute inset-0 bg-black bg-opacity-45 flex items-center justify-center">
+          <div className="absolute inset-0 bg-black bg-opacity-35 flex items-center justify-center">
             <div className="text-white text-center">
               <p className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 sm:mb-4">
                 Contact Us
@@ -156,7 +156,7 @@ export default function Home() {
               </p>
               <p className="text-md sm:text-lg">Let us know your queries</p>
               <Link href="/contact-us">
-                <p className="font-bold text-black mt-2 hover:underline"> Contact Us</p>
+                <p className="font-bold text-blue-800 mt-2 hover:underline"> Contact Us</p>
               </Link>
             </div>
           </div>

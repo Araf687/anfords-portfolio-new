@@ -79,7 +79,7 @@ export function Navbar() {
                           allBrands.map((item: Brand, index: number) => (
                             <ListItem
                               key={index}
-                              href="/docs"
+                              href={item.href}
                               title={item.brandName}
                             >
                               {item.description}

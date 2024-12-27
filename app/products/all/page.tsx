@@ -4,7 +4,7 @@ import ProductCard from "@/components/dashboard/card/ProductCard";
 import { allProducts } from "@/helpers/data/all-products-data";
 import { Brand, ProductCardProps } from "@/types/data";
 import React, { useState } from "react";
-import allProductBanner from "@/assets/image/sliders/alProductGroup.png";
+import allProductBanner from "@/assets/image/sliders/allProductGroup2.png";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import {
@@ -53,7 +53,7 @@ const AllProducts = () => {
         />
       </div>
       <div className="max-w-6xl mx-auto pb-10 px-4">
-        <p className="font-semibold text-xl my-5">All Products</p>
+        <p className="font-semibold text-2xl my-5">{selectedBrand && selectedBrand!="all"?allBrands.find((item:any)=>item.id===parseInt(selectedBrand))?.brandName + " Products":"All Products"}</p>
         <div className="flex justify-between items-center mb-5">
           <div className="w-2/3">
             <Input

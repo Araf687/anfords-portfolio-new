@@ -2,7 +2,7 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-blue-800 py-20 " style={{ background: "#dedde1" }}>
+    <footer className="text-blue-800 py-20 bg-gray-100" >
       <div className="container px-4 ">
         <div className="flex flex-wrap justify-between w-3/4 mx-auto font-semibold">
           {/* Company Information */}
@@ -118,7 +118,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-100 text-center mt-5 py-4">
+      <div className="bg-blue-100 text-center mt-5 py-4">
         <p className="text-sm">
           &copy; {new Date().getFullYear()} Anfords Bangladesh limited. All
           rights reserved.
