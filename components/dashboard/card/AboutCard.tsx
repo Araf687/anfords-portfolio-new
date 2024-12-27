@@ -14,19 +14,19 @@ import Image from "next/image";
 
 export function AboutCard({ data }: { data: AboutCardProps }): JSX.Element {
   return (
-    <Card className="text-center">
+    <Card className="text-center shadow-none">
       <CardHeader className="flex items-center pb-3">
         <Image
           src={data?.image}
           alt="card-icon"
-          height={60}
-          width={60}
+          height={data?.height || 80}
+          width={data?.width || 80}
           className="mb-4"
         />
-         <CardTitle className="font-semibold text-md">{data?.title.toUpperCase()}</CardTitle>
+         <CardTitle className="font-semibold text-lg">{data?.title.toUpperCase()}</CardTitle>
       </CardHeader>
       <CardContent>
-        <p className="text-gray-800 text-xs text-wrap pt-2">{data?.description}</p>
+        <p className="text-wrap text-sm pt-2">{data?.description}</p>
       </CardContent>
     </Card>
   );

@@ -15,7 +15,7 @@ import img4 from "@/assets/image/sliders/mediplusgroup3.png";
 import img5 from "@/assets/image/sliders/alProductGroup.png";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import mission from "@/assets/icons/mission2.png";
+import mission from "@/assets/icons/vision-and-mission.png";
 import vision from "@/assets/icons/vision.png";
 import commitment from "@/assets/icons/commitments2.png";
 import contactUsBg from "@/assets/image/contact us/contact-us3.jpg";
@@ -29,7 +29,6 @@ import Link from "next/link";
 import FadeIn from "@/components/gsap/FadeIn";
 import BrandSection from "@/components/dashboard/landing-page/BrandSection";
 
-
 export default function Home() {
   const animation = React.useRef();
   const plugin = React.useRef(Autoplay({ delay: 3000 }));
@@ -39,11 +38,10 @@ export default function Home() {
   const [embla] = useEmblaCarousel({ loop: true }, [Autoplay(autoplayOptions)]);
 
   return (
- 
-    <main className="flex min-h-screen  bg-gradient-to-r from-gray-200 to-blue-300 flex-col items-center justify-between">
+    <main className="flex min-h-screen flex-col items-center justify-between">
       <Carousel className="w-full" plugins={[plugin.current]}>
         <CarouselContent>
-          {[img5,img1, img2, img3,img4].map((item, index) => (
+          {[img5, img1, img2, img3, img4].map((item, index) => (
             <CarouselItem key={index}>
               <div className="relative w-full h-[72vh] md:h-[400px] lg:h-[78vh]">
                 <Image
@@ -53,19 +51,18 @@ export default function Home() {
                   objectFit="cover"
                   className="rounded-lg"
                 />
-                
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
-          {/* <div className="w-full h-[78vh] backdrop-blur-xs absolute top-0">
+        {/* <div className="w-full h-[78vh] backdrop-blur-xs absolute top-0">
                 </div> */}
       </Carousel>
 
       <main className="w-full">
         {/* Product Feature Section */}
-        <section className="max-w-6xl mx-auto my-10">
-          <SectionHeading title="Product Feature" color="#06a950"/>
+        <section className="max-w-6xl mx-auto p-10 my-10">
+          <SectionHeading title="What We Provide?" color="#06a950" />
           <section>
             <FadeIn stagger={0.2} x={100} ref={animation}>
               {cardData.map((card, index) => (
@@ -76,7 +73,7 @@ export default function Home() {
         </section>
 
         {/* Our Products Section */}
-        <BrandSection/>
+        <BrandSection />
 
         {/* Mission, Vision, and Commitment Section */}
         <section className="my-10">
@@ -91,8 +88,10 @@ export default function Home() {
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold mb-3">Mission</p>
-                  <p className="text-gray-900">
+                  <p className="text-lg sm:text-xl font-semibold mb-3">
+                    Mission
+                  </p>
+                  <p>
                     To provide the best quality products to our customers
                   </p>
                 </div>
@@ -106,8 +105,10 @@ export default function Home() {
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold mb-3">Vision</p>
-                  <p className="text-gray-900">
+                  <p className="text-lg sm:text-xl font-semibold mb-3">
+                    Vision
+                  </p>
+                  <p>
                     To be the best in the industry
                   </p>
                 </div>
@@ -121,8 +122,10 @@ export default function Home() {
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold mb-3">Commitment</p>
-                  <p className="text-gray-900">
+                  <p className="text-lg sm:text-xl font-semibold mb-3">
+                    Commitment
+                  </p>
+                  <p>
                     To provide the best quality products to our customers
                   </p>
                 </div>

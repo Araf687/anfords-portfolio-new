@@ -5,6 +5,8 @@ export type AboutCardProps = {
   image: StaticImageData; // Type imported images correctly
   title: string;
   description: string;
+  width?:number;
+  height?:number
 };
 
 export interface ProductCardProps {
