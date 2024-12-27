@@ -13,11 +13,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 function About(): React.JSX.Element {
-  const logo2ref = useRef(null);
-  const storyImageref = useRef(null);
-  const storyImageContentref = useRef(null);
-  const goalsImageRef = useRef(null);
-  const goalsContentRef = useRef(null);
+const logo2ref = useRef<HTMLImageElement>(null);
+  const storyImageref = useRef<HTMLDivElement>(null);
+  const storyImageContentref = useRef<HTMLDivElement>(null);
+  const goalsImageRef = useRef<HTMLDivElement>(null);
+  const goalsContentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -33,7 +33,7 @@ function About(): React.JSX.Element {
     // Story image animation
     const tl = gsap.timeline();
     if (storyImageref.current) {
-      const storyImageElement = storyImageref.current as HTMLDivElement;
+      const storyImageElement = storyImageref.current;
       tl.from(
         storyImageElement,
         {
@@ -54,8 +54,8 @@ function About(): React.JSX.Element {
     }
 
     // Story content animation
-    const headline = storyImageContentref.current?.children[0];
-    const contentP = headline?.nextSibling;
+    const headline = storyImageContentref.current?.children[0] as HTMLElement;
+    const contentP = storyImageContentref.current?.children[1] as HTMLElement;
     tl.from(
       headline,
       0.5,
@@ -65,15 +65,14 @@ function About(): React.JSX.Element {
 
     // Goal image animation
     if (goalsImageRef.current) {
-      const goalImageElement = goalsImageRef.current as HTMLDivElement;
+      const goalImageElement = goalsImageRef.current;
       gsap.from(goalImageElement, {
         duration: 1.5,
         x: 1280,
         ease: "power4.out",
         scrollTrigger: {
           trigger: goalImageElement,
-          start: "top 80%", // adjust the start point as needed
-          // end: "bottom 20%",
+          start: "top 80%",
           scrub: true,
         },
       });

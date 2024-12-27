@@ -2,7 +2,7 @@
 import * as React from "react";
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import {Tween} from "gsap";
+
 
 type FadeInProps = {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ type FadeInProps = {
 const FadeIn = React.forwardRef(
   ({ children, stagger = 0, x = 0 }: FadeInProps, ref) => {
     const el = React.useRef<HTMLSpanElement>(null);
-    const animation = React.useRef<typeof Tween>();
+    const animation = React.useRef<any>();
 
     useGSAP(() => {
       if (el.current) {

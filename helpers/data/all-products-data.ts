@@ -11,6 +11,7 @@ import mediplusToothpaste from "@/assets/image/products/mediplusResize2.png";
 export const allProducts = [
   {
     id: 1,
+    brand_id:4,
     brand_name: "Mediplus",
     product_name: "Mediplus Toothpaste",
     image: mediplusToothpaste,
@@ -52,6 +53,7 @@ export const allProducts = [
   },
   {
     id: 2,
+    brand_id:5,
     brand_name: "Brush Up",
     product_name: "Brush Up Toothpaste",
     image: toothpaste,
@@ -100,6 +102,7 @@ export const allProducts = [
   },
   {
     id: 3,
+    brand_id:1,
     brand_name: "Envy",
     product_name: "Uptan Soap",
     image: envy,
@@ -134,6 +137,7 @@ export const allProducts = [
   },
   {
     id: 4,
+    brand_id:3,
     brand_name: "Sleek",
     product_name: "Sleek Air Freshener",
     image: sleek,
@@ -196,6 +200,7 @@ export const allProducts = [
   },
   {
     id: 6,
+    brand_id:4,
     brand_name: "Mediplus",
     product_name: "Fluoride Gel",
     image: florideGel,
@@ -247,6 +252,7 @@ export const allProducts = [
   },
   {
     id: 7,
+    brand_id:4,
     brand_name: "Mediplus",
     product_name: "Mediplus Dental Floss",
     image: floss,
@@ -299,6 +305,7 @@ export const allProducts = [
   // },
   {
     id: 9,
+    brand_id:4,
     brand_name: "Mediplus",
     product_name: "Mediplus Toothbrush",
     image: brush,
@@ -334,6 +341,7 @@ export const allProducts = [
   },
   {
     id: 10,
+    brand_id:2,
     brand_name: "Shampoo",
     product_name: "English Shampoo",
     image: shampoo,

@@ -9,15 +9,17 @@ export type AboutCardProps = {
 
 export interface ProductCardProps {
   id: number;
-  brand_name:string;
+  brand_id: number;
+  brand_name: string;
   product_name: string;
-  image: StaticImageData | string; // Allow either a URL string or an imported image
-  shortDescription: string;
-  longDescription:string;
-  rating: string;
-  width?: number | undefined;
-  height?:number |undefined;
-}
+  image: StaticImageData; // Assuming `mediplusToothpaste` is the path or URL of the image
+  shortDescription: string; // HTML as string
+  longDescription: string; // HTML as string
+  rating: string; // It's a string, but you may want to consider changing it to `number` if it should be numeric
+  width: number;
+  height?: number | undefined; // Explicitly allowing `undefined`
+};
+
 
 export interface Brand {
   id:Number;

@@ -1,7 +1,9 @@
+'use client';
+
 import ProductCard from "@/components/dashboard/card/ProductCard";
 import { allProducts } from "@/helpers/data/all-products-data";
 import { Brand, ProductCardProps } from "@/types/data";
-import React, { useRef } from "react";
+import React, { useState } from "react";
 import allProductBanner from "@/assets/image/sliders/alProductGroup.png";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
@@ -17,13 +19,29 @@ import {
 import { allBrands } from "@/lib/constants";
 
 const AllProducts = () => {
-  const searchInputRef=useRef(null)
-  const onSelectBrand=()=>{
+  const [brandList] = useState(allBrands); // Brand options
+  const [selectedBrand, setSelectedBrand] = useState<string | null>(null); // Selected brand
+  const [searchTerm, setSearchTerm] = useState<string>(""); // Search term for input
 
-  }
-  const onChangeSearchInput=()=>{
-    
-  }
+  const onSelectBrand = (selectedBrandId: string) => {
+    setSelectedBrand(selectedBrandId);
+    console.log("Selected Brand ID:", selectedBrandId);
+  };
+
+  const onChangeSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchTerm(e.target.value);
+  };
+
+  // Filter products based on selected brand and search term
+  const filteredProducts = allProducts.filter((product: any) => {
+    const matchesBrand = selectedBrand ? product.brand_id.toString() === selectedBrand : true;
+    const matchesSearch = searchTerm
+      ? product.product_name.toLowerCase().includes(searchTerm.toLowerCase())
+      : true;
+
+    return matchesBrand && matchesSearch;
+  });
+
   return (
     <div className="space-y-6">
       <div className="relative h-[78vh]">
@@ -35,40 +53,39 @@ const AllProducts = () => {
         />
       </div>
       <div className="max-w-6xl mx-auto pb-10 px-4">
-        {/* <p className="font-semibold text-xl my-5">All Products</p> */}
-        <div className="flex justify-between items-center mb-10">
+        <p className="font-semibold text-xl my-5">All Products</p>
+        <div className="flex justify-between items-center mb-5">
           <div className="w-2/3">
             <Input
               type="text"
               className="w-full"
               placeholder="Write Product name to search.."
+              value={searchTerm}
+              onChange={onChangeSearchInput}
             />
           </div>
           <div>
-            {" "}
-            <Select>
+            <Select onValueChange={onSelectBrand}>
               <SelectTrigger className="w-[180px]">
                 <SelectValue placeholder="Select a Brand" />
               </SelectTrigger>
               <SelectContent>
                 <SelectGroup>
                   <SelectLabel>Brands</SelectLabel>
-                  {allBrands &&
-                    allBrands.map((item: Brand, index: number) => (
-                      <SelectItem key={index} value={`item.id`}>
-                        {item.brandName}
-                      </SelectItem>
-                    ))}
+                  {brandList.map((item: Brand,index:number) => (
+                    <SelectItem key={index} value={`${item.id}`}>
+                      {item.brandName}
+                    </SelectItem>
+                  ))}
                 </SelectGroup>
               </SelectContent>
             </Select>
           </div>
         </div>
         <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-          {allProducts &&
-            allProducts.map((item: ProductCardProps, index: number) => (
-              <ProductCard data={item} key={index} />
-            ))}
+          {filteredProducts.map((item: any, index: number) => (
+            <ProductCard data={item} key={index} />
+          ))}
         </div>
       </div>
     </div>
