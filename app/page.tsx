@@ -15,10 +15,10 @@ import img4 from "@/assets/image/sliders/mediplusgroup3.png";
 import img5 from "@/assets/image/sliders/alProductGroup.png";
 import Autoplay from "embla-carousel-autoplay";
 import useEmblaCarousel from "embla-carousel-react";
-import mission from "@/assets/icons/vision-and-mission.png";
-import vision from "@/assets/icons/vision.png";
-import commitment from "@/assets/icons/commitments2.png";
-import contactUsBg from "@/assets/image/contact us/contact-us3.jpg";
+import mission from "@/assets/icons/bullseye.png";
+import vision from "@/assets/icons/supervision.png";
+import commitment from "@/assets/icons/partnership.png";
+import contactUsBg from "@/assets/image/contact us/contact2.jpg";
 
 import Image from "next/image";
 import { cardData } from "@/helpers/data/about-card-data";
@@ -77,52 +77,54 @@ export default function Home() {
 
         {/* Mission, Vision, and Commitment Section */}
         <section className="my-10">
-          <section className="max-w-6xl mx-auto">
-            <div className="flex flex-wrap p-6 sm:p-8 md:p-10">
-              <div className="w-full sm:w-1/2 md:w-1/3 text-center mb-6 md:mb-0">
+          <section className="max-w-6xl mx-auto text-black">
+            <div className="flex flex-wrap p-6  sm:p-8 md:p-10">
+              <div className="w-full sm:w-1/2 p-4 md:w-1/3 text-center mb-6 md:mb-0">
                 <Image
                   src={mission}
-                  height={90}
-                  width={90}
+                  height={100}
+                  width={100}
                   alt="icon-mission"
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold mb-3">
+                  <p className="text-lg sm:text-2xl font-semibold mb-3">
                     Mission
                   </p>
                   <p>
-                    To provide the best quality products to our customers
+                  Undertaking to endow with a comfortable lifestyle
+                  carried by health, safety and beauty.
                   </p>
                 </div>
               </div>
-              <div className="w-full sm:w-1/2 md:w-1/3 text-center mb-6 md:mb-0">
+              <div className="w-full sm:w-1/2 md:w-1/3 p-4 text-center mb-6 md:mb-0">
                 <Image
                   src={vision}
-                  height={90}
-                  width={90}
+                  height={100}
+                  width={100}
                   alt="icon-vision"
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold mb-3">
+                  <p className="text-lg sm:text-2xl font-semibold mb-3">
                     Vision
                   </p>
                   <p>
-                    To be the best in the industry
+                  Ensuring a meaningful balance of the satisfaction of its consumers employees and other
+                  stakeholders
                   </p>
                 </div>
               </div>
-              <div className="w-full md:w-1/3 text-center">
+              <div className="w-full md:w-1/3 p-4 text-center">
                 <Image
                   src={commitment}
-                  height={90}
-                  width={90}
+                  height={100}
+                  width={100}
                   alt="icon-commitments"
                   className="mx-auto mb-4"
                 />
                 <div>
-                  <p className="text-lg sm:text-xl font-semibold mb-3">
+                  <p className="text-lg sm:text-2xl font-semibold mb-3">
                     Commitment
                   </p>
                   <p>
@@ -135,7 +137,7 @@ export default function Home() {
         </section>
 
         {/* Contact Us Section */}
-        <section className="relative h-[350px] sm:h-[450px] md:h-[550px] w-full">
+        <section className="relative h-[40vh] sm:h-[40vh] md:h-[70vh] w-full">
           <Image
             src={contactUsBg}
             alt="bg"
@@ -153,7 +155,7 @@ export default function Home() {
               </p>
               <p className="text-md sm:text-lg">Let us know your queries</p>
               <Link href="/contact-us">
-                <p className="font-bold text-[#1f2937] mt-2"> Contact Us</p>
+                <p className="font-bold text-black mt-2 hover:underline"> Contact Us</p>
               </Link>
             </div>
           </div>

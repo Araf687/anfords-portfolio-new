@@ -19,7 +19,7 @@ const BrandSection = () => {
   const router=useRouter();
   return (
     <div>
-      <section className="bg-gray-100 p-6 sm:p-8 md:p-10">
+      <section className="bg-[#eef9fb] p-6 sm:p-8 md:p-10">
         <SectionHeading title="Our Products" />
         <section className="max-w-6xl mx-auto my-10">
           <Carousel className="w-full">
