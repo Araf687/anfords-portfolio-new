@@ -15,6 +15,8 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
   const { id } = params;
   const productData: ProductCardProps = getProductDetails(parseInt(id))[0];
 
+  
+
   if (!productData) {
     return <p>Product not found</p>; // Handle case where product data is not available
   }

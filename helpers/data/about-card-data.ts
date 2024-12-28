@@ -11,7 +11,7 @@ export const cardData = [
   },
   {
     image: oralHygine,
-    title: "Oral Hygin Product",
+    title: "Oral Hygiene Product",
     width:100,
     description:
       "we are committed to sustainability and strive to be a zero-waste company by 2022.",
