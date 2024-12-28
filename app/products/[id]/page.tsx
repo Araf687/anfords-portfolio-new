@@ -23,10 +23,10 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
     productData && (
       <div>
         <div className="lg:bg-[#f8ffff]">
-          <div className="max-w-6xl mx-auto py-10 ">
+          <div className="max-w-6xl mx-auto lg:py-10 ">
             <div className="flex flex-col md:flex-row items-center">
               {/* Image Section */}
-              <div className="md:w-2/3 w-full text-center flex justify-center">
+              <div className="xs:p-10 md:w-2/3 w-full text-center flex justify-center">
                 <Image
                   src={productData?.image}
                   alt="product-image"
@@ -43,7 +43,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
               </div>
 
               {/* Product Details Section */}
-              <div className="sm:p-10 xs:p-10 md:w-2/3 w-full text-black">
+              <div className="md:w-2/3 w-full p-5 text-black ">
                 <h1 className="text-2xl md:text-4xl text-blue-900 font-semibold mb-4">
                   {productData?.product_name}
                 </h1>
@@ -62,7 +62,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
           </div>
         </div>
 
-        <section className="rounded my-10 lg:max-w-5xl lg:mx-auto">
+        <section className="rounded mb-5 lg:my-10 lg:max-w-5xl lg:mx-auto p-5">
           {/* <div> <ProductDemonstrationSection productData={productData}/></div> */}
           <div>
             {/* <p className="sm:text-lg lg:text-3xl mb-3 ">Description</p> */}
