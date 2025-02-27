@@ -1,7 +1,5 @@
 "use client";
-
-import { usePathname } from "next/navigation";
-import logo from "@/assets/image/logo.png";
+import logo from "@/assets/image/logo.svg";
 import * as React from "react";
 import Link from "next/link";
 
@@ -18,16 +16,11 @@ import {
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
 import { allProducts } from "@/helpers/data/all-products-data";
-import { Item } from "@radix-ui/react-navigation-menu";
-import { Menu } from "lucide-react";
 import { ResponsiveNavMenu } from "./ResponsiveNavMenu";
 import { allBrands } from "@/lib/constants";
 import { Brand } from "@/types/data";
 
 export function Navbar() {
-  const pathname: string = usePathname();
-  const isLandingPage: boolean = pathname === "/";
-
   const calculateImageWidth = (width: number) => {
     if (width < 100) return 20;
     if (width > 130) return 100;
@@ -36,14 +29,11 @@ export function Navbar() {
 
   return (
     <nav
-      className={cn(
-        "z-50 transition-all  duration-300 w-full px-10",
-        isLandingPage
-          ? "py-2 fixed top-0 bg-[#ffffffc2] backdrop-blur-lg"
-          : "py-2 sticky top-0 bg-white shadow-md"
-      )}
+      className={
+        "z-50 transition-all  duration-300 w-full px-10 py-2 sticky bg-[#F1F2F6] top-0"
+      }
     >
-      <div className="max-w-6xl mx-auto sm:px-6 lg:px-8 ">
+      <div>
         <div className="flex justify-between items-center h-15">
           <div className="flex-shrink-0 items-center">
             <a href="/" className="text-xl font-bold text-gray-800">
@@ -54,8 +44,19 @@ export function Navbar() {
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">
-                    Our Brands
+                  <Link href="/" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
+                      style={{ background: "transparent" }}
+                    >
+                      Home
+                    </NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger className="bg-transparent ">
+                    <span className="tracking-[.10em] ">  Our Brands</span>
+                  
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
@@ -90,7 +91,7 @@ export function Navbar() {
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent">
+                  <NavigationMenuTrigger className="bg-transparent tracking-[.10em]">
                     Products
                   </NavigationMenuTrigger>
                   <NavigationMenuContent className="h-[50vh] overflow-y-auto">
@@ -117,16 +118,16 @@ export function Navbar() {
                       ))}
                     </ul>
                     <p className="text-center p-3 font-semibold">
-                        <Link href="/products/all" className="text-blue-700">
-                          See more..
-                        </Link>
-                      </p>
+                      <Link href="/products/all" className="text-blue-700">
+                        See more..
+                      </Link>
+                    </p>
                   </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="bg-transparent">
                   <Link href="/about" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
+                   className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
                       style={{ background: "transparent" }}
                     >
                       About Us
@@ -136,7 +137,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link href="/career" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
+                    className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
                       style={{ background: "transparent" }}
                     >
                       Career
@@ -146,7 +147,7 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link href="/contact-us" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={navigationMenuTriggerStyle()}
+                      className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
                       style={{ background: "transparent" }}
                     >
                       Contact Us
@@ -155,6 +156,29 @@ export function Navbar() {
                 </NavigationMenuItem>
               </NavigationMenuList>
             </NavigationMenu>
+          </div>
+          <div className="hidden lg:block">
+            <div className="relative w-80">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="absolute top-0 bottom-0 w-5 h-5 my-auto text-gray-500 left-3"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search products here.."
+                className="pl-10 border-none bg-transparent outline-none ring-0 focus:ring-0 focus:border-transparent focus:outline-none"
+              />
+            </div>
           </div>
           <div className="lg:hidden md:hidden">
             {/* <Menu size={20} /> */}

@@ -19,7 +19,9 @@ const config = {
       },
     },
     extend: {
-      fontFamily: {sans:["Inter var", "system-ui", "sans-serif"]},
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"], // Set Poppins as default sans-serif
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

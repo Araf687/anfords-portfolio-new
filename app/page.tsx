@@ -8,7 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 // images import
-import img1 from "@/assets/image/sliders/sleekbg3.png";
+
 import img2 from "@/assets/image/sliders/envy1.png";
 import img3 from "@/assets/image/sliders/foam.png";
 import img4 from "@/assets/image/sliders/mediplusGroup3.png";
@@ -28,6 +28,8 @@ import SectionHeading from "@/components/dashboard/heading/SectionHeading";
 import Link from "next/link";
 import FadeIn from "@/components/gsap/FadeIn";
 import BrandSection from "@/components/dashboard/landing-page/BrandSection";
+import HeroSection from "@/components/dashboard/landing-page/HeroSection";
+
 
 export default function Home() {
   const animation = React.useRef();
@@ -39,29 +41,11 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <Carousel className="w-full" plugins={[plugin.current]}>
-        <CarouselContent>
-          {[img5, img1, img2, img3, img4].map((item, index) => (
-            <CarouselItem key={index}>
-              <div className="relative w-full h-[72vh] md:h-[400px] lg:h-[78vh]">
-                <Image
-                  src={item}
-                  alt={`Slide ${index + 1}`}
-                  layout="fill"
-                  objectFit="cover"
-                  className="rounded-lg"
-                />
-              </div>
-            </CarouselItem>
-          ))}
-        </CarouselContent>
-        {/* <div className="w-full h-[78vh] backdrop-blur-xs absolute top-0">
-                </div> */}
-      </Carousel>
+      <HeroSection/>
 
       <main className="w-full">
         {/* Product Feature Section */}
-        <section className="max-w-6xl mx-auto p-10 my-10">
+        {/* <section className="max-w-6xl mx-auto p-10 my-10">
           <SectionHeading title="What We Provide?" color="#06a950" />
           <section>
             <FadeIn stagger={0.2} x={100} ref={animation}>
@@ -70,7 +54,7 @@ export default function Home() {
               ))}
             </FadeIn>
           </section>
-        </section>
+        </section> */}
 
         {/* Our Products Section */}
         <BrandSection />
@@ -78,7 +62,7 @@ export default function Home() {
         {/* Mission, Vision, and Commitment Section */}
         <section className="my-10">
           <section className="max-w-6xl mx-auto text-black">
-            <div className="flex flex-wrap p-6  sm:p-8 md:p-10">
+            <div className="flex flex-wrap p-6 sm:p-8 md:p-10">
               <div className="w-full sm:w-1/2 p-4 md:w-1/3 text-center mb-6 md:mb-0">
                 <Image
                   src={mission}
