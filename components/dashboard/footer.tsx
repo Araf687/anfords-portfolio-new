@@ -2,13 +2,13 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-blue-800 py-20 bg-gray-100" >
+    <footer className="text-blue-800 pt-10 pb-5 bg-gray-100" >
       <div className="container px-4 ">
         <div className="flex flex-wrap justify-between w-3/4 mx-auto font-semibold">
           {/* Company Information */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <h3 className="text-xl font-bold mb-4">Company</h3>
-            <div className="lg:text-xs xs:text-md space-y-3">
+            <div className=" space-y-3">
               {" "}
               <p>1234 Street Name</p>
               <p>City, State, 56789</p>
@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
           {/* Navigation Links */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">
             <h3 className="text-lg font-bold mb-4">Quick Links</h3>
-            <ul className="lg:text-xs xs:text-md font-semibold space-y-3">
+            <ul className="font-semibold space-y-2">
               <li>
                 <a href="/" className="hover:underline">
                   Home
@@ -98,7 +98,7 @@ const Footer: React.FC = () => {
           {/* Newsletter Sign-Up */}
           <div className="w-full md:w-1/4">
             <h3 className="text-xl font-bold mb-4">Newsletter</h3>
-            <p className="lg:text-xs xs:text-md font-semibold mb-4">
+            <p className="font-semibold mb-4">
               Sign up for our newsletter to get the latest updates and offers.
             </p>
             <form>
@@ -119,7 +119,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
       <div className="bg-blue-100 text-center mt-5 py-4">
-        <p className="text-sm">
+        <p className="font-semibold">
           &copy; {new Date().getFullYear()} Anfords Bangladesh limited. All
           rights reserved.
         </p>
