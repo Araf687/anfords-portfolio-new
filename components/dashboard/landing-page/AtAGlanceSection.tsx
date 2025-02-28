@@ -40,7 +40,7 @@ const AtAGlanceSection = () => {
       {/* Content Section */}
       <div className=" max-w-7xl mx-auto space-y-6">
         <h1 className="text-3xl md:text-5xl lg:text-6xl text-[#206CB1]">
-          Anfords Bangladesh at a Glance
+            Anfords Bangladesh at a <span className="text-[#00A85A]">Glance</span>
         </h1>
         <p className="text-lg md:text-2xl lg:text-4xl text-[#333333]">
           Key Milestones and Impact

@@ -34,14 +34,14 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="bg-[#001F4E] py-10 text-white">
+    <div className="bg-[#001F4E] py-12 text-white tracking-wide">
       {/* Top Section */}
       <div className="flex px-[100px] tracking-wide items-center gap-10">
         <div className="space-y-6 flex-1">
-          <h1 className="text-6xl">Get In Touch</h1>
+            <h1 className="text-6xl text-[#2E9EFF]">Get In <span className="text-[#00A85A]">Touch</span></h1>
           <p className="text-justify">
             Have questions or need assistance? We’re here to help! Reach out to
-            Anfords Bangladesh for any inquiries about our products, services,
+            <span className="text-[#2E9EFF]">{" "}Anfords Bangladesh{" "}</span>for any inquiries about our products, services,
             or partnerships. Our team is ready to assist you with prompt and
             reliable support. Let’s connect!
           </p>
@@ -50,7 +50,7 @@ const ContactSection = () => {
       </div>
 
       {/* Contact Information Section */}
-      <div className="bg-white text-black mt-12 px-[100px] py-16 flex flex-wrap justify-between">
+      <div className="bg-white text-black mt-12 px-[100px] py-10 flex flex-wrap justify-between">
         {contactLinkData.map((item, index) => (
           <div
             key={index}

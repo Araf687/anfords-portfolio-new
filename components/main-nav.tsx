@@ -30,7 +30,7 @@ export function Navbar() {
   return (
     <nav
       className={
-        "z-50 transition-all  duration-300 w-full px-10 py-2 sticky bg-[#F1F2F6] top-0"
+        "z-50 transition-all duration-300 w-full px-10 py-2 sticky bg-[#F1F2F6] top-0"
       }
     >
       <div>

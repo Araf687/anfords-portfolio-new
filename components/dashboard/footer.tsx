@@ -2,8 +2,8 @@ import React from "react";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="text-blue-800 pt-10 pb-5 bg-gray-100" >
-      <div className="container px-4 ">
+    <footer className="text-blue-800 pt-10 pb-5 bg-[#F1F2F6] tracking-wide" >
+      <div>
         <div className="flex flex-wrap justify-between w-3/4 mx-auto font-semibold">
           {/* Company Information */}
           <div className="w-full md:w-1/4 mb-6 md:mb-0">

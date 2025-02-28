@@ -34,6 +34,7 @@ import HeroSection from "@/components/dashboard/landing-page/HeroSection";
 import AtAGlanceSection from "@/components/dashboard/landing-page/AtAGlanceSection";
 import CompleteCareCard from "@/components/dashboard/landing-page/CompleteCareCard";
 import ContactSection from "@/components/dashboard/landing-page/ContactSection";
+import MissionVission from "@/components/dashboard/landing-page/MissionVission";
 
 export default function Home() {
   const animation = React.useRef();
@@ -48,18 +49,6 @@ export default function Home() {
       <HeroSection />
 
       <main className="w-full">
-        {/* Product Feature Section */}
-        {/* <section className="max-w-6xl mx-auto p-10 my-10">
-          <SectionHeading title="What We Provide?" color="#06a950" />
-          <section>
-            <FadeIn stagger={0.2} x={100} ref={animation}>
-              {cardData.map((card, index) => (
-                <AboutCard key={index} data={card} />
-              ))}
-            </FadeIn>
-          </section>
-        </section> */}
-
         {/* Our brand Section */}
         <BrandSection />
 
@@ -75,114 +64,34 @@ export default function Home() {
         />
 
         {/* complete care section  */}
-        <div className="p-20 bg-[#001F4E]">
+        <div className="p-20 bg-[#001F4E] tracking-wide">
           <div
             className="w-full bg-cover bg-center bg-no-repeat relative overflow-hidden "
             style={{ backgroundImage: `url(${completeCareBanner.src})` }}
           >
             <div className="p-14 space-y-6 text-white tracking-wide">
-              <h3 className="text-6xl">Complete Care </h3>
-              <h3 className="text-4xl">Nourish Your Skin, Smile Bright, and Strengthen Your Hair</h3>
+                <h3 className="text-6xl text-[#2E9EFF]">Complete <span className="text-[#00DD76]">Care</span></h3>
+              <h3 className="text-4xl">
+                Nourish Your Skin, Smile Bright, and Strengthen Your Hair
+              </h3>
               <p>
                 Take care of your skin, smile, and hair with our premium
                 products. From glowing skin to strong teeth and healthy hair,
                 we’ve got you covered. Look and feel your best every day!
               </p>
               <div className="flex gap-4 justify-between items-center pt-10">
-                {cardData.map((item,index)=><CompleteCareCard key={index} data={item}/>)}
+                {cardData.map((item, index) => (
+                  <CompleteCareCard key={index} data={item} />
+                ))}
               </div>
             </div>
           </div>
         </div>
 
-        {/* Mission, Vision, and Commitment Section */}
-        <section className="my-10">
-          <section className="max-w-6xl mx-auto text-black">
-            <div className="flex flex-wrap p-6 sm:p-8 md:p-10">
-              <div className="w-full sm:w-1/2 p-4 md:w-1/3 text-center mb-6 md:mb-0">
-                <Image
-                  src={mission}
-                  height={100}
-                  width={100}
-                  alt="icon-mission"
-                  className="mx-auto mb-4"
-                />
-                <div>
-                  <p className="text-lg sm:text-2xl font-semibold mb-3">
-                    Mission
-                  </p>
-                  <p>
-                    Undertaking to endow with a comfortable lifestyle carried by
-                    health, safety and beauty.
-                  </p>
-                </div>
-              </div>
-              <div className="w-full sm:w-1/2 md:w-1/3 p-4 text-center mb-6 md:mb-0">
-                <Image
-                  src={vision}
-                  height={100}
-                  width={100}
-                  alt="icon-vision"
-                  className="mx-auto mb-4"
-                />
-                <div>
-                  <p className="text-lg sm:text-2xl font-semibold mb-3">
-                    Vision
-                  </p>
-                  <p>
-                    Ensuring a meaningful balance of the satisfaction of its
-                    consumers employees and other stakeholders
-                  </p>
-                </div>
-              </div>
-              <div className="w-full md:w-1/3 p-4 text-center">
-                <Image
-                  src={commitment}
-                  height={100}
-                  width={100}
-                  alt="icon-commitments"
-                  className="mx-auto mb-4"
-                />
-                <div>
-                  <p className="text-lg sm:text-2xl font-semibold mb-3">
-                    Commitment
-                  </p>
-                  <p>To provide the best quality products to our customers</p>
-                </div>
-              </div>
-            </div>
-          </section>
-        </section>
+        <MissionVission />
 
         {/* Contact Us Section */}
-        {/* <section className="relative h-[40vh] sm:h-[40vh] md:h-[70vh] w-full">
-          <Image
-            src={contactUsBg}
-            alt="bg"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg"
-          />
-          <div className="absolute inset-0 bg-black bg-opacity-35 flex items-center justify-center">
-            <div className="text-white text-center">
-              <p className="text-xl sm:text-2xl md:text-3xl font-semibold mb-2 sm:mb-4">
-                Contact Us
-              </p>
-              <p className="text-md sm:text-lg mb-2">
-                Have any questions? We are here to talk!
-              </p>
-              <p className="text-md sm:text-lg">Let us know your queries</p>
-              <Link href="/contact-us">
-                <p className="font-bold text-blue-800 mt-2 hover:underline">
-                  {" "}
-                  Contact Us
-                </p>
-              </Link>
-            </div>
-          </div>
-        </section> */}
-
-        <ContactSection/>
+        <ContactSection />
       </main>
     </main>
   );

@@ -40,6 +40,7 @@ const HeroSection = () => {
             alt="group-mockup"
             height={450}
             className="mt-[105px]"
+            loading="lazy"
           />
         </div>
       </div>
