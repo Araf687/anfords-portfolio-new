@@ -33,6 +33,7 @@ import BrandSection from "@/components/dashboard/landing-page/BrandSection";
 import HeroSection from "@/components/dashboard/landing-page/HeroSection";
 import AtAGlanceSection from "@/components/dashboard/landing-page/AtAGlanceSection";
 import CompleteCareCard from "@/components/dashboard/landing-page/CompleteCareCard";
+import ContactSection from "@/components/dashboard/landing-page/ContactSection";
 
 export default function Home() {
   const animation = React.useRef();
@@ -79,7 +80,7 @@ export default function Home() {
             className="w-full bg-cover bg-center bg-no-repeat relative overflow-hidden "
             style={{ backgroundImage: `url(${completeCareBanner.src})` }}
           >
-            <div className="p-10 space-y-6 text-white tracking-wide">
+            <div className="p-14 space-y-6 text-white tracking-wide">
               <h3 className="text-6xl">Complete Care </h3>
               <h3 className="text-4xl">Nourish Your Skin, Smile Bright, and Strengthen Your Hair</h3>
               <p>
@@ -87,7 +88,7 @@ export default function Home() {
                 products. From glowing skin to strong teeth and healthy hair,
                 we’ve got you covered. Look and feel your best every day!
               </p>
-              <div className="flex gap-4 max-w-4xl mx-auto justify-between items-center py-10">
+              <div className="flex gap-4 justify-between items-center pt-10">
                 {cardData.map((item,index)=><CompleteCareCard key={index} data={item}/>)}
               </div>
             </div>
@@ -154,7 +155,7 @@ export default function Home() {
         </section>
 
         {/* Contact Us Section */}
-        <section className="relative h-[40vh] sm:h-[40vh] md:h-[70vh] w-full">
+        {/* <section className="relative h-[40vh] sm:h-[40vh] md:h-[70vh] w-full">
           <Image
             src={contactUsBg}
             alt="bg"
@@ -179,7 +180,9 @@ export default function Home() {
               </Link>
             </div>
           </div>
-        </section>
+        </section> */}
+
+        <ContactSection/>
       </main>
     </main>
   );
