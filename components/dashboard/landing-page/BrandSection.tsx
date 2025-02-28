@@ -59,8 +59,41 @@
 // };
 
 // export default BrandSection;
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 
+// import Image from "next/image";
+// import React from "react";
+// import leafIcon from "@/assets/image/landing-page/leafIcon.svg";
+// import { ChevronRight } from "lucide-react";
+
+// const BrandSection = () => {
+//   return (
+//     <div className="px-6 py-12 md:py-20 lg:py-28  space-y-6">
+//       <h2 className="text-6xl text-[#206CB1]">Explore Our Brands</h2>
+//       <h4 className="text-4xl text-[#333333]">
+//         Discover Top Brands & Their Products
+//       </h4>
+
+//       <div className="flex items-top gap-10 tracking-wide">
+//         <p>
+//           Find all your favorite brands in one place! Browse through our wide
+//           selection of top-quality products from leading brands. Click on any
+//           brand to explore its full range of offerings and discover the perfect
+//           products for you.
+//         </p>{" "}
+//         <Button className="flex items-center bg-[#1263AD] rounded-full px-7 py-6 text-white transition-all duration-300 hover:bg-[#0E5290] hover:scale-105">
+//           <Image src={leafIcon} alt="leaf" className="mr-2" height={25} />
+//           All Products
+//           <ChevronRight />
+//         </Button>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default BrandSection;
+
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
 import leafIcon from "@/assets/image/landing-page/leafIcon.svg";
@@ -68,20 +101,26 @@ import { ChevronRight } from "lucide-react";
 
 const BrandSection = () => {
   return (
-    <div className="p-[100px] space-y-4">
-      <h2 className="text-5xl">Explore Our Brands</h2>
-      <h4 className="text-3xl">Discover Top Brands & Their Products</h4>
-      <div className="flex items-center gap-10">
+    <div className="px-6 py-16 md:py-24 lg:py-32 space-y-6 max-w-7xl mx-auto">
+      {/* Title Section */}
+      <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#206CB1] ">
+        Explore Our Brands
+      </h2>
+      <h4 className="text-lg md:text-2xl lg:text-4xl text-[#333333]">
+        Discover Top Brands & Their Products
+      </h4>
+
+      <div className="flex items-top gap-10 tracking-wide">
         <p>
           Find all your favorite brands in one place! Browse through our wide
           selection of top-quality products from leading brands. Click on any
           brand to explore its full range of offerings and discover the perfect
           products for you.
         </p>{" "}
-        <Button className="flex items-center rounded-full p-6">
+        <Button className="flex items-center bg-[#1263AD] rounded-full px-7 py-6 text-white transition-all duration-300 hover:bg-[#0E5290] hover:scale-105">
           <Image src={leafIcon} alt="leaf" className="mr-2" height={25} />
           All Products
-          <ChevronRight color="white" />
+          <ChevronRight />
         </Button>
       </div>
     </div>

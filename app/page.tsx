@@ -29,6 +29,7 @@ import Link from "next/link";
 import FadeIn from "@/components/gsap/FadeIn";
 import BrandSection from "@/components/dashboard/landing-page/BrandSection";
 import HeroSection from "@/components/dashboard/landing-page/HeroSection";
+import AtAGlanceSection from "@/components/dashboard/landing-page/AtAGlanceSection";
 
 
 export default function Home() {
@@ -56,8 +57,11 @@ export default function Home() {
           </section>
         </section> */}
 
-        {/* Our Products Section */}
+        {/* Our brand Section */}
         <BrandSection />
+
+        <AtAGlanceSection/>
+
 
         {/* Mission, Vision, and Commitment Section */}
         <section className="my-10">

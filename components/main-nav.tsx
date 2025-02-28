@@ -37,7 +37,7 @@ export function Navbar() {
         <div className="flex justify-between items-center h-15">
           <div className="flex-shrink-0 items-center">
             <a href="/" className="text-xl font-bold text-gray-800">
-              <Image src={logo} alt={"logo"} height={50} width={120} />
+              <Image src={logo} alt={"logo"} height={40} width={120} />
             </a>
           </div>
           <div className="hidden md:flex md:space-x-8">
