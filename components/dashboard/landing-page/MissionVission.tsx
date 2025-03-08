@@ -7,6 +7,10 @@ import VissionBg from "@/assets/image/mission-vission/visionBg.svg";
 import commitmentIcon from "@/assets/image/mission-vission/commitmentIcon.svg";
 import commitmentBg from "@/assets/image/mission-vission/commitmentBg.svg";
 import MissionVissionCard from "./MissionVissionCard";
+import Section from "@/components/ui/Section";
+import completeCareBanner from "@/assets/image/landing-page/completeCareBanner.svg";
+import SectionHeading from "@/components/ui/SectionHeading";
+import SectionSubHeading from "@/components/ui/SectionSubHeading";
 
 const MissionVission = () => {
   const cardData = [
@@ -32,21 +36,19 @@ const MissionVission = () => {
     },
   ];
   return (
-    <div
-      style={{ backgroundImage: `url(${leafTransparentImg.src})` }}
-      className=" bg-no-repeat [background-size:350px_350px] [background-position:calc(100%-100px)_center]"
-    >
-      <div className="p-[80px] space-y-6">
-        <h3 className="text-6xl text-[#206CB1]">
-          Our Guiding <span className="text-[#00A85A]">Principles</span>
-        </h3>
-        <h3 className="text-4xl">Mission, Vision & Commitment</h3>
-        <div className="grid md:grid-cols-3 gap-8 pt-4">
+    <div className="p-16 bg-[#001F4E]">
+      <Section className="bg-cover bg-center" bgImage={completeCareBanner}>
+        <SectionHeading bgVarient="dark">Our Guiding Principles</SectionHeading>
+        <SectionSubHeading bgVarient="dark">
+          Mission, Vision & Commitment
+        </SectionSubHeading>
+
+        <div className="grid md:grid-cols-3 gap-8 pt-2">
           {cardData.map((item, index) => (
             <MissionVissionCard key={index} data={item} />
           ))}
         </div>
-      </div>
+      </Section>
     </div>
   );
 };

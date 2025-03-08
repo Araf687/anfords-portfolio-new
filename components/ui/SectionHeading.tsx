@@ -14,7 +14,9 @@ const SectionHeading = ({
   return (
     <>
       <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#206CB1] ">
-        {restOfText}{" "}
+        <span className={`${
+            bgVarient === "light" ? "text-[#206CB1]" : "text-[#2E9EFF]"
+          }`}>{restOfText} </span>
         <span
           className={`${
             bgVarient === "light" ? "text-[#00A85A]" : "text-[#00DD76]"

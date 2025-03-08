@@ -7,6 +7,8 @@ import bg2 from "@/assets/image/landing-page/at-a-glance2.svg";
 import bg3 from "@/assets/image/landing-page/at-a-glance3.svg";
 import bg4 from "@/assets/image/landing-page/at-a-glance4.svg";
 import Section from "@/components/ui/Section";
+import SectionHeading from "@/components/ui/SectionHeading";
+import SectionSubHeading from "@/components/ui/SectionSubHeading";
 
 const AtAGlanceSection = () => {
   const cards = [
@@ -37,29 +39,19 @@ const AtAGlanceSection = () => {
   ];
 
   return (
-    <Section className="bg-gray-100 flex justify-center">
+    <Section
+      className="bg-gray-100 [background-size:350px_350px] "
+      bgImage={leafTransparentImg}
+      bgPosition="right"
+    >
      
-        {/* Content Section */}
-        <div className=" max-w-7xl mx-auto space-y-6">
-          <h1 className="text-3xl md:text-5xl lg:text-6xl text-[#206CB1]">
-            Anfords Bangladesh at a{" "}
-            <span className="text-[#00A85A]">Glance</span>
-          </h1>
-          <p className="text-lg md:text-2xl lg:text-4xl text-[#333333]">
-            Key Milestones and Impact
-          </p>
-
-          {/* Cards Section */}
-          <div className="flex flex-wrap justify-center md:justify-start gap-5">
-            {cards.map((item, index) => (
-              <AtAGlanceCard data={item} key={index} />
-            ))}
-          </div>
-        </div>
-        <div className="px-2">
-          <Image src={leafTransparentImg} alt="leaf-img" height={380} />
-        </div>
-
+      <SectionHeading>Anfords Bangladesh at a Glance</SectionHeading>
+      <SectionSubHeading>Key Milestones and Impact</SectionSubHeading>
+      <div className="flex flex-wrap justify-center gap-5 pt-3">
+        {cards.map((item, index) => (
+          <AtAGlanceCard data={item} key={index} />
+        ))}
+      </div>
     </Section>
   );
 };

@@ -41,20 +41,12 @@ export default function Home() {
         {/* Our brand Section */}
         <BrandSection />
 
-        <AboutAnfords/>
+        <AboutAnfords />
         {/* Anfords at a glance  */}
         <AtAGlanceSection />
 
-        {/* Anfords product mockup  */}
-        <Image
-          src={anfordsProductMockup}
-          alt="anfordsProductMockup"
-          loading="lazy"
-          className="w-full"
-        />
-
         {/* complete care section  */}
-        <div className="p-20 bg-[#001F4E] tracking-wide">
+        {/* <div className="p-20 bg-[#001F4E] tracking-wide">
           <div
             className="w-full bg-cover bg-center bg-no-repeat relative overflow-hidden "
             style={{ backgroundImage: `url(${completeCareBanner.src})` }}
@@ -78,12 +70,18 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <MissionVission />
+        {/* Anfords product mockup  */}
+        <Image
+          src={anfordsProductMockup}
+          alt="anfordsProductMockup"
+          loading="lazy"
+          className="w-full"
+        />
 
-        {/* Contact Us Section */}
-        <ContactSection />
+      
       </main>
     </main>
   );
