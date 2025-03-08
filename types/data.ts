@@ -28,6 +28,7 @@ export interface Brand {
   brandName: string;
   description: string;
   href: string;
+  image:{gray:StaticImageData,color:StaticImageData}
 }
 
 export interface Product {

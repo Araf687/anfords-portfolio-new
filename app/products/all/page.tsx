@@ -4,7 +4,7 @@ import ProductCard from "@/components/dashboard/card/ProductCard";
 import { allProducts } from "@/helpers/data/all-products-data";
 import { Brand, ProductCardProps } from "@/types/data";
 import React, { useState } from "react";
-import allProductBanner from "@/assets/image/sliders/allProductGroup2.png";
+import allProductBanner from "@/assets/image/sliders/allProductGroup3.png";
 import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import {
@@ -44,7 +44,7 @@ const AllProducts = () => {
 
   return (
     <div className="space-y-6">
-      <div className="relative h-[78vh]">
+      <div className="relative h-[72vh]">
         <Image
           src={allProductBanner}
           alt="all products image"
