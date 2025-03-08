@@ -100,10 +100,11 @@ import leafIcon from "@/assets/image/landing-page/leafIcon.svg";
 import { ChevronRight } from "lucide-react";
 import { allBrands } from "@/lib/constants";
 import { Brand } from "@/types/data";
+import Section from "@/components/ui/Section";
 
 const BrandSection = () => {
   return (
-    <div className="px-6 py-16 md:py-24 lg:py-32 space-y-6 max-w-7xl mx-auto">
+    <Section>
       {/* Title Section */}
       <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#206CB1] ">
         Explore Our <span className="text-[#00A85A]">Brands</span>
@@ -149,7 +150,7 @@ const BrandSection = () => {
           </div>
         ))}
       </div>
-    </div>
+    </Section>
   );
 };
 

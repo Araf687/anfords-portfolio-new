@@ -1,34 +1,9 @@
 "use client";
 import * as React from "react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
-// images import
-
-import img2 from "@/assets/image/sliders/envy1.png";
-import img3 from "@/assets/image/sliders/foam.png";
-import img4 from "@/assets/image/sliders/mediplusGroup3.png";
-import img5 from "@/assets/image/sliders/allProductGroup2.png";
-import Autoplay from "embla-carousel-autoplay";
-import useEmblaCarousel from "embla-carousel-react";
-import mission from "@/assets/icons/bullseye.png";
-import vision from "@/assets/icons/supervision.png";
-import commitment from "@/assets/icons/partnership.png";
-import contactUsBg from "@/assets/image/contact us/contact2.jpg";
-
 import Image from "next/image";
 import anfordsProductMockup from "@/assets/image/landing-page/anfordsProductMockup.svg";
 import completeCareBanner from "@/assets/image/landing-page/completeCareBanner.svg";
 import { cardData } from "@/helpers/data/about-card-data";
-import { AboutCard } from "@/components/dashboard/card/AboutCard";
-import SectionHeading from "@/components/dashboard/heading/SectionHeading";
-
-import Link from "next/link";
-import FadeIn from "@/components/gsap/FadeIn";
 import BrandSection from "@/components/dashboard/landing-page/BrandSection";
 import HeroSection from "@/components/dashboard/landing-page/HeroSection";
 import AtAGlanceSection from "@/components/dashboard/landing-page/AtAGlanceSection";
@@ -36,22 +11,37 @@ import CompleteCareCard from "@/components/dashboard/landing-page/CompleteCareCa
 import ContactSection from "@/components/dashboard/landing-page/ContactSection";
 import MissionVission from "@/components/dashboard/landing-page/MissionVission";
 
+import leafIcon1 from "@/assets/icons/landing-page/leaf1.svg";
+import AboutAnfords from "@/components/dashboard/landing-page/AboutAnfords";
+
 export default function Home() {
-  const animation = React.useRef();
-  const plugin = React.useRef(Autoplay({ delay: 3000 }));
-
-  const autoplayOptions = { delay: 3000 }; // Auto-scroll delay in milliseconds
-  const emblaRef = React.useRef(null);
-  const [embla] = useEmblaCarousel({ loop: true }, [Autoplay(autoplayOptions)]);
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <HeroSection />
+
+      <div className="bg-[#005AAA] w-full flex flex-col items-center gap-3 justify-center pb-8">
+        <Image src={leafIcon1} alt="leaf-icon" />
+        <div className="text-center text-white space-y-1 relative">
+          {/* Heading with left & right horizontal lines */}
+          <div className="relative text-lg font-semibold uppercase flex items-center justify-center">
+            <span className="before:content-[''] before:block before:h-[1.6px] before:bg-white before:flex-1 before:mr-4"></span>
+            <p>HEALTH, SAFETY AND BEAUTY</p>
+            <span className="after:content-[''] after:block after:h-[1.6px] after:bg-white after:flex-1 after:ml-4"></span>
+          </div>
+
+          {/* Subtext below */}
+          <p className="relative z-10">
+            Be everywhere, do everything, and never fail to satisfy the
+            customer.
+          </p>
+        </div>
+      </div>
 
       <main className="w-full">
         {/* Our brand Section */}
         <BrandSection />
 
+        <AboutAnfords/>
         {/* Anfords at a glance  */}
         <AtAGlanceSection />
 
@@ -70,7 +60,9 @@ export default function Home() {
             style={{ backgroundImage: `url(${completeCareBanner.src})` }}
           >
             <div className="p-14 space-y-6 text-white tracking-wide">
-                <h3 className="text-6xl text-[#2E9EFF]">Complete <span className="text-[#00DD76]">Care</span></h3>
+              <h3 className="text-6xl text-[#2E9EFF]">
+                Complete <span className="text-[#00DD76]">Care</span>
+              </h3>
               <h3 className="text-4xl">
                 Nourish Your Skin, Smile Bright, and Strengthen Your Hair
               </h3>

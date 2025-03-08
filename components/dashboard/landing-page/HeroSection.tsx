@@ -32,7 +32,7 @@ const HeroSection = () => {
         </div>
       </div>
       {/* First content with rounded bottom */}
-      <div className="h-[1714px] rounded-full bg-[#F1F2F6] mb-2 shadow-lg absolute left-[-132px] bottom-[-1113px] w-[116.2vw] left-0 right-0">
+      <div className="h-[1712px] rounded-full bg-[#005AAA] mb-2 shadow-lg absolute left-[-132px] bottom-[-1113px] w-[116.2vw] left-0 right-0">
         {/* Content of the first section */}
         <div className="flex justify-center items-center ">
           <Image
