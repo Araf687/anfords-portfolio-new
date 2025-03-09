@@ -5,6 +5,10 @@ import phoneIcon from "@/assets/icons/landing-page/phoneIcon.svg";
 import mailIcon from "@/assets/icons/landing-page/mailIcon.svg";
 import socialLinkIcon from "@/assets/icons/landing-page/socialLinkIcon.svg";
 import locationIcon from "@/assets/icons/landing-page/locationIcon.svg";
+import SectionHeading from "@/components/ui/SectionHeading";
+import SectionDescription from "@/components/ui/SectionDescription";
+import leafIcon from "@/assets/icons/landing-page/leaf1.svg";
+import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
 
 const ContactSection = () => {
   const contactLinkData = [
@@ -34,19 +38,20 @@ const ContactSection = () => {
   ];
 
   return (
-    <div className="bg-[#001F4E] py-12 text-white tracking-wide">
+    <div className="bg-[#001F4E] pt-10 text-white tracking-wide">
       {/* Top Section */}
-      <div className="flex px-[100px] tracking-wide items-center gap-10">
-        <div className="space-y-6 flex-1">
-            <h1 className="text-6xl text-[#2E9EFF]">Get In <span className="text-[#00A85A]">Touch</span></h1>
-          <p className="text-justify">
+      <div className="flex px-[80px] tracking-wide items-center gap-10">
+        <div className="space-y-6">
+          <SectionHeading bgVarient="dark">Get In Touch</SectionHeading>
+          <SectionDescription className="lg:pr-[60px]">
+            {" "}
             Have questions or need assistance? We’re here to help! Reach out to
-            <span className="text-[#2E9EFF]">{" "}Anfords Bangladesh{" "}</span>for any inquiries about our products, services,
-            or partnerships. Our team is ready to assist you with prompt and
-            reliable support. Let’s connect!
-          </p>
+            <span className="text-[#2E9EFF]"> Anfords Bangladesh </span>for any
+            inquiries about our products, services, or partnerships. Our team is
+            ready to assist you with prompt and reliable support. Let’s connect!
+          </SectionDescription>
         </div>
-        <Image src={contactBG} alt="contact-background" height={400} />
+        <Image src={contactBG} alt="contact-background" height={300} />
       </div>
 
       {/* Contact Information Section */}
@@ -72,11 +77,54 @@ const ContactSection = () => {
                 ))}
               </div>
             </div>
-
-         
           </div>
         ))}
       </div>
+      <div className="flex justify-between items-center py-5 px-[80px] border-b-2 border-green-600">
+  <div className="flex items-center gap-3">
+    <Image src={leafIcon} alt="leafIcon" height={30} />
+    <p className="uppercase">
+      Anfords Bangladesh © 2025 | All Rights Reserved
+    </p>
+  </div>
+  <div className="flex space-x-6">
+    <a
+      href="#"
+      className="group text-gray-400 transition duration-300"
+      aria-label="Facebook"
+    >
+      <Facebook className="w-6 h-6 group-hover:text-[#1877F2]" />
+    </a>
+
+    <a
+      href="#"
+      className="group text-gray-400 transition duration-300"
+      aria-label="Twitter"
+    >
+      <Twitter className="w-6 h-6 group-hover:text-[#1DA1F2]" />
+    </a>
+
+    <a
+      href="#"
+      className="group text-gray-400 transition duration-300"
+      aria-label="Instagram"
+    >
+      <Instagram className="w-6 h-6 group-hover:text-[#E1306C]" />
+    </a>
+
+    <a
+      href="#"
+      className="group text-gray-400 transition duration-300"
+      aria-label="YouTube"
+    >
+      <Youtube className="w-6 h-6 group-hover:text-[#FF0000]" />
+    </a>
+  </div>
+</div>
+
+      <p className="py-2 text-center text-sm text-gray-400 uppercase">
+        Developed and maintain by CODEX 2.0 team
+      </p>
     </div>
   );
 };

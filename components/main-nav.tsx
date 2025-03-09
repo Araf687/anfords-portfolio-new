@@ -54,42 +54,16 @@ export function Navbar() {
                   </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent ">
-                    <span className="tracking-[.10em] ">  Our Brands</span>
-                  
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent>
-                    <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-                      <li className="row-span-3">
-                        <NavigationMenuLink asChild>
-                          <div className="h-full w-full flex flex-col justify-center items-center rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md">
-                            <Image
-                              src={logo}
-                              alt={"logo"}
-                              height={100}
-                              width={140}
-                            />
-                            {/* <p className="mb-2 mt-4 font-medium">
-                              Anfords Bangladesh
-                            </p> */}
-                          </div>
-                        </NavigationMenuLink>
-                      </li>
-                      <li className="h-[30vh] overflow-y-auto">
-                        {allBrands &&
-                          allBrands.map((item: Brand, index: number) => (
-                            <ListItem
-                              key={index}
-                              href={item.href}
-                              title={item.brandName}
-                            >
-                              {item.description}
-                            </ListItem>
-                          ))}
-                      </li>
-                    </ul>
-                  </NavigationMenuContent>
+                  <Link href="/brands" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
+                      style={{ background: "transparent" }}
+                    >
+                      Brands
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
+            
                 <NavigationMenuItem>
                   <NavigationMenuTrigger className="bg-transparent tracking-[.10em]">
                     Products
