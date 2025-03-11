@@ -2,15 +2,10 @@
 import * as React from "react";
 import Image from "next/image";
 import anfordsProductMockup from "@/assets/image/landing-page/anfordsProductMockup.svg";
-import completeCareBanner from "@/assets/image/landing-page/completeCareBanner.svg";
-import { cardData } from "@/helpers/data/about-card-data";
 import BrandSection from "@/components/dashboard/landing-page/BrandSection";
 import HeroSection from "@/components/dashboard/landing-page/HeroSection";
 import AtAGlanceSection from "@/components/dashboard/landing-page/AtAGlanceSection";
-import CompleteCareCard from "@/components/dashboard/landing-page/CompleteCareCard";
-import ContactSection from "@/components/dashboard/landing-page/ContactSection";
 import MissionVission from "@/components/dashboard/landing-page/MissionVission";
-
 import leafIcon1 from "@/assets/icons/landing-page/leaf1.svg";
 import AboutAnfords from "@/components/dashboard/landing-page/AboutAnfords";
 

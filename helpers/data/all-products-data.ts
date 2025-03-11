@@ -31,7 +31,7 @@ export const allProducts = [
   </p>
 </div>
 `,
-  longDescription: `<div class="text-justify">
+    longDescription: `<div class="text-justify">
   <h2 class="text-xl lg:text-3xl font-bold text-blue-900 mb-4">
     Experience the Ultimate in Oral Hygiene with Brush Up Toothpaste!
   </h2>
