@@ -27,16 +27,22 @@ export interface Brand {
   id:Number;
   brandName: string;
   description: string;
+  longDescription?: string; // HTML as string
   href: string;
   image:{gray:StaticImageData,color:StaticImageData}
 }
 
+
+
 export interface Product {
   id: number;
+  brand_id: number;
+  brand_name: string;
   product_name: string;
-  image: StaticImageData; // Assuming 'sleek' is a string URL or file path
-  shortDescription: string; // Can include HTML tags
-  longDescription: string; // Plain text or with special formatting like bullets
-  rating: string | number; // Depending on how you handle ratings (as a string or number)
-  width?: number |undefined; // Assumed to represent the width as a numeric value
+  image: StaticImageData; // Assuming `toothpaste` is a string (URL or path to image)
+  shortDescription: string;
+  longDescription: string;
+  rating: string; // Could be `number`, but keeping it as `string` based on your data
+  width: number;
+  height?: number; // Optional since it's `undefined`
 };

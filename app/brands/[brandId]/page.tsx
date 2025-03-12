@@ -1,31 +1,58 @@
 "use client";
-import Section from '@/components/ui/Section';
-import { allBrands } from '@/lib/constants';
-import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import ProductCard from "@/components/dashboard/card/ProductCard";
+import Section from "@/components/ui/Section";
+import SectionDescription from "@/components/ui/SectionDescription";
+import SectionHeading from "@/components/ui/SectionHeading";
+import { allProducts } from "@/helpers/data/all-products-data";
+import { allBrands } from "@/lib/constants";
+import { Brand, Product } from "@/types/data";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
 
 const SingleBrand = ({ params }: { params: { brandId: string } }) => {
-    const [brandData, setBrandData] = useState<any>(null);
+  const [brandData, setBrandData] = useState<Brand>();
+  const [productListByBrand, setProductListByBrand] = useState<
+    Product[] | null
+  >(null);
 
-    useEffect(() => {
-        const brand = allBrands.find((brand) => brand.id.toString() === params.brandId);
-        console.log(brand)
-        setBrandData(brand);
-    }, [params.brandId]);
-
-    return (
-        <Section>
-            <h1 className="text-2xl font-bold">Single Brand Page</h1>
-            {brandData ? (
-                <div>
-                    <h2 className="text-xl">{brandData.brandName}</h2>
-                    <Image src={brandData.image.color} alt={brandData.brandName} />
-                </div>
-            ) : (
-                <p>Brand not found</p>
-            )}
-        </Section>
+  useEffect(() => {
+    const brand = allBrands.find(
+      (brand) => brand.id.toString() === params.brandId
     );
+    setBrandData(brand);
+    const productByBrand = allProducts.filter(
+      (item: Product) => item.brand_id === brand?.id
+    );
+    setProductListByBrand(productByBrand);
+  }, [params.brandId]);
+
+  console.log(productListByBrand);
+
+  return (
+    <div className="py-10 px-16">
+      {brandData && (
+        <div className="space-y-6">
+          <SectionHeading>About Envy</SectionHeading>
+          <SectionDescription>{brandData?.longDescription}</SectionDescription>
+        </div>
+      )}
+     <div className="lg:px-16">
+  {brandData ? (
+    <div className="flex justify-center border-b-4 border-fuchsia-800 my-10">
+      <Image src={brandData.image.color} alt={brandData.brandName} />
+    </div>
+  ) : (
+    <p>Brand not found</p>
+  )}
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    {productListByBrand?.map((item, index) => (
+      <ProductCard key={index} data={item} />
+    ))}
+  </div>
+</div>
+
+    </div>
+  );
 };
 
 export default SingleBrand;
