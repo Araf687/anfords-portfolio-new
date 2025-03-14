@@ -52,7 +52,7 @@ export const allBrands: Brand[] = [
     image: { gray: mediplusGray, color: mediplusColor },
   },
   {
-    id: 4,
+    id: 5,
     brandName: "Mediplus Gel",
     description: "Promoting oral health care products.",
     longDescription:'Mediplus Fluoride Gel is designed to provide enhanced cavity protection while strengthening enamel for a healthier smile. Infused with fluoride, this toothpaste helps prevent tooth decay, fights plaque buildup, and ensures long-lasting freshness. Its gentle yet effective formula is perfect for daily use, promoting strong teeth and healthy gums. Available in multiple sizes, Mediplus Fluoride Gel is your go-to solution for complete oral care and protection. Keep your smile bright and confident every day!',
@@ -60,7 +60,7 @@ export const allBrands: Brand[] = [
     image: { gray: gelGray, color: gelColor },
   },
   {
-    id: 4,
+    id: 6,
     brandName: "Mediplus DS",
     description: "Promoting oral health care products.",
     longDescription:'Mediplus DS is specially formulated to provide deep cleaning and long-lasting protection for your teeth and gums. Its advanced formula helps remove plaque, fight cavities, and maintain fresh breath throughout the day. Designed for optimal oral hygiene, Mediplus DS strengthens enamel, prevents gum problems, and ensures a healthy, confident smile. Available in multiple sizes, it’s the perfect choice for daily dental care. Keep your teeth strong and your breath fresh with Mediplus DS!',
@@ -68,7 +68,7 @@ export const allBrands: Brand[] = [
     image: { gray: dsGray, color: dsColor },
   },
   {
-    id: 5,
+    id: 7,
     brandName: "Brush Up",
     description: "Brightening smiles with superior oral care essentials.",
     longDescription:'Brush Up is a toothpaste brand offered by ANSAR HARFORD FZC, a company based in the United Arab Emirates. Their Brush Up Fluoride Toothpaste is designed to gently clean away yellowing plaque and whiten teeth with each brushing. It contains a powerful fluoride component that strengthens tooth enamel. The toothpaste is available in various flavors, including Ice Blue Minty Gel, Strong Green Minty Gel, Red Spice Minty Gel, and Miswak Toothpaste (Opaque).',
@@ -76,7 +76,7 @@ export const allBrands: Brand[] = [
     image: { gray: brushUpGray, color: brushUpColor },
   },
   {
-    id: 6,
+    id: 8,
     brandName: "Every Day",
     description:
       "Elevating your grooming routine with reliable daily care products.",

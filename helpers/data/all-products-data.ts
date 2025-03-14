@@ -20,13 +20,15 @@ import shavingFoamLime from "@/assets/image/products/everyday/everydayLime.png";
 import shavingFoamLimeBG from "@/assets/image/products/everyday/everydayLimebg.png";
 import shavingFoamSensetive from "@/assets/image/products/everyday/everydaySensetive.png";
 import shavingFoamSensetiveBG from "@/assets/image/products/everyday/everydaySensetivebg.png";
+import { title } from "process";
 
 export const allProducts = [
   {
     id: 2,
-    brand_id: 5,
+    brand_id: 7,
     brand_name: "Brush Up",
     product_name: "Brush Up Toothpaste",
+    
     productCardBg:toothpasteBG,
     image: toothpaste,
     shortDescription: `<div>
@@ -112,7 +114,7 @@ export const allProducts = [
     id: 4,
     brand_id: 3,
     brand_name: "Sleek",
-    product_name: "Sleek Air Freshener",
+    product_name: "Sleek Air Freshener (Rose)",
     image: sleek,
     productCardBg:sleekBG,
     shortDescription: `<p><p class="text-xl font-semibold mb-4">Freshen up your space with Sleek Air Freshener!</p> Available in seven captivating flavors – Lavender, Lime, Rose, Anti-Tobacco, Bakhoor, Jasmine, and Orchid – it ensures a refreshing ambiance that suits every mood.</p>`,
@@ -144,8 +146,8 @@ export const allProducts = [
   },
   {
     id: 5,
-    brand_id: 4,
-    brand_name: "Mediplus",
+    brand_id: 6,
+    brand_name: "Mediplus DS",
     product_name: "Mediplus DS",
     image: mediplusDS,
     productCardBg:mediplusDSBg,
@@ -176,8 +178,8 @@ export const allProducts = [
   },
   {
     id: 6,
-    brand_id: 4,
-    brand_name: "Mediplus",
+    brand_id: 5,
+    brand_name: "Mediplus Gel",
     product_name: "Fluoride Gel",
     image: mediplusGel,
     productCardBg:mediplusGelBg,
@@ -273,7 +275,7 @@ export const allProducts = [
   {
     id: 8,
     brand_name: "Everyday",
-    brand_id:1,
+    brand_id:8,
     product_name: "Shaving Foam",
     image: shavingFoamLime,
     productCardBg:shavingFoamLimeBG,
@@ -286,7 +288,7 @@ export const allProducts = [
   {
     id: 9,
     brand_name: "Everyday",
-    brand_id:1,
+    brand_id:8,
     product_name: "Shaving Foam",
     image: shavingFoamSensetive,
     productCardBg:shavingFoamSensetiveBG,
@@ -302,6 +304,7 @@ export const allProducts = [
     brand_name: "Mediplus",
     product_name: "Mediplus Toothbrush",
     image: mediplusToothBrush,
+    titleColor:"white",
     productCardBg:mediplusToothBrushBg,
     shortDescription: `<div>
       <p class="text-xl mb-4 font-semibold">Gentle Care, Confident Smiles!</p>
@@ -335,7 +338,7 @@ export const allProducts = [
   {
     id: 11,
     brand_id: 2,
-    brand_name: "Shampoo",
+    brand_name: "English",
     product_name: "English Shampoo",
     image: shampoo,
     productCardBg:shampooBG,
@@ -364,6 +367,7 @@ export const allProducts = [
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Mediplus Toothpaste",
+    
     image: mediplusToothpaste,
     productCardBg:mediplusToothpasteBg,
     shortDescription: `<div >

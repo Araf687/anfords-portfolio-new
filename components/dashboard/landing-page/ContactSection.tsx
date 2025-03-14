@@ -40,90 +40,61 @@ const ContactSection = () => {
   return (
     <div className="bg-[#001F4E] pt-10 text-white tracking-wide">
       {/* Top Section */}
-      <div className="flex px-[80px] tracking-wide items-center gap-10">
+      <div className="flex flex-col md:flex-row px-4 sm:px-10 md:px-[80px] items-center gap-10 text-center md:text-left">
         <div className="space-y-6">
           <SectionHeading bgVarient="dark">Get In Touch</SectionHeading>
-          <SectionDescription className="lg:pr-[60px]">
-            {" "}
+          <SectionDescription className="md:pr-[60px]">
             Have questions or need assistance? We’re here to help! Reach out to
-            <span className="text-[#2E9EFF]"> Anfords Bangladesh </span>for any
+            <span className="text-[#2E9EFF]"> Anfords Bangladesh </span> for any
             inquiries about our products, services, or partnerships. Our team is
             ready to assist you with prompt and reliable support. Let’s connect!
           </SectionDescription>
         </div>
-        <Image src={contactBG} alt="contact-background" height={300} />
+        <Image src={contactBG} alt="contact-background" height={250} className="w-full md:w-auto" />
       </div>
 
       {/* Contact Information Section */}
-      <div className="bg-white text-black mt-12 px-[100px] py-10 flex flex-wrap justify-between">
+      <div className="bg-white text-black mt-12 px-4 sm:px-10 md:px-[80px] py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
         {contactLinkData.map((item, index) => (
-          <div
-            key={index}
-            className="flex flex-col items-center text-center px-6 w-[22%]"
-          >
-            <div className="flex flex-col items-center text-center">
-              <Image
-                src={item.icon}
-                alt={item.title}
-                height={50}
-                className="mb-3 mx-auto"
-              />
-              <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-              <div className="space-y-1">
-                {item.data.map((info, idx) => (
-                  <p key={idx} className="text-gray-700">
-                    {info}
-                  </p>
-                ))}
-              </div>
+          <div key={index} className="flex flex-col items-center">
+            <Image src={item.icon} alt={item.title} height={50} className="mb-3" />
+            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+            <div className="space-y-1">
+              {item.data.map((info, idx) => (
+                <p key={idx} className="text-gray-700">{info}</p>
+              ))}
             </div>
           </div>
         ))}
       </div>
-      <div className="flex justify-between items-center py-5 px-[80px] border-b-2 border-green-600">
-  <div className="flex items-center gap-3">
-    <Image src={leafIcon} alt="leafIcon" height={30} />
-    <p className="uppercase">
-      Anfords Bangladesh © 2025 | All Rights Reserved
-    </p>
-  </div>
-  <div className="flex space-x-6">
-    <a
-      href="#"
-      className="group text-gray-400 transition duration-300"
-      aria-label="Facebook"
-    >
-      <Facebook className="w-6 h-6 group-hover:text-[#1877F2]" />
-    </a>
 
-    <a
-      href="#"
-      className="group text-gray-400 transition duration-300"
-      aria-label="Twitter"
-    >
-      <Twitter className="w-6 h-6 group-hover:text-[#1DA1F2]" />
-    </a>
+      {/* Footer Section */}
+      <div className="flex flex-col md:flex-row justify-between items-center py-5 px-4 sm:px-10 md:px-[80px] border-b-2 border-green-600">
+        <div className="flex items-center gap-3 text-center md:text-left">
+          <Image src={leafIcon} alt="leafIcon" height={30} />
+          <p className="uppercase text-sm sm:text-base">
+            Anfords Bangladesh © 2025 | All Rights Reserved
+          </p>
+        </div>
+        <div className="flex space-x-4 mt-4 md:mt-0">
+          <a href="#" className="group text-gray-400 transition duration-300" aria-label="Facebook">
+            <Facebook className="w-6 h-6 group-hover:text-[#1877F2]" />
+          </a>
+          <a href="#" className="group text-gray-400 transition duration-300" aria-label="Twitter">
+            <Twitter className="w-6 h-6 group-hover:text-[#1DA1F2]" />
+          </a>
+          <a href="#" className="group text-gray-400 transition duration-300" aria-label="Instagram">
+            <Instagram className="w-6 h-6 group-hover:text-[#E1306C]" />
+          </a>
+          <a href="#" className="group text-gray-400 transition duration-300" aria-label="YouTube">
+            <Youtube className="w-6 h-6 group-hover:text-[#FF0000]" />
+          </a>
+        </div>
+      </div>
 
-    <a
-      href="#"
-      className="group text-gray-400 transition duration-300"
-      aria-label="Instagram"
-    >
-      <Instagram className="w-6 h-6 group-hover:text-[#E1306C]" />
-    </a>
-
-    <a
-      href="#"
-      className="group text-gray-400 transition duration-300"
-      aria-label="YouTube"
-    >
-      <Youtube className="w-6 h-6 group-hover:text-[#FF0000]" />
-    </a>
-  </div>
-</div>
-
+      {/* Developer Credit */}
       <p className="py-2 text-center text-sm text-gray-400 uppercase">
-        Developed and maintain by CODEX 2.0 team
+        Developed and maintained by CODEX 2.0 team
       </p>
     </div>
   );

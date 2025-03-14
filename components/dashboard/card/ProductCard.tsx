@@ -1,15 +1,4 @@
-import { Button } from "@/components/ui/button";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { cardData } from "@/helpers/data/about-card-data";
 import { ProductCardProps } from "@/types/data";
-import { Star } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -19,42 +8,47 @@ interface ProductCardComponentProps {
 }
 
 const ProductCard: React.FC<ProductCardComponentProps> = ({ data }) => {
-  const { id, product_name, image, width, rating } = data;
+  const { id, product_name, image, width, rating, titleColor, productCardBg } =
+    data;
   return (
     <>
-      <Card className="w-full rounded-xl">
-        <CardHeader className=" bg-[#f8ffff] h-[35vh] rounded">
-          <div className="w-full h-full flex flex-row justify-center items-center">
+      <div
+        className="h-[395px] w-full flex items-center justify-center relative" // Ensure full width and fixed height
+        style={{
+          backgroundImage: productCardBg
+            ? `url(${productCardBg.src})`
+            : undefined,
+           
+          backgroundSize: "cover", // Ensure the background image covers the full width and height of the div
+         
+          backgroundRepeat: "no-repeat", // Prevents repeating the background image
+        }}
+      >
+        <div className="group flex flex-col space-y-8 items-center transition duration-500 ease-out relative z-10 w-full">
+          {/* Glassmorphism effect on product name with full width */}
+          <p
+            className={`w-full font-bold ${
+              titleColor ? `text-[${titleColor}]` : "text-sky-800"
+            } text-center text-lg backdrop-blur-md bg-white/20 p-2 rounded`}
+          >
+            {product_name}
+          </p>
+
+          <div>
             <Image
               src={image}
-              alt="product_image"
-              height={100}
-              width={width ? width : 100}
+              alt={product_name || "Product image"}
+              className="w-[250px] object-contain transition-transform duration-500 ease-out group-hover:scale-125"
             />
           </div>
-        </CardHeader>
-        <CardContent>
-          <div>
-            <p className="text-center font-semibold mt-3">
-              <Link href={`/products/${id}`} className="hover:text-blue-500">
-                {product_name}
-              </Link>
-            </p>
-            {/* <div className="flex gap-1 justify-center mt-2">
-              {[1, 2, 3, 4, 5].map((item: number) => (
-                <Star
-                  className={`w-6 h-6 ${
-                    item > parseInt(rating[0])
-                      ? "text-gray-700"
-                      : "text-yellow-700"
-                  }`}
-                  key={item}
-                />
-              ))}
-            </div> */}
-          </div>
-        </CardContent>
-      </Card>
+
+          <p className="text-center text-sm font-semibold bg-sky-700 py-2 px-4 rounded-full">
+            <Link href={`/products/${id}`} className="text-white">
+              View more
+            </Link>
+          </p>
+        </div>
+      </div>
     </>
   );
 };

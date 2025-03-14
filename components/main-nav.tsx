@@ -46,7 +46,10 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link href="/" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "tracking-[.10em]"
+                      )}
                       style={{ background: "transparent" }}
                     >
                       Home
@@ -56,52 +59,37 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link href="/brands" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "tracking-[.10em]"
+                      )}
                       style={{ background: "transparent" }}
                     >
                       Brands
                     </NavigationMenuLink>
                   </Link>
                 </NavigationMenuItem>
-            
+
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger className="bg-transparent tracking-[.10em]">
-                    Products
-                  </NavigationMenuTrigger>
-                  <NavigationMenuContent className="h-[50vh] overflow-y-auto">
-                    <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
-                      {allProducts.slice(0, 4).map((component) => (
-                        <ListItem
-                          key={component.id}
-                          title={component.product_name}
-                          href={`/products/${component.id}`}
-                        >
-                          <Image
-                            src={component.image || "/placeholder.png"} // Fallback image if `component.image` is empty
-                            alt={`${component.product_name} image`}
-                            height={50}
-                            width={calculateImageWidth(component.width)}
-                          />
-                          {/* <div
-                            dangerouslySetInnerHTML={{
-                              __html: component.shortDescription,
-                            }}
-                            className="text-sm text-gray-700"
-                          /> */}
-                        </ListItem>
-                      ))}
-                    </ul>
-                    <p className="text-center p-3 font-semibold">
-                      <Link href="/products/all" className="text-blue-700">
-                        See more..
-                      </Link>
-                    </p>
-                  </NavigationMenuContent>
+                  <Link href="/products/all" legacyBehavior passHref>
+                    <NavigationMenuLink
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "tracking-[.10em]"
+                      )}
+                      style={{ background: "transparent" }}
+                    >
+                      Products
+                    </NavigationMenuLink>
+                  </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="bg-transparent">
                   <Link href="/about" legacyBehavior passHref>
                     <NavigationMenuLink
-                   className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "tracking-[.10em]"
+                      )}
                       style={{ background: "transparent" }}
                     >
                       About Us
@@ -111,7 +99,10 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link href="/career" legacyBehavior passHref>
                     <NavigationMenuLink
-                    className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "tracking-[.10em]"
+                      )}
                       style={{ background: "transparent" }}
                     >
                       Career
@@ -121,7 +112,10 @@ export function Navbar() {
                 <NavigationMenuItem>
                   <Link href="/contact-us" legacyBehavior passHref>
                     <NavigationMenuLink
-                      className={cn(navigationMenuTriggerStyle(),"tracking-[.10em]")}
+                      className={cn(
+                        navigationMenuTriggerStyle(),
+                        "tracking-[.10em]"
+                      )}
                       style={{ background: "transparent" }}
                     >
                       Contact Us
