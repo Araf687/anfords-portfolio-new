@@ -1,12 +1,25 @@
-import brush from "@/assets/image/products/TB-04.jpg";
-import toothpaste from "@/assets/image/products/B UP.png";
-import floss from "@/assets/image/products/D Floss.png";
-import DSTube from "@/assets/image/products/DSl Pack & Tube.png";
-import shampoo from "@/assets/image/products/web-images/english-shampu1_crop.png";
-import sleek from "@/assets/image/products/Sleek-5.png";
-import envy from "@/assets/image/products/Envy.png";
-import florideGel from "@/assets/image/products/Fgel Pack & Tube.png";
-import mediplusToothpaste from "@/assets/image/products/mediplusResize2.png";
+import mediplusToothBrush from "@/assets/image/products/toothbrush/toothbrush.png";
+import mediplusToothBrushBg from "@/assets/image/products/toothbrush/toothBrushbg.png";
+import toothpaste from "@/assets/image/products/brush up/brushUp.png";
+import toothpasteBG from "@/assets/image/products/brush up/brushUpbg.png";
+import mediplusDentalfloss from "@/assets/image/products/dental floss/dentalfloss.png";
+import mediplusDentalflossBg from "@/assets/image/products/dental floss/dentalFlossbg.png";
+import mediplusDS from "@/assets/image/products/mediplus Ds/mediplusDS.png";
+import mediplusDSBg from "@/assets/image/products/mediplus Ds/mediplusDSbg.png";
+import shampoo from "@/assets/image/products/english/englishShampoo.png";
+import shampooBG from "@/assets/image/products/english/englishShampoobg.png";
+import sleek from "@/assets/image/products/sleek/roseSleek.png";
+import sleekBG from "@/assets/image/products/sleek/sleekRosebg.png";
+import envy from "@/assets/image/products/envy/envySoap.png";
+import envyBG from "@/assets/image/products/envy/envySoapbg.png";
+import mediplusGel from "@/assets/image/products/mediplus floride/mediplusFloride.png";
+import mediplusGelBg from "@/assets/image/products/mediplus floride/mediplusFloridebg.png";
+import mediplusToothpaste from "@/assets/image/products/mediplus toothpaste/mediplusToothpaste.png";
+import mediplusToothpasteBg from "@/assets/image/products/mediplus toothpaste/mediplusToothpastebg.png";
+import shavingFoamLime from "@/assets/image/products/everyday/everydayLime.png";
+import shavingFoamLimeBG from "@/assets/image/products/everyday/everydayLimebg.png";
+import shavingFoamSensetive from "@/assets/image/products/everyday/everydaySensetive.png";
+import shavingFoamSensetiveBG from "@/assets/image/products/everyday/everydaySensetivebg.png";
 
 export const allProducts = [
   {
@@ -14,13 +27,14 @@ export const allProducts = [
     brand_id: 5,
     brand_name: "Brush Up",
     product_name: "Brush Up Toothpaste",
+    productCardBg:toothpasteBG,
     image: toothpaste,
     shortDescription: `<div>
   <h2 class="text-xl font-semibold mb-4">
     Start Your Day Fresh with Brush Up Toothpaste!
   </h2>
   <p class="lg:text-lg lg:leading-relaxed mb-4">
-    Brush Up contains a whitening agent that works gently every time you brush.
+    Brush Up contains a whitening agent that works gently every time you mediplusToothBrush.
     Its powerful fluoride strengthens enamel, while the exciting fresh flavor
     and strong mouthwash leave your mouth cool and fresh.
   </p>
@@ -50,7 +64,7 @@ export const allProducts = [
     </li>
   </ul>
   <p class="lg:text-lg lg:leading-relaxed mt-4">
-    Ideal for daily use, Brush Up Toothpaste is crafted to suit the oral care needs of all age groups. Trust Brush Up to deliver a refreshing start and a confident finish to your day, every time you brush!
+    Ideal for daily use, Brush Up Toothpaste is crafted to suit the oral care needs of all age groups. Trust Brush Up to deliver a refreshing start and a confident finish to your day, every time you mediplusToothBrush!
   </p>
 </div>
 `,
@@ -63,6 +77,7 @@ export const allProducts = [
     brand_id: 1,
     brand_name: "Envy",
     product_name: "Uptan Soap",
+    productCardBg:envyBG,
     image: envy,
     shortDescription: `<div >
   <h1 class="text-xl font-semibold mb-4">Experience the Traditional Essence of Glowing Skin</h1>
@@ -99,6 +114,7 @@ export const allProducts = [
     brand_name: "Sleek",
     product_name: "Sleek Air Freshener",
     image: sleek,
+    productCardBg:sleekBG,
     shortDescription: `<p><p class="text-xl font-semibold mb-4">Freshen up your space with Sleek Air Freshener!</p> Available in seven captivating flavors – Lavender, Lime, Rose, Anti-Tobacco, Bakhoor, Jasmine, and Orchid – it ensures a refreshing ambiance that suits every mood.</p>`,
     longDescription: `<div class="text-justify">
   <h1 class="text-xl lg:text-3xl font-bold text-blue-900 mb-4">Elevate Your Surroundings with Sleek Air Freshener</h1>
@@ -123,7 +139,7 @@ export const allProducts = [
 </div>
 `,
     rating: "4.8",
-    width: 50,
+    width: 250,
     height: undefined,
   },
   {
@@ -131,7 +147,8 @@ export const allProducts = [
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Mediplus DS",
-    image: DSTube,
+    image: mediplusDS,
+    productCardBg:mediplusDSBg,
     shortDescription: `<div>
   <h1 class="text-xl font-semibold mb-4">Experience Double Protection with Mediplus DS!</h1>
   <p class="lg:text-lg lg:leading-relaxed">
@@ -162,7 +179,8 @@ export const allProducts = [
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Fluoride Gel",
-    image: florideGel,
+    image: mediplusGel,
+    productCardBg:mediplusGelBg,
     shortDescription: `<div >
  <h1 class="text-xl font-semibold mb-4">Be Strengthened and Protected with Fluoride Gel!</h1>
 
@@ -214,7 +232,8 @@ export const allProducts = [
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Mediplus Dental Floss",
-    image: floss,
+    image: mediplusDentalfloss,
+    productCardBg:mediplusDentalflossBg,
     shortDescription: `<div>
   <h1 class="text-xl font-bold mb-4">Mediplus Dental Floss: Cleaner, Healthier Teeth!</h1>
   <p class="lg:leading-relaxed">
@@ -251,24 +270,39 @@ export const allProducts = [
     width: 150,
     height: undefined,
   },
-  // {
-  //   id: 8,
-  //   brand_name: "Everyday",
-  //   brand_id:1,
-  //   product_name: "Shaving Foam",
-  //   image: "",
-  //   shortDescription: `<p>Enjoy a smooth, irritation-free shave with Everyday Shaving Foam, designed for all skin types, including sensitive skin.</p>`,
-  //   longDescription: `<p>Everyday Shaving Foam provides superior hydration and comfort. Its ultra-moisturizing formula ensures a close, irritation-free shave while nourishing your skin. Available in refreshing variants, it's the perfect companion for your grooming routine.</p>`,
-  //   rating: "4.7",
-  //   width: 200,
-  //   height:undefined,
-  // },
+  {
+    id: 8,
+    brand_name: "Everyday",
+    brand_id:1,
+    product_name: "Shaving Foam",
+    image: shavingFoamLime,
+    productCardBg:shavingFoamLimeBG,
+    shortDescription: `<p>Enjoy a smooth, irritation-free shave with Everyday Shaving Foam, designed for all skin types, including sensitive skin.</p>`,
+    longDescription: `<p>Everyday Shaving Foam provides superior hydration and comfort. Its ultra-moisturizing formula ensures a close, irritation-free shave while nourishing your skin. Available in refreshing variants, it's the perfect companion for your grooming routine.</p>`,
+    rating: "4.7",
+    width: 200,
+    height:undefined,
+  },
   {
     id: 9,
+    brand_name: "Everyday",
+    brand_id:1,
+    product_name: "Shaving Foam",
+    image: shavingFoamSensetive,
+    productCardBg:shavingFoamSensetiveBG,
+    shortDescription: `<p>Enjoy a smooth, irritation-free shave with Everyday Shaving Foam, designed for all skin types, including sensitive skin.</p>`,
+    longDescription: `<p>Everyday Shaving Foam provides superior hydration and comfort. Its ultra-moisturizing formula ensures a close, irritation-free shave while nourishing your skin. Available in refreshing variants, it's the perfect companion for your grooming routine.</p>`,
+    rating: "4.7",
+    width: 200,
+    height:undefined,
+  },
+  {
+    id: 10,
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Mediplus Toothbrush",
-    image: brush,
+    image: mediplusToothBrush,
+    productCardBg:mediplusToothBrushBg,
     shortDescription: `<div>
       <p class="text-xl mb-4 font-semibold">Gentle Care, Confident Smiles!</p>
   <p class="lg:text-lg">
@@ -299,11 +333,12 @@ export const allProducts = [
     width: 130,
   },
   {
-    id: 10,
+    id: 11,
     brand_id: 2,
     brand_name: "Shampoo",
     product_name: "English Shampoo",
     image: shampoo,
+    productCardBg:shampooBG,
     shortDescription: `<p><p class="text-xl font-semibold mb-3">Struggling with hair lice?</p><p class="lg:text-lg">Our English shampoo is here to help! Designed to effectively remove head lice while being gentle on your scalp, it’s packed with nourishing ingredients that leave your hair fresh and smooth. Get rid of lice and enjoy healthy, beautiful hair with every wash!</p></p>`,
 
     longDescription: `<div class="text-justify">
@@ -325,11 +360,12 @@ export const allProducts = [
     width: 120,
   },
   {
-    id: 1,
+    id: 12,
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Mediplus Toothpaste",
     image: mediplusToothpaste,
+    productCardBg:mediplusToothpasteBg,
     shortDescription: `<div >
   <h2 class="text-xl font-semibold mb-4">
     Achieve a Healthier Smile with Mediplus Toothpaste!
