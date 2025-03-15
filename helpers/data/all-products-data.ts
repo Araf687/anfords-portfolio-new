@@ -48,6 +48,7 @@ import everydaySensetiveBanner from "@/assets/image/products/everyday/everydaySe
 import mediplusDSBanner from "@/assets/image/products/mediplus Ds/mediplusDSBanner.png";
 import mediplusGelBanner from "@/assets/image/products/mediplus floride/mediplusGelBanner.png";
 import mediplusBanner from "@/assets/image/products/mediplus toothpaste/mediplusBanner.png";
+import mediplusToothBrushBanner from "@/assets/image/products/toothbrush/mediplusToothBrushBanner.png";
 import envySoapBanner from "@/assets/image/products/envy/envySoapBanner.png";
 import roseSleekBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
 import sleekAntiTobaccoBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
@@ -56,6 +57,8 @@ import sleekJasmineBanner from "@/assets/image/products/sleek/roseSleekBanner.pn
 import sleekLimeBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
 import sleekOrchidBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
 import sleekLavenderBanner from "@/assets/image/products/sleek/sleekLavenderBanner.png";
+import everydayLimeBanner from "@/assets/image/products/everyday/everydayLimeBanner.png";
+
 
 export const allProducts = [
   {
@@ -401,14 +404,14 @@ export const allProducts = [
     height: undefined,
   },
   {
-    id: 5,
+    id: 10,
     brand_id: 6,
     brand_name: "Mediplus DS",
     product_name: "Mediplus DS",
     image: mediplusDS,
     productCardBg: mediplusDSBg,
     descriptionSideImg:mediplusDSSideImg,
-    banner:brushUpBanner,
+    banner:mediplusDSBanner,
     shortDescription: `<div>
   <h1 class="text-xl font-semibold mb-4">Experience Double Protection with Mediplus DS!</h1>
   <p class="lg:text-lg lg:leading-relaxed">
@@ -435,14 +438,14 @@ export const allProducts = [
     height: undefined,
   },
   {
-    id: 6,
+    id: 11,
     brand_id: 5,
     brand_name: "Mediplus Gel",
     product_name: "Fluoride Gel",
     image: mediplusGel,
     productCardBg: mediplusGelBg,
     descriptionSideImg:florifeSideImg,
-    banner:brushUpBanner,
+    banner:mediplusGelBanner,
     shortDescription: `<div >
  <h1 class="text-xl font-semibold mb-4">Be Strengthened and Protected with Fluoride Gel!</h1>
 
@@ -490,14 +493,14 @@ export const allProducts = [
     height: undefined,
   },
   {
-    id: 7,
+    id: 12,
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Mediplus Dental Floss",
     image: mediplusDentalfloss,
     productCardBg: mediplusDentalflossBg,
     descriptionSideImg:dentalFlossSideImg,
-    banner:brushUpBanner,
+    banner:dentalflossBanner,
     shortDescription: `<div>
   <h1 class="text-xl font-bold mb-4">Mediplus Dental Floss: Cleaner, Healthier Teeth!</h1>
   <p class="lg:leading-relaxed">
@@ -535,14 +538,14 @@ export const allProducts = [
     height: undefined,
   },
   {
-    id: 8,
+    id: 13,
     brand_name: "Everyday",
     brand_id: 8,
     product_name: "Shaving Foam",
     image: shavingFoamLime,
     productCardBg: shavingFoamLimeBG,
     descriptionSideImg:everydayShavingSideImg,
-    banner:brushUpBanner,
+    banner:everydayLimeBanner,
     shortDescription: `<p>Enjoy a smooth, irritation-free shave with Everyday Shaving Foam, designed for all skin types, including sensitive skin.</p>`,
     longDescription: `<p>Everyday Shaving Foam provides superior hydration and comfort. Its ultra-moisturizing formula ensures a close, irritation-free shave while nourishing your skin. Available in refreshing variants, it's the perfect companion for your grooming routine.</p>`,
     rating: "4.7",
@@ -550,14 +553,14 @@ export const allProducts = [
     height: undefined,
   },
   {
-    id: 9,
+    id: 14,
     brand_name: "Everyday",
     brand_id: 8,
     product_name: "Shaving Foam",
     image: shavingFoamSensetive,
     productCardBg: shavingFoamSensetiveBG,
     descriptionSideImg:everydayShavingSideImg,
-    banner:brushUpBanner,
+    banner:everydaySensetiveBanner,
     shortDescription: `<p>Enjoy a smooth, irritation-free shave with Everyday Shaving Foam, designed for all skin types, including sensitive skin.</p>`,
     longDescription: `<p>Everyday Shaving Foam provides superior hydration and comfort. Its ultra-moisturizing formula ensures a close, irritation-free shave while nourishing your skin. Available in refreshing variants, it's the perfect companion for your grooming routine.</p>`,
     rating: "4.7",
@@ -565,7 +568,7 @@ export const allProducts = [
     height: undefined,
   },
   {
-    id: 10,
+    id: 15,
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Mediplus Toothbrush",
@@ -573,7 +576,7 @@ export const allProducts = [
     titleColor: "white",
     productCardBg: mediplusToothBrushBg,
     descriptionSideImg:mediplusToothBrushSideImg,
-    banner:brushUpBanner,
+    banner:mediplusToothBrushBanner,
     shortDescription: `<div>
       <p class="text-xl mb-4 font-semibold">Gentle Care, Confident Smiles!</p>
   <p class="lg:text-lg">
@@ -604,14 +607,14 @@ export const allProducts = [
     width: 130,
   },
   {
-    id: 11,
+    id: 16,
     brand_id: 2,
     brand_name: "English",
     product_name: "English Shampoo",
     image: shampoo,
     productCardBg: shampooBG,
     descriptionSideImg:englishShampooSideImg,
-    banner:brushUpBanner,
+    banner:englishShampooBanner,
     shortDescription: `<p><p class="text-xl font-semibold mb-3">Struggling with hair lice?</p><p class="lg:text-lg">Our English shampoo is here to help! Designed to effectively remove head lice while being gentle on your scalp, it’s packed with nourishing ingredients that leave your hair fresh and smooth. Get rid of lice and enjoy healthy, beautiful hair with every wash!</p></p>`,
 
     longDescription: `<div class="text-justify">
@@ -633,14 +636,14 @@ export const allProducts = [
     width: 120,
   },
   {
-    id: 12,
+    id: 17,
     brand_id: 4,
     brand_name: "Mediplus",
     product_name: "Mediplus Toothpaste",
     image: mediplusToothpaste,
     productCardBg: mediplusToothpasteBg,
     descriptionSideImg:mediplusToothPasteSideImg,
-    banner:brushUpBanner,
+    banner:mediplusBanner,
     shortDescription: `<div >
   <h2 class="text-xl font-semibold mb-4">
     Achieve a Healthier Smile with Mediplus Toothpaste!

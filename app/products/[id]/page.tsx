@@ -16,10 +16,10 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
   return (
     productData && (
       <div>
-        <div className="lg:bg-[#f8ffff]">
+        {/* <div className="lg:bg-[#f8ffff]">
           <div className="max-w-6xl mx-auto lg:py-10 ">
             <div className="flex flex-col md:flex-row items-center">
-              {/* Image Section */}
+  
               <div className="xs:p-10 md:w-2/3 w-full text-center flex justify-center">
                 <Image
                   src={productData?.image}
@@ -36,7 +36,7 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                 />
               </div>
 
-              {/* Product Details Section */}
+          
               <div className="md:w-2/3 w-full p-5 text-black ">
                 <h1 className="text-2xl md:text-4xl text-blue-900 font-semibold mb-4">
                   {productData?.product_name}
@@ -50,14 +50,14 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
                     __html: productData.shortDescription || "",
                   }}
                 ></div>
-                {/* <p className="mb-2 text-lg">Price: BDT 312</p> */}
+           
               </div>
             </div>
           </div>
-        </div>
-        {/* <div>
-          <Image src={productData?.} alt=""/>
         </div> */}
+        <div >
+          <Image src={productData?.banner} alt="product-banner"/>
+        </div>
 
         <section className="rounded mb-5 lg:my-10 lg:max-w-5xl lg:mx-auto p-5">
           {/* <div> <ProductDemonstrationSection productData={productData}/></div> */}
