@@ -50,12 +50,13 @@ import mediplusGelBanner from "@/assets/image/products/mediplus floride/mediplus
 import mediplusBanner from "@/assets/image/products/mediplus toothpaste/mediplusBanner.png";
 import mediplusToothBrushBanner from "@/assets/image/products/toothbrush/mediplusToothBrushBanner.png";
 import envySoapBanner from "@/assets/image/products/envy/envySoapBanner.png";
+
 import roseSleekBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
-import sleekAntiTobaccoBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
-import sleekBakhorBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
-import sleekJasmineBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
-import sleekLimeBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
-import sleekOrchidBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
+import sleekAntiTobaccoBanner from "@/assets/image/products/sleek/sleekAntiTobaccoBanner.png";
+import sleekBakhorBanner from "@/assets/image/products/sleek/sleekBakhorBanner.png";
+import sleekJasmineBanner from "@/assets/image/products/sleek/sleekJasmineBanner.png";
+import sleekLimeBanner from "@/assets/image/products/sleek/sleekLimeBanner.png";
+import sleekOrchidBanner from "@/assets/image/products/sleek/sleekOrchidBanner.png";
 import sleekLavenderBanner from "@/assets/image/products/sleek/sleekLavenderBanner.png";
 import everydayLimeBanner from "@/assets/image/products/everyday/everydayLimeBanner.png";
 
@@ -224,7 +225,7 @@ export const allProducts = [
     height: undefined,
   },
   {
-    id: 5,
+    id: 18,
     brand_id: 3,
     brand_name: "Sleek",
     product_name: "Sleek Air Freshener (Orchid)",
