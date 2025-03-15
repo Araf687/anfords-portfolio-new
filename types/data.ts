@@ -22,6 +22,8 @@ export interface ProductCardProps {
   width: number;
   height?: number | undefined; // Explicitly allowing `undefined`
   titleColor?:string
+  descriptionSideImg:StaticImageData;
+  banner:StaticImageData;
 };
 
 
@@ -34,12 +36,11 @@ export interface Brand {
   image:{gray:StaticImageData,color:StaticImageData}
 }
 
-
-
 export interface Product {
   id: number;
   brand_id: number;
   brand_name: string;
+  productCardBg:StaticImageData;
   product_name: string;
   image: StaticImageData; // Assuming `toothpaste` is a string (URL or path to image)
   shortDescription: string;
@@ -47,4 +48,6 @@ export interface Product {
   rating: string; // Could be `number`, but keeping it as `string` based on your data
   width: number;
   height?: number; // Optional since it's `undefined`
+  descriptionSideImg:StaticImageData;
+  banner:StaticImageData;
 };

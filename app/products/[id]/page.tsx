@@ -1,13 +1,5 @@
-import ProductDemonstrationSection from "@/components/dashboard/products/ProductDemonstrationSection";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { getProductDetails } from "@/helpers/functions/main";
 import { ProductCardProps } from "@/types/data";
-import { Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 
@@ -63,6 +55,9 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
             </div>
           </div>
         </div>
+        {/* <div>
+          <Image src={productData?.} alt=""/>
+        </div> */}
 
         <section className="rounded mb-5 lg:my-10 lg:max-w-5xl lg:mx-auto p-5">
           {/* <div> <ProductDemonstrationSection productData={productData}/></div> */}
