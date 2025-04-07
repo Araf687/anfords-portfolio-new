@@ -27,30 +27,35 @@ const SingleBrand = ({ params }: { params: { brandId: string } }) => {
   }, [params.brandId]);
 
   return (
-    <div className="py-10 px-16">
-      {brandData && (
-        <div className="space-y-6">
-         <SectionHeading>{`About ${brandData.brandName || ""}`}</SectionHeading>
+    <>
+      {brandData && <Image src={brandData.banner} alt="banner" className="mb-10"/>}
+      <div className="pb-10 px-16">
+
+        {brandData && (
+          <div className="space-y-6">
+            <SectionHeading>{`About ${brandData.brandName || ""}`}</SectionHeading>
 
 
-          <SectionDescription>{brandData?.longDescription}</SectionDescription>
-        </div>
-      )}
-      <div>
-        {brandData ? (
-          <div className="flex justify-center border-b-4 border-fuchsia-800 my-10">
-            <Image src={brandData.image.color} alt={brandData.brandName} />
+            <SectionDescription>{brandData?.longDescription}</SectionDescription>
           </div>
-        ) : (
-          <p>Brand not found</p>
         )}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {productListByBrand?.map((item, index) => (
-            <ProductCard key={index} data={item} />
-          ))}
+        <div>
+          {brandData ? (
+            <div className="flex justify-center border-b-4 border-fuchsia-800 my-10">
+              <Image src={brandData.image.color} alt={brandData.brandName} />
+            </div>
+          ) : (
+            <p>Brand not found</p>
+          )}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {productListByBrand?.map((item, index) => (
+              <ProductCard key={index} data={item} />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
+
   );
 };
 

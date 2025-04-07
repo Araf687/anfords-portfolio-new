@@ -10,6 +10,7 @@ import Section from "@/components/ui/Section";
 const BrandSection = () => {
   return (
     <Section>
+      
       {/* Title Section */}
       <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#206CB1] ">
         Explore Our <span className="text-[#00A85A]">Brands</span>

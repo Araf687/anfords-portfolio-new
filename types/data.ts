@@ -34,6 +34,7 @@ export interface Brand {
   longDescription?: string; // HTML as string
   href: string;
   image:{gray:StaticImageData,color:StaticImageData}
+  banner:StaticImageData;
 }
 
 export interface Product {
