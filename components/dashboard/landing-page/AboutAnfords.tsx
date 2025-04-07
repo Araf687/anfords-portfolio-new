@@ -5,8 +5,9 @@ import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
 import SectionSubHeading from "@/components/ui/SectionSubHeading";
 import SectionDescription from "@/components/ui/SectionDescription";
-import UiButton from "@/components/ui/UiButton";
+
 import Image from "next/image";
+import UiButton from "@/components/ui/uiButton";
 
 const AboutAnfords = () => {
   return (

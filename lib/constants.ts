@@ -16,15 +16,26 @@ import everydayColor from "@/assets/image/brand/everyday-color.svg";
 import gelGray from "@/assets/image/brand/gel-gray.svg";
 import gelColor from "@/assets/image/brand/gel-color.svg";
 
+
+//background image for the brand section
+import envyBG from "@/assets/image/brand/envyBrandBG.png";
+import mediplusDSBG from "@/assets/image/brand/mediplusDSBrandBG.png";
+import mediplusGelBG from "@/assets/image/brand/mediplusGelBrandBG.png";
+import mediplusBG from "@/assets/image/brand/MediplusBrandBG.png";
+import englishBG from "@/assets/image/brand/englishBrandBG.png";
+import sleekBG from "@/assets/image/brand/SleekBrandBG.png";
+import brushUpBG from "@/assets/image/brand/brushUpBrandBG.png";
+import everydayBG from "@/assets/image/brand/everyDayBrandBG.png";
+
 export const allBrands: Brand[] = [
   {
     id: 1,
     brandName: "Envy",
     description: "Premium skincare solutions.",
     longDescription:"Envy is a personal care brand under Anfords Bangladesh Ltd., known for its innovative skincare and beauty products. Established with a focus on natural ingredients, Envy aims to provide effective solutions for everyday skincare needs. The brand is recognized for its commitment to quality and sustainability, utilizing ingredients that are gentle on the skin while offering significant benefits.",
-
     href: "#",
     image: { gray: envyGray, color: envyColor },
+   
   },
   {
     id: 2,
