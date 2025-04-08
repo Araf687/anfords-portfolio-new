@@ -3,9 +3,11 @@ import React from "react";
 const SectionHeading = ({
   children,
   bgVarient = "light",
+  className,
 }: {
   children: string;
   bgVarient?: "dark" | "light";
+  className?: string;
 }) => {
   const words = children.split(" ");
   const lastWord = words.pop(); // Extracts the last word
@@ -13,7 +15,7 @@ const SectionHeading = ({
 
   return (
     <>
-      <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#206CB1] ">
+      <h2 className={"text-3xl md:text-5xl lg:text-6xl text-[#206CB1] "+className}>
         <span className={`${
             bgVarient === "light" ? "text-[#206CB1]" : "text-[#2E9EFF]"
           }`}>{restOfText} </span>

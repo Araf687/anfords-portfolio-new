@@ -34,6 +34,8 @@ export function Navbar() {
       }
     >
       <div>
+        
+
         <div className="flex justify-between items-center h-15">
           <div className="flex-shrink-0 items-center">
             <a href="/" className="text-xl font-bold text-gray-800">

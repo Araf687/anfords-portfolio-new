@@ -28,25 +28,33 @@ const SingleBrand = ({ params }: { params: { brandId: string } }) => {
 
   return (
     <>
-      {brandData && <Image src={brandData.banner} alt="banner" className="mb-10"/>}
+      {brandData && (
+        <Image src={brandData.banner} alt="banner" className="mb-2" />
+      )}
       <div className="pb-10 px-16">
-
         {brandData && (
           <div className="space-y-6">
-            <SectionHeading>{`About ${brandData.brandName || ""}`}</SectionHeading>
+            <div className="flex flex-col items-center">
+              <Image src={brandData.image.color} alt={brandData.brandName} />
+              <p className="text-center text-3xl mb-5 font-bold text-[#393880]">
+                {brandData.description}
+              </p>
+            </div>
 
-
-            <SectionDescription>{brandData?.longDescription}</SectionDescription>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: brandData.longDescription || "",
+              }}
+              className="max-w-5xl mx-auto space-y-4 lg:text-lg"
+            ></div>
           </div>
         )}
         <div>
-          {brandData ? (
-            <div className="flex justify-center border-b-4 border-fuchsia-800 my-10">
-              <Image src={brandData.image.color} alt={brandData.brandName} />
-            </div>
-          ) : (
-            <p>Brand not found</p>
-          )}
+         {brandData && (
+           <SectionHeading className="text-center my-10">
+             {`${brandData.brandName} Products`}
+           </SectionHeading>
+         )}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {productListByBrand?.map((item, index) => (
               <ProductCard key={index} data={item} />
@@ -55,7 +63,6 @@ const SingleBrand = ({ params }: { params: { brandId: string } }) => {
         </div>
       </div>
     </>
-
   );
 };
 

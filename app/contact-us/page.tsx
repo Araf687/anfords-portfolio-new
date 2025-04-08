@@ -6,7 +6,10 @@ import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
-import contactUsImg from "@/assets/image/contact us/contact-us2.jpg";
+import contactUsImg from "@/assets/image/contact us/banner.png";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Section from "@/components/ui/Section";
+import map from "@/assets/image/about-us/map.png";
 // import { Button, Input, TextArea, Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui';
 
 interface IFormInput {
@@ -28,18 +31,31 @@ const ContactForm: React.FC = () => {
   };
 
   return (
-    <div className="max-w-6xl mx-auto p-8">
-      <p className="text-2xl mb-3">Contact Us</p>
-      <div >
-      <div className="relative h-[300px] w-full mb-3">
-          <Image
-            src={contactUsImg} // replace with your image path or variable
-            alt="Contact Us"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-lg" // Optional: Add any additional styling like border-radius
-          />
+    <div>
+
+
+      <div className="flex flex-col items-center py-14 space-y-6">
+        <SectionHeading>Get In Touch With Our Team</SectionHeading>
+        <p className="text-[#1263AD]">We have the team and know-how to help you scale 10x faster</p>
+        <Image
+          src={contactUsImg} // replace with your image path or variable
+          alt="Contact Us"
+          className="pt-10"
+          height={450}
+        />
+      </div>
+      <Section className="bg-[#1F416A]">
+        <div className="flex items-center gap-4 w-full">
+          <div>
+            <p>Our Location</p>
+            <p>Visit our Head office </p>
+            <p>Find us at these locations.</p>
+          </div>
+          <Image src={map} alt="map"/>
         </div>
+      </Section>
+
+      <div className="max-w-6xl mx-auto p-4 mb-20">
         <div>
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div>
@@ -84,8 +100,9 @@ const ContactForm: React.FC = () => {
             </Button>
           </form>
         </div>
-        
       </div>
+
+
     </div>
   );
 };
