@@ -220,7 +220,7 @@
 // export default About;
 
 import React from "react";
-import aboutMockUp from "@/assets/image/about-us/mockup.svg";
+import aboutMockUp from "@/assets/image/about-us/mockup.png";
 import map from "@/assets/image/about-us/map.png";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -279,7 +279,7 @@ const About = () => {
             the best.
           </SectionDescription>
         </div>
-        <Image src={aboutMockUp} alt="about-section-mockup" height={320} />
+        <Image src={aboutMockUp} alt="about-section-mockup" height={400}/>
       </Section>
       <Section>
         <SectionHeading>Our Guiding Principles</SectionHeading>

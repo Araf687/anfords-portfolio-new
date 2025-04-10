@@ -7,25 +7,15 @@ import { cn } from "@/lib/utils";
 // import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
-  NavigationMenuContent,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Image from "next/image";
-import { allProducts } from "@/helpers/data/all-products-data";
 import { ResponsiveNavMenu } from "./ResponsiveNavMenu";
-import { allBrands } from "@/lib/constants";
-import { Brand } from "@/types/data";
 
 export function Navbar() {
-  const calculateImageWidth = (width: number) => {
-    if (width < 100) return 20;
-    if (width > 130) return 100;
-    return 50;
-  };
 
   return (
     <nav

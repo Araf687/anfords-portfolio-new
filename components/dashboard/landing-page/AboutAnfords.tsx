@@ -1,5 +1,5 @@
 import React from "react";
-import aboutMockUp from "@/assets/image/about-us/mockup.svg";
+import aboutMockUp from "@/assets/image/about-us/mockup.png";
 import map from "@/assets/image/about-us/map.png";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -12,7 +12,7 @@ import UiButton from "@/components/ui/uiButton";
 const AboutAnfords = () => {
   return (
     <Section
-      className="bg-[# 1F416A] [background-size:320px_400px] flex gap-20 items-center"
+      className="bg-[#1F416A] [background-size:320px_400px] flex gap-20 items-center"
       bgImage={map}
     >
       <div className="space-y-8">

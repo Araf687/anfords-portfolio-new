@@ -81,57 +81,7 @@ export const allBrands: Brand[] = [
     image: { gray: englishGray, color: englishColor },
     banner: englishBG,
   },
-  {
-    id: 3,
-    brandName: "Sleek",
-    description: "Freshen up your space with Sleek Air Freshener!",
-    longDescription: `
-          <p>
-            Transform your home, officeor any area with delightful fragrances
-            that last long. Whether you&#39;re looking to relax , Sleek has the
-            perfect scent for every mood. Say goodbye to odors and hello to
-            freshness!
-          </p>
-          <p>
-            Transform your space with Sleek Sir Freshener! Available in seven
-            captivating flavors – Lavender, Lime, Rose, Anti-Tobacco, Bakhoor,
-            Jasmine, and Orchid – it ensures a refreshing ambiance that suits
-            every mood.
-          </p>
-          <h2 className='text-red-400'><b>Elevate Every Breath</b></h2>
-          <p>
-            Elevate your surroundings with the enchanting fragrances of Sleek
-            Sir Freshener. Designed to create an inviting atmosphere, this air
-            freshener comes in seven delightful flavors:
-          </p>
-          <ul>
-            <li><strong>Lavender:</strong> For a calming and soothing experience.</li>
-            <li><strong>Lime:</strong> A burst of citrusy freshness to energize your space.</li>
-            <li><strong>Rose:</strong> The timeless elegance of blooming roses.</li>
-            <li>
-              <strong>Anti-Tobacco:</strong> Specially formulated to neutralize and refresh smoky
-              odors.
-            </li>
-            <li><strong>Bakhoor:</strong> An exotic, woody aroma for a luxurious vibe.</li>
-            <li>
-              <strong>Jasmine:</strong> The soft, floral essence of freshly picked jasmine.
-            </li>
-            <li>
-              <strong>Orchid:</strong> A unique, sophisticated fragrance to uplift your mood.
-            </li>
-          </ul>
-          <p>
-            Perfect for homes, offices, or cars, Sleek Sir Freshener combines
-            long-lasting scents with an easy-to-use design, ensuring your space
-            remains fragrant and inviting all day long. Choose your favorite
-            scent and refresh your environment with Sleek!
-          </p>
-          <p>Variants: 300ml.</p>
-    `,
-    href: "#",
-    image: { gray: sleekGray, color: sleekColor },
-    banner: sleekBG,
-  },
+
   {
     id: 4,
     brandName: "Mediplus",
@@ -274,5 +224,56 @@ export const allBrands: Brand[] = [
     href: "#",
     image: { gray: everydayGray, color: everydayColor },
     banner: everydayBG,
+  },
+  {
+    id: 3,
+    brandName: "Sleek",
+    description: "Freshen up your space with Sleek Air Freshener!",
+    longDescription: `
+          <p>
+            Transform your home, officeor any area with delightful fragrances
+            that last long. Whether you&#39;re looking to relax , Sleek has the
+            perfect scent for every mood. Say goodbye to odors and hello to
+            freshness!
+          </p>
+          <p>
+            Transform your space with Sleek Sir Freshener! Available in seven
+            captivating flavors – Lavender, Lime, Rose, Anti-Tobacco, Bakhoor,
+            Jasmine, and Orchid – it ensures a refreshing ambiance that suits
+            every mood.
+          </p>
+          <h2 className='text-red-400'><b>Elevate Every Breath</b></h2>
+          <p>
+            Elevate your surroundings with the enchanting fragrances of Sleek
+            Sir Freshener. Designed to create an inviting atmosphere, this air
+            freshener comes in seven delightful flavors:
+          </p>
+          <ul>
+            <li><strong>Lavender:</strong> For a calming and soothing experience.</li>
+            <li><strong>Lime:</strong> A burst of citrusy freshness to energize your space.</li>
+            <li><strong>Rose:</strong> The timeless elegance of blooming roses.</li>
+            <li>
+              <strong>Anti-Tobacco:</strong> Specially formulated to neutralize and refresh smoky
+              odors.
+            </li>
+            <li><strong>Bakhoor:</strong> An exotic, woody aroma for a luxurious vibe.</li>
+            <li>
+              <strong>Jasmine:</strong> The soft, floral essence of freshly picked jasmine.
+            </li>
+            <li>
+              <strong>Orchid:</strong> A unique, sophisticated fragrance to uplift your mood.
+            </li>
+          </ul>
+          <p>
+            Perfect for homes, offices, or cars, Sleek Sir Freshener combines
+            long-lasting scents with an easy-to-use design, ensuring your space
+            remains fragrant and inviting all day long. Choose your favorite
+            scent and refresh your environment with Sleek!
+          </p>
+          <p>Variants: 300ml.</p>
+    `,
+    href: "#",
+    image: { gray: sleekGray, color: sleekColor },
+    banner: sleekBG,
   },
 ];
