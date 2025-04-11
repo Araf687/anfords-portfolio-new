@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Link from "next/link";
-import careerBg from "@/assets/image/career/career-bg.jpg";
+import careerBg from "@/assets/image/career/career-bg2.png";
 
 import React from "react";
 import Image from "next/image";
@@ -39,7 +39,13 @@ const jobPositions: JobPosition[] = [
 const CareersPage: React.FC = () => {
   return (
     <div>
-      <section>
+      <div   className="w-full h-[3000px] bg-cover bg-center bg-no-repeat relative overflow-hidden"
+      style={{ backgroundImage: `url(${careerBg.src})` }}>
+
+      </div>
+
+
+      {/* <section>
         <div className="relative h-[300px] w-full">
           <Image
             src={careerBg}
@@ -83,7 +89,7 @@ const CareersPage: React.FC = () => {
             </Card>
           )):<div className="sm:h-[30vh] lg:[40vh] flex justify-center items-center">No open positions are availabe right now</div>}
         </section>
-      </div>
+      </div> */}
     </div>
   );
 };
