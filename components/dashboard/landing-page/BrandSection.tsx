@@ -1,3 +1,5 @@
+"use client"
+
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import React from "react";
@@ -6,8 +8,11 @@ import { ChevronRight } from "lucide-react";
 import { allBrands } from "@/lib/constants";
 import { Brand } from "@/types/data";
 import Section from "@/components/ui/Section";
+import { useRouter } from "next/navigation";
+
 
 const BrandSection = () => {
+  const router=useRouter()
   return (
     <Section>
       {/* Title Section */}
@@ -25,7 +30,7 @@ const BrandSection = () => {
           brand to explore its full range of offerings and discover the perfect
           products for you.
         </p>{" "}
-        <Button className="flex items-center bg-[#1263AD] rounded-full px-7 py-6 text-white transition-all duration-300 hover:bg-[#0E5290] hover:scale-105">
+        <Button onClick={()=>router.push("/products/all")} className="flex items-center bg-[#1263AD] rounded-full px-7 py-6 text-white transition-all duration-300 hover:bg-[#0E5290] hover:scale-105">
           <Image src={leafIcon} alt="leaf" className="mr-2" height={25} />
           All Products
           <ChevronRight />

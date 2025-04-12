@@ -1,3 +1,4 @@
+"use client"
 import React from "react";
 import aboutMockUp from "@/assets/image/about-us/mockup.png";
 import map from "@/assets/image/about-us/map.png";
@@ -8,8 +9,10 @@ import SectionDescription from "@/components/ui/SectionDescription";
 
 import Image from "next/image";
 import UiButton from "@/components/ui/uiButton";
+import { useRouter } from "next/navigation";
 
 const AboutAnfords = () => {
+  const router=useRouter()
   return (
     <Section
       className="bg-[#1F416A] [background-size:320px_400px] flex gap-20 items-center"
@@ -30,7 +33,7 @@ const AboutAnfords = () => {
         <UiButton
           varient="light"
           onClick={() => {
-            console.log("asd");
+            router.push("/about")
           }}
         >
           See More
