@@ -1,6 +1,6 @@
 import React from "react";
-import hero from "@/assets/image/landing-page/hero.svg";
-import groupMockUp from "@/assets/image/landing-page/groupMockUp.svg";
+import hero from "@/assets/image/landing-page/hero.png";
+import groupMockUp from "@/assets/image/landing-page/groupMockUp.png";
 import leafIcon from "@/assets/image/landing-page/leafIcon.svg";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
