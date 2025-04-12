@@ -98,7 +98,7 @@ const ContactForm: React.FC = () => {
       </div>
 
       {/* Map Section */}
-      <Section className="bg-[#1F416A] px-4">
+      <Section className="bg-[#1F416A] px-40">
         <div className="flex flex-col lg:flex-row items-center gap-8 w-full">
           <div className="flex-1 text-white space-y-4 text-center lg:text-left">
             <p className="text-lg">Our Location</p>
@@ -118,7 +118,11 @@ const ContactForm: React.FC = () => {
         </SectionHeading>
         <div className="flex flex-col md:flex-row items-center gap-6">
           <div className="hidden md:block">
-            <Image src={question} alt="question" className="w-full h-auto max-w-sm" />
+            <Image
+              src={question}
+              alt="question"
+              className="w-full h-auto max-w-sm"
+            />
           </div>
 
           <form
@@ -158,9 +162,7 @@ const ContactForm: React.FC = () => {
                 className="w-full mt-1 mb-2"
               />
               {errors.message && (
-                <p className="text-red-500 text-sm">
-                  {errors.message.message}
-                </p>
+                <p className="text-red-500 text-sm">{errors.message.message}</p>
               )}
             </div>
 
