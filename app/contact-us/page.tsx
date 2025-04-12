@@ -13,7 +13,6 @@ import map from "@/assets/image/contact us/map.png";
 import question from "@/assets/image/contact us/question.png";
 import { MessageCircleMore, Phone, Send } from "lucide-react";
 import supportIcon from "@/assets/icons/contact-us/support.png";
-// import { Button, Input, TextArea, Card, CardContent, CardHeader, CardTitle } from '@shadcn/ui';
 
 interface IFormInput {
   name: string;
@@ -30,7 +29,6 @@ const ContactForm: React.FC = () => {
 
   const onSubmit: SubmitHandler<IFormInput> = (data) => {
     console.log(data);
-    // Handle form submission, e.g., send data to an API
   };
 
   const contactCards = [
@@ -41,13 +39,13 @@ const ContactForm: React.FC = () => {
       contact: "support@anfords.com",
     },
     {
-      icon: <MessageCircleMore size={45}  className="my-4"/>,
+      icon: <MessageCircleMore size={45} className="my-4" />,
       heading: "Sales",
       desc: "Questions or queries? Get in touch!",
       contact: "sales@anfords.com",
     },
     {
-      icon: <Phone size={45} className="my-4"/>,
+      icon: <Phone size={45} className="my-4" />,
       heading: "Phone",
       desc: "Mon-Fri from 8am to 5pm",
       contact: "+880-2-9353698",
@@ -56,69 +54,77 @@ const ContactForm: React.FC = () => {
 
   return (
     <div>
-      <div className="flex flex-col items-center py-14 space-y-6">
+      {/* Header Section */}
+      <div className="flex flex-col items-center xs:py-8 py-14 space-y-6 xs:space-y-2 px-4">
         <SectionHeading>Get In Touch With Our Team</SectionHeading>
-        <p className="text-[#1263AD] pb-5">
+        <p className="text-[#1263AD] xs:text-sm text-center pb-5">
           We have the team and know-how to help you scale 10x faster
         </p>
 
-        {/* Hover Image Wrapper */}
-        <div className="relative group h-[450px] w-auto">
-          {/* Default image */}
+        {/* Hover Image */}
+        <div className="relative group h-[250px] sm:h-[350px] md:h-[450px] w-full max-w-5xl">
           <Image
             src={contactUsImg}
             alt="Contact Us"
-            className="transition-opacity duration-300 group-hover:opacity-0"
-            height={450}
+            fill
+            className="object-contain transition-opacity duration-300 group-hover:opacity-0"
           />
-
-          {/* Hover image */}
           <Image
             src={hoverContactUsImg}
             alt="Contact Us Hover"
-            className="absolute top-0 left-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-            height={450}
+            fill
+            className="object-contain absolute top-0 left-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
           />
         </div>
       </div>
-      <div className="px-20 pb-14">
-        {" "}
-        <div className="flex items-center gap-6">
+
+      {/* Contact Cards */}
+      <div className="px-4 sm:px-10 pb-14">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {contactCards.map((item, index) => (
             <div
               key={index}
-              className="border border-gray-200 border-2 p-5 rounded-lg flex flex-col items-center space-y-2 xs:w-[full] w-[33%]"
+              className="border border-gray-200 p-5 rounded-lg flex flex-col items-center text-center space-y-2"
             >
-              {item?.icon}
-              <p className="text-xl">{item?.heading}</p>
-              <p>{item?.desc}</p>
-              <p className="bg-gray-100 py-2 px-3 rounded-lg">{item?.contact}</p>
+              {item.icon}
+              <p className="text-xl font-semibold">{item.heading}</p>
+              <p>{item.desc}</p>
+              <p className="bg-gray-100 py-2 px-3 rounded-lg text-sm">
+                {item.contact}
+              </p>
             </div>
           ))}
         </div>
       </div>
 
-      <Section className="bg-[#1F416A]">
-        <div className="flex items-center gap-4 w-full">
-          <div className="flex-1 text-white space-y-4">
+      {/* Map Section */}
+      <Section className="bg-[#1F416A] px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-8 w-full">
+          <div className="flex-1 text-white space-y-4 text-center lg:text-left">
             <p className="text-lg">Our Location</p>
-            <p className="text-4xl ">Visit our Head office </p>
-            <p className="text-lg">Find us at these location</p>
+            <p className="text-3xl md:text-4xl">Visit our Head Office</p>
+            <p className="text-lg">Find us at these locations</p>
           </div>
           <div className="flex-1">
-            <Image src={map} alt="map" height={350} className="" />
+            <Image src={map} alt="map" className="w-full h-auto" />
           </div>
         </div>
       </Section>
 
-      <div className="max-w-6xl mx-auto my-20">
-        <SectionHeading className="text-center mb-20">
+      {/* Question Form Section */}
+      <div className="max-w-6xl mx-auto my-20 px-4">
+        <SectionHeading className="text-center mb-12">
           Still have Questions?
         </SectionHeading>
-        <div className="flex items-center gap-3">
-          <Image src={question} alt="question" height={370} />
+        <div className="flex flex-col md:flex-row items-center gap-6">
+          <div className="hidden md:block">
+            <Image src={question} alt="question" className="w-full h-auto max-w-sm" />
+          </div>
 
-          <form onSubmit={handleSubmit(onSubmit)} className="space-y-4 flex-1">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="space-y-4 flex-1 w-full"
+          >
             <div>
               <label htmlFor="name">Name</label>
               <Input
@@ -127,7 +133,7 @@ const ContactForm: React.FC = () => {
                 className="w-full mt-1"
               />
               {errors.name && (
-                <p className="text-red-500">{errors.name.message}</p>
+                <p className="text-red-500 text-sm">{errors.name.message}</p>
               )}
             </div>
 
@@ -140,7 +146,7 @@ const ContactForm: React.FC = () => {
                 className="w-full mt-1"
               />
               {errors.email && (
-                <p className="text-red-500">{errors.email.message}</p>
+                <p className="text-red-500 text-sm">{errors.email.message}</p>
               )}
             </div>
 
@@ -152,12 +158,14 @@ const ContactForm: React.FC = () => {
                 className="w-full mt-1 mb-2"
               />
               {errors.message && (
-                <p className="text-red-500">{errors.message.message}</p>
+                <p className="text-red-500 text-sm">
+                  {errors.message.message}
+                </p>
               )}
             </div>
 
             <Button type="submit" className="w-full bg-[#1263AD]">
-              Submit <Send size={26} className="pl-3" />
+              Submit <Send size={20} className="ml-2" />
             </Button>
           </form>
         </div>

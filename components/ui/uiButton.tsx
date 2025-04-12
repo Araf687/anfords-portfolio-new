@@ -30,7 +30,7 @@ const UiButton: React.FC<UiButtonProps> = ({
       } hover:scale-105`}
     >
       <p>
-        {children} {varient}
+        {children}
       </p>
 
       {varient === "dark" ? (
