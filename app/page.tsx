@@ -10,11 +10,16 @@ import leafIcon1 from "@/assets/icons/landing-page/leaf1.svg";
 import AboutAnfords from "@/components/dashboard/landing-page/AboutAnfords";
 
 export default function Home() {
+  const exploreRef = React.useRef<HTMLDivElement>(null);
+  const onClickExploreBTN = () => { 
+    console.log("Explore button clicked");
+    exploreRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
-      <HeroSection />
+      <HeroSection exploreFunc={onClickExploreBTN}/>
 
-      <div className="bg-[#005AAA] w-full flex flex-col items-center gap-3 justify-center pb-8">
+      <div ref={exploreRef} className="bg-[#005AAA] w-full flex flex-col items-center gap-3 justify-center pb-8">
         <Image src={leafIcon1} alt="leaf-icon" />
         <div className="text-center text-white space-y-1 relative">
           {/* Heading with left & right horizontal lines */}

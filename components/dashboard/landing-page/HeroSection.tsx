@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { ChevronRight, Leaf } from "lucide-react";
 
-const HeroSection = () => {
+const HeroSection = ({exploreFunc}:{exploreFunc:()=>void}) => {
   return (
     <div
       className="w-full h-[1000px] bg-cover bg-center bg-no-repeat relative overflow-hidden"
@@ -45,7 +45,7 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="z-100 absolute top-[37%] left-[43.2%]">
-        <Button className="flex items-center bg-[#1263AD] rounded-full px-7 py-6 text-white transition-all duration-300 hover:bg-[#0E5290] hover:scale-105">
+        <Button onClick={()=>exploreFunc()} className="flex items-center bg-[#1263AD] rounded-full px-7 py-6 text-white transition-all duration-300 hover:bg-[#0E5290] hover:scale-105">
           <Image src={leafIcon} alt="leaf" className="mr-2" height={25} />
           Explore More
           <ChevronRight />
