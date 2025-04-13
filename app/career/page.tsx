@@ -4,7 +4,7 @@ import Link from "next/link";
 import UiButton from "@/components/ui/uiButton";
 import careerBg from "@/assets/image/career/careerbanner.png";
 import careerBgSideImg from "@/assets/image/career/careerbannerSideImg.png";
-import intersect from "@/assets/image/career/intersect.png";
+import intersect from "@/assets/image/career/Intersect.png";
 import mockup from "@/assets/image/career/mockup.png";
 
 // Icons
