@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
   return (
     <>
       <div
-        className="w-full min-h-[600px] bg-no-repeat bg-center bg-contain sm:bg-cover"
+        className="w-full min-h-[630px] bg-no-repeat bg-center bg-contain sm:bg-cover"
         style={{
           backgroundImage: `url(${footerImg.src})`,
         }}
