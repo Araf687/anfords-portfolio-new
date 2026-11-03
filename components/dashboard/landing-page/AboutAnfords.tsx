@@ -1,8 +1,7 @@
 "use client";
 import React, { useRef } from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import aboutMockUp from "@/assets/image/about-us/mockup.png";
+import AboutHeroArt from "@/components/about/AboutHeroArt";
 import map from "@/assets/image/about-us/map.png";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -49,22 +48,8 @@ const AboutAnfords = () => {
         </div>
 
         <Reveal direction="left" className="relative">
-          <motion.div style={{ y: imgY }} className="relative mx-auto max-w-lg">
-            <div className="absolute inset-8 rounded-[3rem] bg-brand-blue/50 blur-3xl" />
-            <Image
-              src={aboutMockUp}
-              alt="Anfords Bangladesh – everyday care for families"
-              sizes="(min-width: 1024px) 45vw, 90vw"
-              className="relative h-auto w-full drop-shadow-2xl"
-            />
-            <div className="absolute -bottom-4 -left-2 rounded-2xl bg-white/95 px-5 py-4 text-brand-navy shadow-2xl backdrop-blur sm:-left-8">
-              <p className="text-3xl font-semibold text-brand-blue">15 +</p>
-              <p className="text-xs font-medium text-slate-500">
-                Years of sustainable
-                <br />
-                business in Bangladesh
-              </p>
-            </div>
+          <motion.div style={{ y: imgY }} className="relative mx-auto max-w-[240px] sm:max-w-xs">
+            <AboutHeroArt className="w-full" />
           </motion.div>
         </Reveal>
       </Section>

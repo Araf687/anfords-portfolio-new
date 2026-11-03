@@ -15,7 +15,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 const [LEAF, ARC_TOP, ARC_BOTTOM] = LEAF_PATHS;
 
 // Entrance: the two arcs sweep in around the circle, the leaf grows up from its stem,
-// then the whole mark floats gently with a soft glow behind it.
+// then it holds still with a soft glow pulsing behind it.
 const AboutHeroArt = ({ className }: { className?: string }) => (
   <div className={`relative ${className ?? ""}`}>
     <motion.div
@@ -31,27 +31,28 @@ const AboutHeroArt = ({ className }: { className?: string }) => (
       aria-label="Anfords"
       fill="#FFFFFF"
       className="relative h-auto w-full"
-      animate={{ y: [0, -12, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1.6 }}
     >
       <motion.path
         d={ARC_TOP}
         initial={{ opacity: 0, rotate: -120 }}
-        animate={{ opacity: 1, rotate: 0 }}
+        whileInView={{ opacity: 1, rotate: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 1.4, ease: EASE }}
         style={{ originX: "379px", originY: "380px" }}
       />
       <motion.path
         d={ARC_BOTTOM}
         initial={{ opacity: 0, rotate: 120 }}
-        animate={{ opacity: 1, rotate: 0 }}
+        whileInView={{ opacity: 1, rotate: 0 }}
+        viewport={{ once: true }}
         transition={{ duration: 1.4, ease: EASE, delay: 0.1 }}
         style={{ originX: "379px", originY: "380px" }}
       />
       <motion.path
         d={LEAF}
         initial={{ opacity: 0, scale: 0.3 }}
-        animate={{ opacity: 1, scale: 1 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
         transition={{ duration: 1.1, ease: EASE, delay: 0.5 }}
         style={{ originX: "390px", originY: "700px" }}
       />

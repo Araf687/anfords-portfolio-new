@@ -21,11 +21,18 @@ const fan = {
   ],
 } as const;
 
+// per-brand tweaks so the packs behind the front one stay visible:
+// drop lowers the front pack, spread pushes the side packs further out (resting, hover)
+const cardTweak: Record<string, { drop: string; spread: [string, string] }> = {
+  "4": { drop: "22%", spread: ["44%", "54%"] }, // Mediplus: toothpaste box hides floss and toothbrush
+};
+
 const BrandCard = ({ item, className }: { item: Brand; className?: string }) => {
   const products = visibleProducts.filter((p: ProductCardProps) => p.brand_id === item.id);
   const shown = pickProducts(products);
   const layout = fan[(Math.max(1, shown.length) as 1 | 2 | 3)];
   const accent = getBrandAccent(item.id);
+  const tweak = cardTweak[item.id.toString()];
 
   return (
     <Link
@@ -54,20 +61,26 @@ const BrandCard = ({ item, className }: { item: Brand; className?: string }) => 
         <div className="absolute bottom-[8%] left-1/2 h-4 w-2/3 -translate-x-1/2 rounded-[50%] bg-slate-900/15 blur-md transition-all duration-500 group-hover:w-3/4 group-hover:bg-slate-900/10" />
         {shown.map((p, i) => {
           const pos = layout[i];
+          const isFront = i === shown.length - 1;
+          // side packs sit left (x < 0) or right; a tweak only widens their distance
+          const side = pos.x.startsWith("-") ? "-" : "";
+          const x = tweak && !isFront && shown.length > 1 ? side + tweak.spread[0] : pos.x;
+          const hx = tweak && !isFront && shown.length > 1 ? side + tweak.spread[1] : pos.hx;
           return (
             <div
               key={p.id}
               style={
                 {
-                  "--x": pos.x,
+                  "--x": x,
                   "--r": pos.r,
-                  "--hx": pos.hx,
+                  "--hx": hx,
                   "--hr": pos.hr,
-                  zIndex: i === shown.length - 1 ? 3 : 1,
+                  "--y": isFront && tweak ? tweak.drop : "0%",
+                  zIndex: isFront ? 3 : 1,
                 } as React.CSSProperties
               }
               className={cn(
-                "absolute inset-0 m-auto flex items-center justify-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] [transform:translateX(var(--x))_rotate(var(--r))] group-hover:[transform:translateX(var(--hx))_rotate(var(--hr))_translateY(-6%)]",
+                "absolute inset-0 m-auto flex items-center justify-center transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] [transform:translateX(var(--x))_translateY(var(--y))_rotate(var(--r))] group-hover:[transform:translateX(var(--hx))_translateY(var(--y))_rotate(var(--hr))_translateY(-6%)]",
                 shown.length === 1 ? "w-[92%]" : shown.length === 2 ? "w-[70%]" : "w-[60%]"
               )}
             >

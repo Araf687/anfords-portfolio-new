@@ -2,7 +2,7 @@
 import { animate, useInView, useReducedMotion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 
-// Animates the leading number of a label like "15 +", "08" or "8/10",
+// Animates the leading number of a label like "30 +", "08" or "8/10",
 // keeping any prefix padding and suffix exactly as written.
 const CountUp = ({
   value,

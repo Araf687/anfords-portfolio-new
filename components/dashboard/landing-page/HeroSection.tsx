@@ -53,6 +53,44 @@ const ProductSlot = ({ left, top, src, alt, title }: { left: string; top: string
   </CollageCard>
 );
 
+// The collage artwork plus the cards laid over its cleared slots. Rendered twice by the
+// stage (left and right halves) so the empty middle can be trimmed.
+const Collage = ({ hidden }: { hidden?: boolean }) => (
+  <>
+    <Image
+      src={heroCollage}
+      alt={hidden ? "" : "Anfords products, customer reviews and highlights"}
+      priority
+      sizes="(min-width: 1400px) 1320px, 100vw"
+      className="relative h-auto w-full drop-shadow-[0_30px_40px_rgba(0,0,0,0.35)]"
+    />
+    {/* oral care cards over the collage's cleared slots */}
+    {/* the photo's lettering is blurred out in the image; this label replaces "1M+ Customers" */}
+    <div className="absolute left-[1.04%] top-[24.7%] flex h-[34.4%] w-[14.66%] items-end justify-center overflow-hidden rounded-[2.1cqw] bg-[linear-gradient(to_bottom,transparent_45%,rgba(0,31,78,0.75)_100%)] pb-[2cqw]">
+      <p className="text-center text-[2.3cqw] font-bold uppercase leading-[1.05] text-white">
+        Happy
+        <br />
+        <span className="text-[1.75cqw] tracking-[0.04em]">Customers</span>
+      </p>
+    </div>
+    <ProductSlot left="19.5%" top="39.16%" src={dentalFloss} alt="Mediplus dental floss" title="Dental Floss" />
+    <CollageCard
+      left="65.84%"
+      top="39.16%"
+      className="justify-between bg-[linear-gradient(160deg,#1F416A_0%,#001F4E_100%)] p-[1.5cqw] ring-1 ring-white/10"
+    >
+      <span className="grid h-[3.2cqw] w-[3.2cqw] place-items-center rounded-full bg-brand-green text-white">
+        <Smile className="h-[60%] w-[60%]" />
+      </span>
+      <p className="text-[1.3cqw] font-medium leading-[1.35] text-white">
+        Healthy teeth, fresh breath and a confident smile, every single day.
+      </p>
+      <p className="text-[1.15cqw] font-semibold leading-tight text-brand-mint">Mediplus Oral Care</p>
+    </CollageCard>
+    <ProductSlot left="84.3%" top="24.7%" src={toothbrush} alt="Mediplus toothbrushes" title="Gum Care" />
+  </>
+);
+
 const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
@@ -92,7 +130,7 @@ const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
           transition={{ duration: 0.7, ease: EASE }}
         >
           <Eyebrow variant="solid" className="normal-case tracking-wide">
-            Natural Products
+            Oral Care Specialists
           </Eyebrow>
         </motion.div>
 
@@ -133,46 +171,27 @@ const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
         initial={{ opacity: 0, y: 120 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.5, ease: EASE }}
-        className="relative -mb-[2px] mt-4 ml-[-20%] w-[140%] sm:ml-0 sm:w-full"
+        className="relative -mb-[2px] mt-4 w-full"
       >
         <motion.div
           style={{ scale: stageScale }}
-          className="relative origin-bottom overflow-hidden rounded-t-[50%_120px] bg-[linear-gradient(to_bottom,#005AAA_0%,#0a4f9c_45%,#001F4E_100%)] px-4 pb-6 pt-12 sm:rounded-t-[50%_220px] sm:pb-8 sm:pt-20 lg:rounded-t-[50%_300px]"
+          className="relative origin-bottom overflow-hidden rounded-t-[50%_120px] bg-[linear-gradient(to_bottom,#005AAA_0%,#0a4f9c_45%,#001F4E_100%)] px-6 pb-6 pt-12 sm:px-4 sm:rounded-t-[50%_220px] sm:pb-8 sm:pt-20 lg:rounded-t-[50%_300px]"
         >
           <div className="pointer-events-none absolute inset-0 bg-grid opacity-50 [mask-image:linear-gradient(to_bottom,#000_40%,transparent_90%)]" />
           <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-[60%] -translate-x-1/2 rounded-full bg-brand-sky/40 blur-[100px]" />
-          <div className="relative mx-auto w-full max-w-[1320px] [container-type:inline-size]">
-            <Image
-              src={heroCollage}
-              alt="Anfords products, customer reviews and highlights"
-              priority
-              sizes="(min-width: 1400px) 1320px, 140vw"
-              className="relative h-auto w-full drop-shadow-[0_30px_40px_rgba(0,0,0,0.35)]"
-            />
-            {/* oral care cards over the collage's cleared slots */}
-            {/* the photo's lettering is blurred out in the image; this label replaces "1M+ Customers" */}
-            <div className="absolute left-[1.04%] top-[24.7%] flex h-[34.4%] w-[14.66%] items-end justify-center overflow-hidden rounded-[2.1cqw] bg-[linear-gradient(to_bottom,transparent_45%,rgba(0,31,78,0.75)_100%)] pb-[2cqw]">
-              <p className="text-center text-[2.3cqw] font-bold uppercase leading-[1.05] text-white">
-                Happy
-                <br />
-                <span className="text-[1.75cqw] tracking-[0.04em]">Customers</span>
-              </p>
-            </div>
-            <ProductSlot left="19.5%" top="39.16%" src={dentalFloss} alt="Mediplus dental floss" title="Dental Floss" />
-            <CollageCard
-              left="65.84%"
-              top="39.16%"
-              className="justify-between bg-[linear-gradient(160deg,#1F416A_0%,#001F4E_100%)] p-[1.5cqw] ring-1 ring-white/10"
-            >
-              <span className="grid h-[3.2cqw] w-[3.2cqw] place-items-center rounded-full bg-brand-green text-white">
-                <Smile className="h-[60%] w-[60%]" />
-              </span>
-              <p className="text-[1.3cqw] font-medium leading-[1.35] text-white">
-                Healthy teeth, fresh breath and a confident smile, every single day.
-              </p>
-              <p className="text-[1.15cqw] font-semibold leading-tight text-brand-mint">Mediplus Oral Care</p>
-            </CollageCard>
-            <ProductSlot left="84.3%" top="24.7%" src={toothbrush} alt="Mediplus toothbrushes" title="Gum Care" />
+          {/* Two copies of the collage, each showing one side, so the empty centre of the artwork
+              shrinks. --k is the share of the collage each side keeps (smaller = tighter gap). */}
+          <div className="mx-auto flex w-full max-w-[1160px] [--k:0.39] sm:[--k:0.42] lg:[--k:0.44]">
+            {[0, 1].map((half) => (
+              <div key={half} aria-hidden={half === 1} className="w-1/2 overflow-x-clip">
+                <div
+                  style={{ width: "calc(100% / var(--k))", marginLeft: half ? "calc(100% - 100% / var(--k))" : 0 }}
+                  className="relative [container-type:inline-size]"
+                >
+                  <Collage hidden={half === 1} />
+                </div>
+              </div>
+            ))}
           </div>
 
           <button

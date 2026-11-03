@@ -19,7 +19,7 @@ const count = (n: number) => n.toString().padStart(2, "0");
 
 const cards = [
   {
-    heading1: "15 +",
+    heading1: "30 +",
     heading2: "Years",
     description: "of sustainable business in Bangladesh",
     backgroundImage: bg1,
