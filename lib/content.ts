@@ -1,0 +1,2 @@
+export const ABOUT_TEXT =
+  "Welcome to Anfords Bangladesh, a distinguished and trusted name in the industry, committed to delivering high-quality consumer products that enhance and enrich everyday life. With an unwavering dedication to excellence, continuous innovation, and superior customer satisfaction, we have established ourselves as a benchmark in the market. Our brand stands as a testament to integrity, quality, and progressive advancement, ensuring that our consumers receive only the best.";

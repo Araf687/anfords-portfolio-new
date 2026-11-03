@@ -1,55 +1,66 @@
+"use client";
 import React from "react";
-import leafTransparentImg from "@/assets/image/landing-page/leafTransparentLogo.svg";
 import missionIcon from "@/assets/image/mission-vission/missionIcon.svg";
 import missionBg from "@/assets/image/mission-vission/missionBg.svg";
 import vissionIcon from "@/assets/image/mission-vission/vissionIcon.svg";
 import VissionBg from "@/assets/image/mission-vission/visionBg.svg";
 import commitmentIcon from "@/assets/image/mission-vission/commitmentIcon.svg";
 import commitmentBg from "@/assets/image/mission-vission/commitmentBg.svg";
-import MissionVissionCard from "./MissionVissionCard";
-import Section from "@/components/ui/Section";
 import completeCareBanner from "@/assets/image/landing-page/completeCareBanner.svg";
+import MissionVissionCard from "./MissionVissionCard";
 import SectionHeading from "@/components/ui/SectionHeading";
 import SectionSubHeading from "@/components/ui/SectionSubHeading";
+import Eyebrow from "@/components/ui/Eyebrow";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
+
+const cardData = [
+  {
+    icon: missionIcon,
+    backgroundImage: missionBg,
+    title: "Mission",
+    description:
+      "Undertaking to endow with a comfortable lifestyle carried by health, safety and beauty.",
+  },
+  {
+    icon: vissionIcon,
+    backgroundImage: VissionBg,
+    title: "Vision",
+    description:
+      "Ensuring a meaningful balance of the satisfaction of its consumers employees and other stakeholders",
+  },
+  {
+    icon: commitmentIcon,
+    backgroundImage: commitmentBg,
+    title: "Commitment",
+    description: "To provide the best quality products to our customers",
+  },
+];
 
 const MissionVission = () => {
-  const cardData = [
-    {
-      icon: missionIcon,
-      backgroundImage: missionBg,
-      title: "Mission",
-      description:
-        "   Undertaking to endow with a comfortable lifestyle carried by health, safety and beauty.",
-    },
-    {
-      icon: vissionIcon,
-      backgroundImage: VissionBg,
-      title: "Vission",
-      description:
-        "Ensuring a meaningful balance of the satisfaction of its consumers employees and other stakeholders",
-    },
-    {
-      icon: commitmentIcon,
-      backgroundImage: commitmentBg,
-      title: "Commitment",
-      description: "To provide the best quality products to our customers",
-    },
-  ];
   return (
-    <div className="p-16 bg-[#001F4E]">
-      <Section className="bg-cover bg-center" bgImage={completeCareBanner}>
-        <SectionHeading bgVarient="dark">Our Guiding Principles</SectionHeading>
-        <SectionSubHeading bgVarient="dark">
-          Mission, Vision & Commitment
-        </SectionSubHeading>
+    <section className="bg-brand-navy px-3 py-3 sm:px-6 sm:py-6 lg:px-10 lg:py-10">
+      <div
+        className="relative overflow-hidden rounded-[2rem] bg-cover bg-center py-16 sm:rounded-[2.5rem] sm:py-20 lg:py-28"
+        style={{ backgroundImage: `url(${completeCareBanner.src})` }}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-brand-navy/40 via-transparent to-brand-navy/60" />
+        <div className="container relative space-y-4">
+          <Reveal>
+            <Eyebrow variant="dark">What drives us</Eyebrow>
+          </Reveal>
+          <SectionHeading bgVarient="dark">Our Guiding Principles</SectionHeading>
+          <SectionSubHeading bgVarient="dark">Mission, Vision & Commitment</SectionSubHeading>
 
-        <div className="grid md:grid-cols-3 gap-8 pt-2">
-          {cardData.map((item, index) => (
-            <MissionVissionCard key={index} data={item} />
-          ))}
+          <Stagger className="grid gap-5 pt-8 md:grid-cols-3 md:gap-6" stagger={0.15}>
+            {cardData.map((item, index) => (
+              <StaggerItem key={index} className="h-full">
+                <MissionVissionCard data={item} index={index} />
+              </StaggerItem>
+            ))}
+          </Stagger>
         </div>
-      </Section>
-    </div>
+      </div>
+    </section>
   );
 };
 

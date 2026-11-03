@@ -1,36 +1,42 @@
 import BrandCard from "@/components/dashboard/brands/BrandCard";
-import Section from "@/components/ui/Section";
-import SectionDescription from "@/components/ui/SectionDescription";
-import SectionHeading from "@/components/ui/SectionHeading";
-import SectionSubHeading from "@/components/ui/SectionSubHeading";
+import PageHero from "@/components/ui/PageHero";
+import UiButton from "@/components/ui/uiButton";
 import { allBrands } from "@/lib/constants";
 import { Brand } from "@/types/data";
 import Image from "next/image";
 import anfordsProductMockup from "@/assets/image/landing-page/anfordsProductMockup.svg";
+import { Stagger, StaggerItem, Reveal } from "@/components/motion/Reveal";
 
 import React from "react";
 
 const BrandPage = () => {
   return (
     <>
-    <Image src={anfordsProductMockup} alt=""/>
-      <Section className="bg-blue-100">
-        <SectionHeading>Explore Our Brands</SectionHeading>
-        <SectionSubHeading>
-          Discover Top Brands & Their Products
-        </SectionSubHeading>
-        <SectionDescription>
-          Find all your favorite brands in one place! Browse through our wide
-          selection of top-quality products from leading brands. Click on any
-          brand to explore its full range of offerings and discover the perfect
-          products for you.
-        </SectionDescription>
-        <div className="grid grid-cols-4 gap-4 pt-10">
-          {allBrands.map((item: Brand, brandIndex) => (
-            <BrandCard item={item} key={brandIndex} />
+      <PageHero
+        crumb="Brands"
+        eyebrow="Our Brands"
+        title="Explore Our Brands"
+        subtitle="Discover Top Brands & Their Products"
+        description="Find all your favorite brands in one place! Browse through our wide selection of top-quality products from leading brands. Click on any brand to explore its full range of offerings and discover the perfect products for you."
+      >
+        <UiButton varient="light" href="/products/all">
+          All Products
+        </UiButton>
+      </PageHero>
+
+      <section className="bg-brand-mist py-14 sm:py-20">
+        <Stagger className="container grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4" stagger={0.07}>
+          {allBrands.map((item: Brand) => (
+            <StaggerItem key={item.id.toString()}>
+              <BrandCard item={item} />
+            </StaggerItem>
           ))}
-        </div>
-      </Section>
+        </Stagger>
+      </section>
+
+      <Reveal direction="none" duration={1.2}>
+        <Image src={anfordsProductMockup} alt="Anfords product family" className="h-auto w-full" />
+      </Reveal>
     </>
   );
 };

@@ -1,101 +1,167 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import contactBG from "@/assets/image/landing-page/contactBG.svg";
 import phoneIcon from "@/assets/icons/landing-page/phoneIcon.svg";
 import mailIcon from "@/assets/icons/landing-page/mailIcon.svg";
 import socialLinkIcon from "@/assets/icons/landing-page/socialLinkIcon.svg";
 import locationIcon from "@/assets/icons/landing-page/locationIcon.svg";
 import SectionHeading from "@/components/ui/SectionHeading";
-import SectionDescription from "@/components/ui/SectionDescription";
 import leafIcon from "@/assets/icons/landing-page/leaf1.svg";
+import UiButton from "@/components/ui/uiButton";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { navLinks } from "@/lib/nav";
+
+const contactLinkData = [
+  {
+    icon: phoneIcon,
+    title: "Phone Number",
+    data: [
+      { label: "+880-2-9353698", href: "tel:+88029353698" },
+      { label: "+880-2-8314671", href: "tel:+88028314671" },
+    ],
+  },
+  {
+    icon: mailIcon,
+    title: "Email",
+    data: [
+      { label: "info@anfordslimited.com", href: "mailto:info@anfordslimited.com" },
+      { label: "anfordsbangladeshlimited.com" },
+    ],
+  },
+  {
+    icon: locationIcon,
+    title: "Location",
+    data: [
+      {
+        label: "7/1 New Eskaton Road, Ghaus Nagar, Dhaka-1000, Bangladesh",
+        href: "https://maps.google.com/?q=7/1+New+Eskaton+Road,+Dhaka-1000,+Bangladesh",
+      },
+    ],
+  },
+  {
+    icon: socialLinkIcon,
+    title: "Social Links",
+    data: [
+      { label: "facebook.com/anfordsbangladesh", href: "https://facebook.com/anfordsbangladesh" },
+      {
+        label: "linkedin.com/company/anfords-bangladesh",
+        href: "https://linkedin.com/company/anfords-bangladesh",
+      },
+    ],
+  },
+];
+
+const socials = [
+  { Icon: Facebook, label: "Facebook", hover: "hover:bg-[#1877F2]" },
+  { Icon: Twitter, label: "Twitter", hover: "hover:bg-[#1DA1F2]" },
+  { Icon: Instagram, label: "Instagram", hover: "hover:bg-[#E1306C]" },
+  { Icon: Youtube, label: "YouTube", hover: "hover:bg-[#FF0000]" },
+];
 
 const ContactSection = () => {
-  const contactLinkData = [
-    {
-      icon: phoneIcon,
-      title: "Phone Number",
-      data: ["+880-2-9353698", "+880-2-8314671"],
-    },
-    {
-      icon: mailIcon,
-      title: "Email",
-      data: ["info@anfordslimited.com", "anfordsbangladeshlimited.com"],
-    },
-    {
-      icon: locationIcon,
-      title: "Location",
-      data: ["7/1 New Eskaton Road, Ghaus Nagar, Dhaka-1000, Bangladesh"],
-    },
-    {
-      icon: socialLinkIcon,
-      title: "Social Links",
-      data: [
-        "facebook.com/anfordsbangladesh",
-        "linkedin.com/company/anfords-bangladesh",
-      ],
-    },
-  ];
-
   return (
-    <div className="bg-[#001F4E] pt-10 text-white tracking-wide">
+    <div className="relative overflow-hidden bg-brand-navy text-white">
+      <div className="pointer-events-none absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-brand-blue/40 blur-[140px]" />
+
       {/* Top Section */}
-      <div className="flex flex-col md:flex-row px-4 sm:px-10 md:px-[80px] items-center gap-10 text-center md:text-left">
+      <div className="container relative grid items-center gap-10 pb-12 pt-16 sm:pt-20 lg:grid-cols-2 lg:gap-16">
         <div className="space-y-6">
           <SectionHeading bgVarient="dark">Get In Touch</SectionHeading>
-          <SectionDescription className="md:pr-[60px]">
-            Have questions or need assistance? We’re here to help! Reach out to
-            <span className="text-[#2E9EFF]"> Anfords Bangladesh </span> for any
-            inquiries about our products, services, or partnerships. Our team is
-            ready to assist you with prompt and reliable support. Let’s connect!
-          </SectionDescription>
+          <Reveal delay={0.15}>
+            <p className="max-w-xl text-[15px] leading-relaxed text-white/75 md:text-base">
+              Have questions or need assistance? We’re here to help! Reach out to
+              <span className="text-brand-sky"> Anfords Bangladesh </span> for any
+              inquiries about our products, services, or partnerships. Our team is
+              ready to assist you with prompt and reliable support. Let’s connect!
+            </p>
+          </Reveal>
+          <Reveal delay={0.25}>
+            <UiButton varient="light" href="/contact-us">
+              Contact Us
+            </UiButton>
+          </Reveal>
         </div>
-        <Image src={contactBG} alt="contact-background" height={250} className="w-full md:w-auto" />
+        <Reveal direction="left">
+          <div className="relative overflow-hidden rounded-3xl ring-1 ring-white/10">
+            <Image src={contactBG} alt="Anfords customer support team" className="h-auto w-full" />
+          </div>
+        </Reveal>
       </div>
 
       {/* Contact Information Section */}
-      <div className="bg-white text-black mt-12 px-4 sm:px-10 md:px-[80px] py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 text-center">
-        {contactLinkData.map((item, index) => (
-          <div key={index} className="flex flex-col items-center">
-            <Image src={item.icon} alt={item.title} height={50} className="mb-3" />
-            <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-            <div className="space-y-1">
-              {item.data.map((info, idx) => (
-                <p key={idx} className="text-gray-700">{info}</p>
-              ))}
-            </div>
-          </div>
-        ))}
+      <div className="container relative pb-14">
+        <Stagger className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {contactLinkData.map((item) => (
+            <StaggerItem key={item.title} className="h-full">
+              <div className="group h-full rounded-3xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur transition-all duration-500 hover:-translate-y-1 hover:border-brand-sky/40 hover:bg-white/[0.08]">
+                <div className="mb-5 grid h-14 w-14 place-items-center rounded-2xl bg-white transition-transform duration-500 group-hover:rotate-[-8deg]">
+                  <Image src={item.icon} alt="" height={30} />
+                </div>
+                <h3 className="mb-2 text-lg font-semibold">{item.title}</h3>
+                <div className="space-y-1">
+                  {item.data.map((info) =>
+                    info.href ? (
+                      <a
+                        key={info.label}
+                        href={info.href}
+                        target={info.href.startsWith("http") ? "_blank" : undefined}
+                        rel="noreferrer"
+                        className="block break-words text-sm text-white/70 transition-colors hover:text-brand-mint"
+                      >
+                        {info.label}
+                      </a>
+                    ) : (
+                      <p key={info.label} className="break-words text-sm text-white/70">
+                        {info.label}
+                      </p>
+                    )
+                  )}
+                </div>
+              </div>
+            </StaggerItem>
+          ))}
+        </Stagger>
       </div>
 
       {/* Footer Section */}
-      <div className="flex flex-col md:flex-row justify-between items-center py-5 px-4 sm:px-10 md:px-[80px] border-b-2 border-green-600">
-        <div className="flex items-center gap-3 text-center md:text-left">
-          <Image src={leafIcon} alt="leafIcon" height={30} />
-          <p className="uppercase text-sm sm:text-base">
-            Anfords Bangladesh © 2025 | All Rights Reserved
-          </p>
+      <div className="relative border-t border-white/10">
+        <div className="container flex flex-col items-center justify-between gap-6 py-6 lg:flex-row">
+          <div className="flex items-center gap-3 text-center lg:text-left">
+            <Image src={leafIcon} alt="" height={30} />
+            <p className="text-xs uppercase tracking-wider text-white/80 sm:text-sm">
+              Anfords Bangladesh © {new Date().getFullYear()} | All Rights Reserved
+            </p>
+          </div>
+          <ul className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-sm text-white/60">
+            {navLinks.map((l) => (
+              <li key={l.href}>
+                <Link href={l.href} className="transition-colors hover:text-white">
+                  {l.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <div className="flex gap-2">
+            {socials.map(({ Icon, label, hover }) => (
+              <a
+                key={label}
+                href="#"
+                aria-label={label}
+                className={`grid h-10 w-10 place-items-center rounded-full bg-white/10 text-white/80 transition-all duration-300 hover:-translate-y-0.5 hover:text-white ${hover}`}
+              >
+                <Icon className="h-[18px] w-[18px]" />
+              </a>
+            ))}
+          </div>
         </div>
-        <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="#" className="group text-gray-400 transition duration-300" aria-label="Facebook">
-            <Facebook className="w-6 h-6 group-hover:text-[#1877F2]" />
-          </a>
-          <a href="#" className="group text-gray-400 transition duration-300" aria-label="Twitter">
-            <Twitter className="w-6 h-6 group-hover:text-[#1DA1F2]" />
-          </a>
-          <a href="#" className="group text-gray-400 transition duration-300" aria-label="Instagram">
-            <Instagram className="w-6 h-6 group-hover:text-[#E1306C]" />
-          </a>
-          <a href="#" className="group text-gray-400 transition duration-300" aria-label="YouTube">
-            <Youtube className="w-6 h-6 group-hover:text-[#FF0000]" />
-          </a>
-        </div>
+        <div className="h-1 bg-gradient-to-r from-brand-blue via-brand-green to-brand-mint" />
+        {/* Developer Credit */}
+        <p className="py-3 text-center text-xs uppercase tracking-wider text-white/40">
+          Developed and maintained by CODEX 2.0 team
+        </p>
       </div>
-
-      {/* Developer Credit */}
-      <p className="py-2 text-center text-sm text-gray-400 uppercase">
-        Developed and maintained by CODEX 2.0 team
-      </p>
     </div>
   );
 };

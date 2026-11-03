@@ -1,11 +1,12 @@
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import UiButton from "@/components/ui/uiButton";
-import careerBg from "@/assets/image/career/careerbanner.png";
 import careerBgSideImg from "@/assets/image/career/careerbannerSideImg.png";
-import intersect from "@/assets/image/career/Intersect.png";
 import mockup from "@/assets/image/career/mockup.png";
+import PageHero from "@/components/ui/PageHero";
+import SectionHeading from "@/components/ui/SectionHeading";
+import Eyebrow from "@/components/ui/Eyebrow";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 
 // Icons
 import user from "@/assets/icons/career/users.png";
@@ -14,45 +15,16 @@ import graduation from "@/assets/icons/career/graduation.png";
 import office from "@/assets/icons/career/office.png";
 import map from "@/assets/icons/career/map.png";
 
-interface JobPosition {
-  id: number;
-  title: string;
-  description: string;
-  location: string;
-  type: string;
-}
-
-const jobPositions: JobPosition[] = [
-  {
-    id: 1,
-    title: "Frontend Developer",
-    description:
-      "We are looking for a skilled frontend developer experienced in React and TypeScript.",
-    location: "Remote",
-    type: "Full-Time",
-  },
-  {
-    id: 2,
-    title: "Backend Developer",
-    description:
-      "Join our team as a backend developer with experience in Node.js and databases.",
-    location: "New York, NY",
-    type: "Full-Time",
-  },
-];
-
 const facilities = [
   {
     icon: office,
     heading: "Large Beautiful Office",
-    description:
-      "A modern, spacious office designed for comfort and productivity.",
+    description: "A modern, spacious office designed for comfort and productivity.",
   },
   {
     icon: user,
     heading: "Great Co-Workers",
-    description:
-      "Work with supportive, talented, and collaborative team members.",
+    description: "Work with supportive, talented, and collaborative team members.",
   },
   {
     icon: map,
@@ -62,121 +34,92 @@ const facilities = [
   {
     icon: graduation,
     heading: "Educational Opportunities",
-    description:
-      "Grow with training, workshops, and skill development programs.",
+    description: "Grow with training, workshops, and skill development programs.",
   },
-  // {
-  //   icon: award,
-  //   heading: "Performance Award",
-  //   description:
-  //     "Recognizing and rewarding exceptional performance and contributions.",
-  // },
+  {
+    icon: award,
+    heading: "Performance Award",
+    description: "Recognizing and rewarding exceptional performance and contributions.",
+  },
 ];
 
 const CareersPage: React.FC = () => {
   return (
     <div>
       {/* Hero Section */}
-      <div className="relative">
-        <Image src={careerBg} alt="banner" className="w-full h-auto" />
+      <PageHero
+        crumb="Career"
+        eyebrow="Join Us"
+        title="Anfords Bangladesh"
+        description={
+          <p className="text-lg text-white/85">
+            Work at a leading FMCG company & unlock your true potential.
+          </p>
+        }
+        image={careerBgSideImg}
+        imageAlt="Grow your career at Anfords"
+      >
+        <UiButton varient="light" href="/career/apply-job">
+          View Openings
+        </UiButton>
+      </PageHero>
 
-        <div className="absolute top-0 left-0 w-full flex">
-          <div className="flex-1 flex justify-center items-center">
-            <div className="p-20 space-y-8 text-white">
-              <p className="text-3xl">Join Us</p>
-              <p className="font-semibold">
-                <span className="text-6xl text-[#2E9EFF]">Anfords </span>
-                <span className="text-3xl text-[#00DD76]">Bangladesh</span>
+      {/* Job life */}
+      <section className="relative overflow-hidden bg-white py-16 sm:py-24">
+        <div className="container grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
+          <div className="space-y-6">
+            <Reveal>
+              <Eyebrow>Culture</Eyebrow>
+            </Reveal>
+            <SectionHeading>Job Life At Anfords</SectionHeading>
+            <Reveal delay={0.1}>
+              <p className="text-2xl font-light text-brand-green sm:text-3xl">Bangladesh</p>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <p className="text-[15px] leading-relaxed text-slate-600 md:text-base">
+                At Anfords Bangladesh, we foster a workplace that encourages
+                creativity, collaboration, and growth. As a leading FMCG company, we
+                provide opportunities to learn, upskill, and take on new challenges
+                to advance your career. We believe in inclusivity and teamwork,
+                ensuring a supportive and engaging environment. Your contributions
+                are valued and rewarded as we strive for excellence together. Join
+                us and unlock your true potential.
               </p>
-              <p className="text-lg tracking-wide">
-                Work at a leading FMCG company & unlock your true potential.
-              </p>
-              <UiButton varient="dark">View Openings</UiButton>
-            </div>
+            </Reveal>
           </div>
-
-          <div className="flex-1">
-            <Image
-              src={careerBgSideImg}
-              alt="banner side img"
-              className="max-w-xl pt-[100px]"
-            />
-            <div className="p-20 space-y-3 font-semibold text-white">
-              <p className="text-6xl text-[#1263AD]">Job Life At</p>
-              <p className="tracking-wide">
-                <span className="text-5xl text-[#2E9EFF] font-semibold">
-                  Anfords{" "}
-                </span>
-                <span className="text-xl text-[#00DD76] font-semibold">
-                  Bangladesh
-                </span>
-              </p>
-            </div>
-          </div>
+          <Reveal direction="left" className="relative">
+            <div className="absolute inset-10 rounded-full bg-brand-sky/20 blur-3xl" />
+            <Image src={mockup} alt="Life at Anfords Bangladesh" className="relative mx-auto h-auto w-full max-w-md" sizes="(min-width: 1024px) 40vw, 90vw" />
+          </Reveal>
         </div>
-      </div>
+      </section>
 
       {/* Facilities Section */}
-      <div className="flex flex-wrap">
-        <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 pl-20 gap-10">
+      <section className="bg-brand-mist py-16 sm:py-24">
+        <Stagger className="container grid gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
           {facilities.map((item, idx) => (
-            <div key={idx} className="bg-white flex items-start gap-4">
-              <Image
-                src={item.icon}
-                alt={item.heading}
-                width={40}
-                height={40}
-              />
-              <div>
-                <h3 className="font-semibold text-lg text-[#1263AD] mb-2">
-                  {item.heading}
-                </h3>
-                <p className="text-sm text-gray-600">{item.description}</p>
+            <StaggerItem key={item.heading} className={idx === 0 ? "lg:row-span-2" : ""}>
+              <div
+                className={`group flex h-full flex-col gap-5 rounded-3xl border border-slate-200 bg-white p-7 transition-all duration-500 hover:-translate-y-1 hover:border-brand-sky/40 hover:shadow-[0_30px_60px_-30px_rgba(0,90,170,0.4)] ${
+                  idx === 0 ? "lg:justify-end lg:bg-gradient-to-br lg:from-brand-blue lg:to-brand-navy lg:text-white" : ""
+                }`}
+              >
+                <div className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-mist transition-transform duration-500 group-hover:-rotate-6 group-hover:scale-110">
+                  <Image src={item.icon} alt="" width={30} height={30} />
+                </div>
+                <div>
+                  <h3 className={`mb-2 text-lg font-semibold ${idx === 0 ? "text-brand-royal lg:text-2xl lg:text-white" : "text-brand-royal"}`}>
+                    {item.heading}
+                  </h3>
+                  <p className={`text-sm leading-relaxed ${idx === 0 ? "text-slate-600 lg:text-white/75" : "text-slate-600"}`}>
+                    {item.description}
+                  </p>
+                </div>
               </div>
-            </div>
+            </StaggerItem>
           ))}
-        </div>
-
-        <div className="w-full lg:w-1/2 px-20">
-          <p className="text-gray-700 text-base px-5">
-            At Anfords Bangladesh, we foster a workplace that encourages
-            creativity, collaboration, and growth. As a leading FMCG company, we
-            provide opportunities to learn, upskill, and take on new challenges
-            to advance your career. We believe in inclusivity and teamwork,
-            ensuring a supportive and engaging environment. Your contributions
-            are valued and rewarded as we strive for excellence together. Join
-            us and unlock your true potential.
-          </p>
-        </div>
-      </div>
-
-      <div className="relative">
-        {/* Adjust height as needed */}
-        <Image
-          src={intersect} // or imported image
-          alt="Background"
-          className="w-auto h-auto"
-        />
-        <div className="absolute top-0">
-          <div className="pl-20 pt-10">
-            <div className="bg-white flex w-[400px] items-start gap-4">
-              <Image src={award} alt={"award icon"} width={40} height={40} />
-              <div>
-                <h3 className="font-semibold text-lg text-[#1263AD] mb-2">
-                  Performance Award
-                </h3>
-                <p className="text-sm text-gray-600">
-                  Recognizing and rewarding exceptional performance and
-                  contributions.
-                </p>
-              </div>
-            </div>
-          </div>
-          <Image src={mockup} alt="mockup" className="px-20"/>
-          
-
-        </div>
-      </div>
+        </Stagger>
+      </section>
     </div>
   );
 };

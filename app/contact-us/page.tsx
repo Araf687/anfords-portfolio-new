@@ -1,5 +1,4 @@
 "use client";
-import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import Image from "next/image";
@@ -8,17 +7,46 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import contactUsImg from "@/assets/image/contact us/banner.png";
 import hoverContactUsImg from "@/assets/image/contact us/banner2.png";
 import SectionHeading from "@/components/ui/SectionHeading";
-import Section from "@/components/ui/Section";
+import PageHero from "@/components/ui/PageHero";
+import UiButton from "@/components/ui/uiButton";
 import map from "@/assets/image/contact us/map.png";
 import question from "@/assets/image/contact us/question.png";
-import { MessageCircleMore, Phone, Send } from "lucide-react";
+import { MapPin, MessageCircleMore, Phone } from "lucide-react";
 import supportIcon from "@/assets/icons/contact-us/support.png";
+import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
 
 interface IFormInput {
   name: string;
   email: string;
   message: string;
 }
+
+const contactCards = [
+  {
+    icon: <Image src={supportIcon} alt="" height={36} width={36} />,
+    heading: "Support",
+    desc: "Our friendly team is here to help.",
+    contact: "support@anfords.com",
+    href: "mailto:support@anfords.com",
+  },
+  {
+    icon: <MessageCircleMore size={28} />,
+    heading: "Sales",
+    desc: "Questions or queries? Get in touch!",
+    contact: "sales@anfords.com",
+    href: "mailto:sales@anfords.com",
+  },
+  {
+    icon: <Phone size={28} />,
+    heading: "Phone",
+    desc: "Mon-Fri from 8am to 5pm",
+    contact: "+880-2-9353698",
+    href: "tel:+88029353698",
+  },
+];
+
+const fieldClass =
+  "mt-2 h-12 rounded-xl border-slate-200 bg-white focus-visible:ring-2 focus-visible:ring-brand-sky/40 focus-visible:ring-offset-0";
 
 const ContactForm: React.FC = () => {
   const {
@@ -31,147 +59,131 @@ const ContactForm: React.FC = () => {
     console.log(data);
   };
 
-  const contactCards = [
-    {
-      icon: <Image src={supportIcon} alt="support" height={80} />,
-      heading: "Support",
-      desc: "Our friendly team is here to help.",
-      contact: "support@anfords.com",
-    },
-    {
-      icon: <MessageCircleMore size={45} className="my-4" />,
-      heading: "Sales",
-      desc: "Questions or queries? Get in touch!",
-      contact: "sales@anfords.com",
-    },
-    {
-      icon: <Phone size={45} className="my-4" />,
-      heading: "Phone",
-      desc: "Mon-Fri from 8am to 5pm",
-      contact: "+880-2-9353698",
-    },
-  ];
-
   return (
     <div>
       {/* Header Section */}
-      <div className="flex flex-col items-center xs:py-8 py-14 space-y-6 xs:space-y-2 px-4">
-        <SectionHeading>Get In Touch With Our Team</SectionHeading>
-        <p className="text-[#1263AD] xs:text-sm text-center pb-5">
-          We have the team and know-how to help you scale 10x faster
-        </p>
+      <PageHero
+        crumb="Contact Us"
+        title="Get In Touch With Our Team"
+        description="We have the team and know-how to help you scale 10x faster"
+      />
 
-        {/* Hover Image */}
-        <div className="relative group h-[250px] sm:h-[350px] md:h-[450px] w-full max-w-5xl">
-          <Image
-            src={contactUsImg}
-            alt="Contact Us"
-            fill
-            className="object-contain transition-opacity duration-300 group-hover:opacity-0"
-          />
+      {/* Contact Cards overlapping the hero */}
+      <div className="container relative -mt-10 sm:-mt-14">
+        <Stagger className="grid gap-4 sm:grid-cols-3 sm:gap-5">
+          {contactCards.map((item) => (
+            <StaggerItem key={item.heading}>
+              <a
+                href={item.href}
+                className="group flex h-full flex-col gap-3 rounded-3xl border border-slate-200 bg-white p-6 shadow-[0_20px_50px_-25px_rgba(0,31,78,0.35)] transition-all duration-500 hover:-translate-y-1 hover:border-brand-sky/40"
+              >
+                <span className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-blue/10 text-brand-blue transition-all duration-500 group-hover:bg-brand-blue group-hover:text-white">
+                  {item.icon}
+                </span>
+                <p className="text-xl font-semibold text-brand-navy">{item.heading}</p>
+                <p className="text-sm text-slate-500">{item.desc}</p>
+                <p className="mt-auto w-fit rounded-full bg-brand-mist px-4 py-2 text-sm font-medium text-brand-royal transition-colors group-hover:bg-brand-green/10 group-hover:text-brand-green">
+                  {item.contact}
+                </p>
+              </a>
+            </StaggerItem>
+          ))}
+        </Stagger>
+      </div>
+
+      {/* Hover Image */}
+      <Reveal className="container py-14 sm:py-20">
+        <div className="group relative mx-auto aspect-[1502/597] w-full max-w-5xl">
+          <Image src={contactUsImg} alt="Contact Us" fill className="object-contain transition-opacity duration-500 group-hover:opacity-0" />
           <Image
             src={hoverContactUsImg}
-            alt="Contact Us Hover"
+            alt=""
             fill
-            className="object-contain absolute top-0 left-0 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+            className="object-contain opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           />
         </div>
-      </div>
-
-      {/* Contact Cards */}
-      <div className="px-4 sm:px-10 pb-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {contactCards.map((item, index) => (
-            <div
-              key={index}
-              className="border border-gray-200 p-5 rounded-lg flex flex-col items-center text-center space-y-2"
-            >
-              {item.icon}
-              <p className="text-xl font-semibold">{item.heading}</p>
-              <p>{item.desc}</p>
-              <p className="bg-gray-100 py-2 px-3 rounded-lg text-sm">
-                {item.contact}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+      </Reveal>
 
       {/* Map Section */}
-      <Section className="bg-[#1F416A] px-40">
-        <div className="flex flex-col lg:flex-row items-center gap-8 w-full">
-          <div className="flex-1 text-white space-y-4 text-center lg:text-left">
-            <p className="text-lg">Our Location</p>
-            <p className="text-3xl md:text-4xl">Visit our Head Office</p>
-            <p className="text-lg">Find us at these locations</p>
-          </div>
-          <div className="flex-1">
-            <Image src={map} alt="map" className="w-full h-auto" />
-          </div>
+      <section className="bg-brand-ink py-16 text-white sm:py-20">
+        <div className="container grid items-center gap-10 lg:grid-cols-2">
+          <Reveal className="space-y-4 text-center lg:text-left">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-brand-mint">Our Location</p>
+            <p className="text-3xl font-semibold md:text-5xl">Visit our Head Office</p>
+            <p className="text-lg text-white/70">Find us at these locations</p>
+            <a
+              href="https://maps.google.com/?q=7/1+New+Eskaton+Road,+Dhaka-1000,+Bangladesh"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-start gap-3 rounded-2xl bg-white/5 p-4 text-left text-sm text-white/85 ring-1 ring-white/10 transition-colors hover:bg-white/10"
+            >
+              <MapPin className="mt-0.5 shrink-0 text-brand-mint" size={18} />
+              7/1 New Eskaton Road, Ghaus Nagar, Dhaka-1000, Bangladesh
+            </a>
+          </Reveal>
+          <Reveal direction="left">
+            <div className="overflow-hidden rounded-3xl ring-1 ring-white/10">
+              <Image src={map} alt="Map of Anfords head office" className="h-auto w-full" />
+            </div>
+          </Reveal>
         </div>
-      </Section>
+      </section>
 
       {/* Question Form Section */}
-      <div className="max-w-6xl mx-auto my-20 px-4">
-        <SectionHeading className="text-center mb-12">
-          Still have Questions?
-        </SectionHeading>
-        <div className="flex flex-col md:flex-row items-center gap-6">
-          <div className="hidden md:block">
-            <Image
-              src={question}
-              alt="question"
-              className="w-full h-auto max-w-sm"
-            />
-          </div>
+      <section className="container py-16 sm:py-24">
+        <SectionHeading className="mb-12 text-center">Still have Questions?</SectionHeading>
+        <div className="grid items-center gap-10 md:grid-cols-[0.8fr_1fr]">
+          <Reveal className="hidden md:block">
+            <Image src={question} alt="" className="h-auto w-full max-w-sm animate-float" />
+          </Reveal>
 
-          <form
-            onSubmit={handleSubmit(onSubmit)}
-            className="space-y-4 flex-1 w-full"
-          >
-            <div>
-              <label htmlFor="name">Name</label>
-              <Input
-                id="name"
-                {...register("name", { required: "Name is required" })}
-                className="w-full mt-1"
-              />
-              {errors.name && (
-                <p className="text-red-500 text-sm">{errors.name.message}</p>
-              )}
-            </div>
+          <Reveal delay={0.1}>
+            <form
+              onSubmit={handleSubmit(onSubmit)}
+              noValidate
+              className="space-y-5 rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl sm:p-8"
+            >
+              <div>
+                <label htmlFor="name" className="text-sm font-medium text-brand-navy">Name</label>
+                <Input
+                  id="name"
+                  aria-invalid={!!errors.name}
+                  {...register("name", { required: "Name is required" })}
+                  className={fieldClass}
+                />
+                {errors.name && <p className="mt-1 text-sm text-red-500">{errors.name.message}</p>}
+              </div>
 
-            <div>
-              <label htmlFor="email">Email</label>
-              <Input
-                id="email"
-                type="email"
-                {...register("email", { required: "Email is required" })}
-                className="w-full mt-1"
-              />
-              {errors.email && (
-                <p className="text-red-500 text-sm">{errors.email.message}</p>
-              )}
-            </div>
+              <div>
+                <label htmlFor="email" className="text-sm font-medium text-brand-navy">Email</label>
+                <Input
+                  id="email"
+                  type="email"
+                  aria-invalid={!!errors.email}
+                  {...register("email", { required: "Email is required" })}
+                  className={fieldClass}
+                />
+                {errors.email && <p className="mt-1 text-sm text-red-500">{errors.email.message}</p>}
+              </div>
 
-            <div>
-              <label htmlFor="message">Message</label>
-              <Textarea
-                id="message"
-                {...register("message", { required: "Message is required" })}
-                className="w-full mt-1 mb-2"
-              />
-              {errors.message && (
-                <p className="text-red-500 text-sm">{errors.message.message}</p>
-              )}
-            </div>
+              <div>
+                <label htmlFor="message" className="text-sm font-medium text-brand-navy">Message</label>
+                <Textarea
+                  id="message"
+                  aria-invalid={!!errors.message}
+                  {...register("message", { required: "Message is required" })}
+                  className="mt-2 min-h-[140px] rounded-xl border-slate-200 focus-visible:ring-2 focus-visible:ring-brand-sky/40 focus-visible:ring-offset-0"
+                />
+                {errors.message && <p className="mt-1 text-sm text-red-500">{errors.message.message}</p>}
+              </div>
 
-            <Button type="submit" className="w-full bg-[#1263AD]">
-              Submit <Send size={20} className="ml-2" />
-            </Button>
-          </form>
+              <UiButton type="submit" className="w-full justify-center">
+                Submit
+              </UiButton>
+            </form>
+          </Reveal>
         </div>
-      </div>
+      </section>
     </div>
   );
 };

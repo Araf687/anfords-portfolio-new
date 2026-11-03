@@ -2,12 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 
 @layer base {
   :root {
-    --font-sans: "Poppins", sans-serif;
-    --background: 0 0% 100%;
+        --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -66,7 +64,92 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-brand-text;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: #00dd76;
+    color: #001f4e;
+  }
+  :focus-visible {
+    outline: 2px solid #2e9eff;
+    outline-offset: 3px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+    }
+  }
+}
+
+@layer components {
+  /* Rich text coming from data files (brand / product descriptions) */
+  .rich-text {
+    @apply space-y-4 text-[15px] leading-relaxed text-slate-600 md:text-base;
+  }
+  .rich-text p:first-child[style] {
+    @apply !mb-6 text-xl font-medium leading-snug text-brand-mid md:!text-2xl;
+  }
+  .rich-text ul {
+    @apply my-5 grid gap-3 sm:grid-cols-2;
+  }
+  .rich-text li {
+    @apply relative rounded-xl border border-slate-200 bg-white py-3 pl-11 pr-4 text-slate-700 shadow-sm;
+  }
+  .rich-text li::before {
+    content: "";
+    @apply absolute left-4 top-1/2 h-4 w-4 -translate-y-1/2 rounded-full bg-brand-green/15 ring-4 ring-brand-green/10;
+    background-image: radial-gradient(circle, #00a85a 35%, transparent 40%);
+  }
+  /* data HTML carries inline text-align: justify, which leaves gaps on phones */
+  .rich-text * {
+    text-align: left !important;
+  }
+  .rich-text strong,
+  .rich-text b {
+    @apply font-semibold text-brand-navy;
+  }
+  .rich-text h2 {
+    @apply pt-2 text-2xl font-semibold text-brand-mid;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .bg-grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-dark {
+    background-image: linear-gradient(rgba(0, 90, 170, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 90, 170, 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .mask-fade-x {
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+  .mask-fade-b {
+    mask-image: linear-gradient(to bottom, #000 60%, transparent);
+  }
+  .no-scrollbar {
+    scrollbar-width: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
   }
 }
