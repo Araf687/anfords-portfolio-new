@@ -1,12 +1,11 @@
 import { Brand, ProductCardProps } from "@/types/data";
-import { allProducts } from "@/helpers/data/all-products-data";
 import Image from "next/image";
 import BrandLogo from "@/components/ui/BrandLogo";
 import Link from "next/link";
 import React from "react";
 import { ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getBrandAccent, pickProducts } from "@/lib/brands";
+import { getBrandAccent, pickProducts, visibleProducts } from "@/lib/brands";
 
 // Fan layout for 1–3 products: resting and hover positions
 const fan = {
@@ -23,7 +22,7 @@ const fan = {
 } as const;
 
 const BrandCard = ({ item, className }: { item: Brand; className?: string }) => {
-  const products = allProducts.filter((p: ProductCardProps) => p.brand_id === item.id);
+  const products = visibleProducts.filter((p: ProductCardProps) => p.brand_id === item.id);
   const shown = pickProducts(products);
   const layout = fan[(Math.max(1, shown.length) as 1 | 2 | 3)];
   const accent = getBrandAccent(item.id);

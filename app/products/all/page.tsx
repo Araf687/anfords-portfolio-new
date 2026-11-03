@@ -1,7 +1,7 @@
 "use client";
 
 import ProductCard from "@/components/dashboard/card/ProductCard";
-import { allProducts } from "@/helpers/data/all-products-data";
+import { visibleBrands } from "@/lib/brands";
 import { Brand, ProductCardProps } from "@/types/data";
 import React, { Suspense, useEffect, useState } from "react";
 import { useSearchParams } from "next/navigation";
@@ -10,7 +10,6 @@ import { Search, X } from "lucide-react";
 import allProductBanner from "@/assets/image/sliders/allProductGroup2.png";
 import Image from "next/image";
 import PageHero from "@/components/ui/PageHero";
-import { allBrands } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 import { searchProducts } from "@/lib/search";
 
@@ -40,7 +39,7 @@ const AllProductsContent = () => {
     selectedBrand ? product.brand_id.toString() === selectedBrand : true
   );
 
-  const filters = [{ id: "all", name: "All" }, ...allBrands.map((b) => ({ id: `${b.id}`, name: b.brandName, logo: b.image.color }))];
+  const filters = [{ id: "all", name: "All" }, ...visibleBrands.map((b) => ({ id: `${b.id}`, name: b.brandName, logo: b.image.color }))];
 
   return (
     <div>

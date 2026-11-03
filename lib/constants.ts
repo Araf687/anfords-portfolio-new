@@ -27,64 +27,11 @@ import brushUpBG from "@/assets/image/brand/brushUpBrandBG.png";
 import everydayBG from "@/assets/image/brand/everyDayBrandBG.png";
 
 export const allBrands: Brand[] = [
-  {
-    id: 1,
-    brandName: "Envy",
-    description: "Glow Naturally, Shine Beautifully",
-    longDescription: `
-    <p style="font-size: 1.5rem;margin-bottom: 20px;">
-      Daily Oral Care for a Brighter, Healthier Smile
-    </p>
-    <p>
-   Experience the timeless skincare secret with Envy Ubtan Soap—a luxurious blend of turmeric, sandalwood, and natural herbs for glowing, healthy skin. Inspired by ancient beauty rituals, this soap gently cleanses, exfoliates, and nourishes, revealing a brighter, more radiant complexion every day.
-    </p>
-    <p>
-     Enriched with saffron, almond oil, and multani mitti, Envy Ubtan Soap helps to: 
-    </p>
-    <ul>
-      <li>Deep cleanse & remove impurities</li>
-      <li>Brighten & even out skin tone</li>
-      <li>Maintain moisture & softness</li>
-    </ul>
-    <p>Free from harsh chemicals & artificial additives, this herbal-infused formula is suitable for all skin types, giving you a natural, glowing look with every wash.</p>
-    <p>Because true beauty starts with nature.</p>
-    <p>Glow Naturally, Shine Beautifully.</p>
-  `,
-    href: "#",
-    image: { gray: envyGray, color: envyColor },
-    banner: envyBG,
-  },
-  {
-    id: 2,
-    brandName: "English",
-    description: "Bye Lice, Hello Healthy Hair",
-    longDescription: `
-    <p style="font-size: 1.5rem;margin-bottom: 20px;">
-      Powerful Protection, Gentle Care
-    </p>
-    <p>
-   Say goodbye to lice and nits with English Anti-Lice Shampoo—a clinically proven formula that eliminates lice while keeping your hair healthy, soft, and nourished. Infused with natural anti-parasitic agents like neem, tea tree oil, and eucalyptus, it provides effective lice removal without harsh chemicals.
-    </p>
-    <p>
-     Specially designed for both children and adults, English Anti-Lice Shampoo:
-    </p>
-    <ul>
-      <li>1. Kills lice and prevents re-infestation</li>
-      <li>2. Soothes the scalp and reduces irritation</li>
-      <li>3. Gently cleanses while nourishing the hair</li>
-    </ul>
-    <p>Free from toxic pesticides and parabens, it’s a safe and dermatologist-approved solution for keeping your hair lice-free and fresh every day.</p>
-    <p>Because healthy hair starts with a clean scalp.</p>
-    <p>Bye Lice, Hello Healthy Hair.</p>
-  `,
-    href: "#",
-    image: { gray: englishGray, color: englishColor },
-    banner: englishBG,
-  },
-
+  // oral care brands lead: they are the flagship range
   {
     id: 4,
     brandName: "Mediplus",
+    hide: false,
     description: "Care Beyond Clean",
     longDescription: `
   <p style="font-size: 1.5rem; margin-bottom: 20px;">
@@ -114,6 +61,7 @@ export const allBrands: Brand[] = [
   {
     id: 5,
     brandName: "Mediplus Gel",
+    hide: false,
     description: "Stronger Teeth, Healthier Smile ",
     longDescription: `
     <p style="font-size: 1.5rem; margin-bottom: 20px;">
@@ -140,6 +88,7 @@ export const allBrands: Brand[] = [
   {
     id: 6,
     brandName: "Mediplus DS",
+    hide: false,
     description: "Strength You Can Smile About ",
     longDescription: `
     <p style="font-size: 1.5rem;margin-bottom: 20px;">
@@ -169,6 +118,7 @@ export const allBrands: Brand[] = [
   {
     id: 7,
     brandName: "Brush Up",
+    hide: false,
     description: "Refresh. Protect. Shine.",
     longDescription: `
     <p style="font-size: 1.5rem;margin-bottom: 20px;">
@@ -199,8 +149,36 @@ export const allBrands: Brand[] = [
     banner: brushUpBG,
   },
   {
+    id: 2,
+    brandName: "English",
+    hide: false,
+    description: "Bye Head Lice, Hello Healthy Hair",
+    longDescription: `
+    <p style="font-size: 1.5rem;margin-bottom: 20px;">
+      Head Lice Removal Shampoo, Now in a New Fragrance
+    </p>
+    <p>
+      English Anti-Lice Shampoo clears head lice and keeps your hair healthy. With regular use, hair becomes free of head lice, shiny and smooth.
+    </p>
+    <p>
+      Just leave it on for five minutes, and stay completely free of head lice.
+    </p>
+    <ul>
+      <li>Dual action: clears head lice and keeps hair healthy</li>
+      <li>Leave it on for five minutes for complete protection</li>
+      <li>Regular use leaves hair free of head lice, shiny and smooth</li>
+      <li>Conditioning shampoo for all types of hair</li>
+    </ul>
+    <p>Bye Head Lice, Hello Healthy Hair.</p>
+  `,
+    href: "#",
+    image: { gray: englishGray, color: englishColor },
+    banner: englishBG,
+  },
+  {
     id: 8,
     brandName: "Every Day",
+    hide: false,
     description: "Smooth Shave, Fresh Start",
     longDescription: `
     <p style="font-size: 1.5rem;margin-bottom: 20px;">
@@ -228,6 +206,7 @@ export const allBrands: Brand[] = [
   {
     id: 3,
     brandName: "Sleek",
+    hide: false,
     description: "Freshen up your space with Sleek Air Freshener!",
     longDescription: `
           <p>
@@ -275,5 +254,33 @@ export const allBrands: Brand[] = [
     href: "#",
     image: { gray: sleekGray, color: sleekColor },
     banner: sleekBG,
+  },
+  {
+    id: 1,
+    brandName: "Envy",
+    hide: true,
+    description: "Glow Naturally, Shine Beautifully",
+    longDescription: `
+    <p style="font-size: 1.5rem;margin-bottom: 20px;">
+      Daily Oral Care for a Brighter, Healthier Smile
+    </p>
+    <p>
+   Experience the timeless skincare secret with Envy Ubtan Soap—a luxurious blend of turmeric, sandalwood, and natural herbs for glowing, healthy skin. Inspired by ancient beauty rituals, this soap gently cleanses, exfoliates, and nourishes, revealing a brighter, more radiant complexion every day.
+    </p>
+    <p>
+     Enriched with saffron, almond oil, and multani mitti, Envy Ubtan Soap helps to: 
+    </p>
+    <ul>
+      <li>Deep cleanse & remove impurities</li>
+      <li>Brighten & even out skin tone</li>
+      <li>Maintain moisture & softness</li>
+    </ul>
+    <p>Free from harsh chemicals & artificial additives, this herbal-infused formula is suitable for all skin types, giving you a natural, glowing look with every wash.</p>
+    <p>Because true beauty starts with nature.</p>
+    <p>Glow Naturally, Shine Beautifully.</p>
+  `,
+    href: "#",
+    image: { gray: envyGray, color: envyColor },
+    banner: envyBG,
   },
 ];

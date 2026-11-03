@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import aboutMockUp from "@/assets/image/about-us/mockup.png";
+import AboutHeroArt from "@/components/about/AboutHeroArt";
 import PageHero from "@/components/ui/PageHero";
 import SectionHeading from "@/components/ui/SectionHeading";
 import SectionSubHeading from "@/components/ui/SectionSubHeading";
@@ -48,8 +48,7 @@ const About = () => {
         title="About Anfords"
         subtitle="Bangladesh"
         description={ABOUT_TEXT}
-        image={aboutMockUp}
-        imageAlt="Anfords Bangladesh – everyday care for families"
+        visual={<AboutHeroArt className="h-auto w-full" />}
       />
 
       <section className="relative overflow-hidden bg-white py-16 sm:py-24">

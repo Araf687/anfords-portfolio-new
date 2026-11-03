@@ -18,6 +18,7 @@ const PageHero = ({
   crumb,
   image,
   imageAlt = "",
+  visual,
   children,
   className,
 }: {
@@ -28,6 +29,8 @@ const PageHero = ({
   crumb: string;
   image?: StaticImageData;
   imageAlt?: string;
+  visual?: React.ReactNode; // static artwork in place of the animated image
+
   children?: React.ReactNode;
   className?: string;
 }) => {
@@ -46,7 +49,7 @@ const PageHero = ({
       <div
         className={cn(
           "container relative grid items-center gap-12",
-          image && "lg:grid-cols-[1.1fr_0.9fr]"
+          (image || visual) && "lg:grid-cols-[1.1fr_0.9fr]"
         )}
       >
         <div className="space-y-6">
@@ -82,7 +85,9 @@ const PageHero = ({
           {children && <Reveal delay={0.35}>{children}</Reveal>}
         </div>
 
-        {image && (
+        {visual && <div className="relative mx-auto w-full max-w-[220px] sm:max-w-[260px] lg:max-w-xs">{visual}</div>}
+
+        {image && !visual && (
           <motion.div
             initial={{ opacity: 0, scale: 0.92, rotate: -2 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}

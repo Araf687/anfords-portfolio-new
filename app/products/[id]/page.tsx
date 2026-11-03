@@ -1,6 +1,5 @@
 import { getProductDetails } from "@/helpers/functions/main";
-import { allBrands } from "@/lib/constants";
-import { allProducts } from "@/helpers/data/all-products-data";
+import { visibleBrands, visibleProducts } from "@/lib/brands";
 import { ProductCardProps } from "@/types/data";
 import Image from "next/image";
 import BrandLogo from "@/components/ui/BrandLogo";
@@ -24,8 +23,8 @@ const SingleProduct = ({ params }: { params: { id: string } }) => {
       </div>
     );
   }
-  const brand = allBrands.find((item) => item.id === productData.brand_id);
-  const related = allProducts
+  const brand = visibleBrands.find((item) => item.id === productData.brand_id);
+  const related = visibleProducts
     .filter((p: ProductCardProps) => p.brand_id === productData.brand_id && p.id !== productData.id)
     .slice(0, 4);
 

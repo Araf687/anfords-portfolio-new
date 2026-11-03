@@ -1,14 +1,13 @@
-import { allProducts } from "@/helpers/data/all-products-data";
-import { allBrands } from "@/lib/constants";
 import { ProductCardProps } from "@/types/data";
+import { visibleBrands, visibleProducts } from "@/lib/brands";
 
 // lowercase and drop spaces/punctuation so "every day", "EveryDay" and "everyday" all match
 const normalize = (s: string) => s.toLowerCase().replace(/[^a-z0-9]+/g, "");
 
-const brandNameById = new Map(allBrands.map((b) => [b.id.toString(), b.brandName]));
+const brandNameById = new Map(visibleBrands.map((b) => [b.id.toString(), b.brandName]));
 
 // Each product is searchable by its own name, its brand_name and the brand's display name
-const index = allProducts.map((product: ProductCardProps) => ({
+const index = visibleProducts.map((product: ProductCardProps) => ({
   product,
   name: normalize(product.product_name),
   haystack: normalize(
@@ -19,7 +18,7 @@ const index = allProducts.map((product: ProductCardProps) => ({
 // Every word in the query must match somewhere; hits on the product name rank first
 export const searchProducts = (query: string): ProductCardProps[] => {
   const words = query.split(/\s+/).map(normalize).filter(Boolean);
-  if (!words.length) return allProducts;
+  if (!words.length) return visibleProducts;
 
   return index
     .filter((entry) => words.every((w) => entry.haystack.includes(w)))

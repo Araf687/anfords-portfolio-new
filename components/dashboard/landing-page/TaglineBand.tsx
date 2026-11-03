@@ -1,12 +1,12 @@
 "use client";
 import React from "react";
+import { visibleBrands } from "@/lib/brands";
 import Image from "next/image";
 import BrandLogo from "@/components/ui/BrandLogo";
 import Link from "next/link";
 import leafIcon1 from "@/assets/icons/landing-page/leaf1.svg";
 import Marquee from "@/components/motion/Marquee";
 import { Reveal, WordReveal } from "@/components/motion/Reveal";
-import { allBrands } from "@/lib/constants";
 
 // "Health, Safety and Beauty" statement + scrolling strip of every brand logo
 const TaglineBand = () => {
@@ -38,7 +38,7 @@ const TaglineBand = () => {
 
       <div className="relative border-t border-white/10 bg-white py-6 sm:py-8">
         <Marquee duration={35}>
-          {allBrands.map((brand) => (
+          {visibleBrands.map((brand) => (
             <Link
               key={brand.id.toString()}
               href={`/brands/${brand.id}`}

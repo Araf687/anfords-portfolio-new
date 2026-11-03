@@ -12,6 +12,10 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import SectionSubHeading from "@/components/ui/SectionSubHeading";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { Reveal, Stagger, StaggerItem } from "@/components/motion/Reveal";
+import { visibleBrands, visibleProducts } from "@/lib/brands";
+
+// product and brand counts come from the data, so hiding a brand updates them
+const count = (n: number) => n.toString().padStart(2, "0");
 
 const cards = [
   {
@@ -21,13 +25,13 @@ const cards = [
     backgroundImage: bg1,
   },
   {
-    heading1: "13 +",
+    heading1: count(visibleProducts.length),
     heading2: "Products",
     description: "range offered with excellence.",
     backgroundImage: bg2,
   },
   {
-    heading1: "08",
+    heading1: count(visibleBrands.length),
     heading2: "Brands",
     description: "in operation delivering quality services.",
     backgroundImage: bg3,

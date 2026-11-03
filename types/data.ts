@@ -30,6 +30,7 @@ export interface ProductCardProps {
 export interface Brand {
   id:Number;
   brandName: string;
+  hide: boolean;
   description: string;
   longDescription?: string; // HTML as string
   href: string;

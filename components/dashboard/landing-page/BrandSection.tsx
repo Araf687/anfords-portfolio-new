@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { allBrands } from "@/lib/constants";
+import { visibleBrands } from "@/lib/brands";
 import { Brand } from "@/types/data";
 import Section from "@/components/ui/Section";
 import SectionHeading from "@/components/ui/SectionHeading";
@@ -43,7 +43,7 @@ const BrandSection = () => {
         stagger={0.08}
         className="no-scrollbar relative -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-6 pt-8 sm:mx-0 sm:grid sm:grid-cols-2 sm:gap-6 sm:overflow-visible sm:px-0 lg:grid-cols-4"
       >
-        {allBrands.map((item: Brand) => (
+        {visibleBrands.map((item: Brand) => (
           <StaggerItem key={item.id.toString()} className="w-[78%] shrink-0 snap-center sm:w-auto">
             <BrandCard item={item} />
           </StaggerItem>

@@ -1,8 +1,7 @@
 import ProductCard from "@/components/dashboard/card/ProductCard";
+import { visibleBrands, visibleProducts } from "@/lib/brands";
 import SectionHeading from "@/components/ui/SectionHeading";
 import UiButton from "@/components/ui/uiButton";
-import { allProducts } from "@/helpers/data/all-products-data";
-import { allBrands } from "@/lib/constants";
 import { Product } from "@/types/data";
 import Image from "next/image";
 import BrandLogo from "@/components/ui/BrandLogo";
@@ -21,7 +20,7 @@ const splitLead = (html = "") => {
 const stripManualNumbers = (html: string) => html.replace(/<li>(\s*)\d+\.\s*/g, "<li>$1");
 
 const SingleBrand = ({ params }: { params: { brandId: string } }) => {
-  const brandData = allBrands.find((brand) => brand.id.toString() === params.brandId);
+  const brandData = visibleBrands.find((brand) => brand.id.toString() === params.brandId);
 
   if (!brandData) {
     return (
@@ -32,8 +31,8 @@ const SingleBrand = ({ params }: { params: { brandId: string } }) => {
     );
   }
 
-  const productListByBrand = allProducts.filter((item: Product) => item.brand_id === brandData.id);
-  const otherBrands = allBrands.filter((b) => b.id !== brandData.id);
+  const productListByBrand = visibleProducts.filter((item: Product) => item.brand_id === brandData.id);
+  const otherBrands = visibleBrands.filter((b) => b.id !== brandData.id);
 
   const { lead, body: rawBody } = splitLead(brandData.longDescription);
   const body = stripManualNumbers(rawBody);

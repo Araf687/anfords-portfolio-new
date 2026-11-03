@@ -1,12 +1,11 @@
 import React from "react";
+import { visibleBrands, visibleProducts } from "@/lib/brands";
 import Image from "next/image";
 import Link from "next/link";
 import ContactSection from "./landing-page/ContactSection";
 import footerImg from "@/assets/image/footer/footerImage2.png";
 import brandLogo from "@/assets/image/footer/brandLogo.png";
-import { allBrands } from "@/lib/constants";
 import { Brand, ProductCardProps } from "@/types/data";
-import { allProducts } from "@/helpers/data/all-products-data";
 import { Reveal } from "@/components/motion/Reveal";
 
 // Rendered height of the doodle artwork. Lower it for smaller doodles; the
@@ -42,7 +41,7 @@ const Footer: React.FC = () => {
 
           {/* Product Grid */}
           <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:px-16">
-            {allBrands.map((brandItem: Brand, i) => (
+            {visibleBrands.map((brandItem: Brand, i) => (
               <Reveal key={brandItem.id.toString()} delay={i * 0.04}>
                 <Link
                   href={`/brands/${brandItem.id}`}
@@ -51,7 +50,7 @@ const Footer: React.FC = () => {
                   {brandItem.brandName}
                 </Link>
                 <ul className="space-y-2">
-                  {allProducts
+                  {visibleProducts
                     .filter((product: ProductCardProps) => product.brand_id === brandItem.id)
                     .map((productItem: ProductCardProps) => (
                       <li key={productItem.id}>

@@ -616,17 +616,17 @@ export const allProducts = [
     productCardBg: shampooBG,
     descriptionSideImg:englishShampooSideImg,
     banner:englishShampooBanner,
-    shortDescription: `<p><p class="text-xl font-semibold mb-3">Struggling with hair lice?</p><p class="lg:text-lg">Our English shampoo is here to help! Designed to effectively remove head lice while being gentle on your scalp, it’s packed with nourishing ingredients that leave your hair fresh and smooth. Get rid of lice and enjoy healthy, beautiful hair with every wash!</p></p>`,
+    shortDescription: `<p><p class="text-xl font-semibold mb-3">Struggling with head lice?</p><p class="lg:text-lg">English Anti-Lice Shampoo, now in a new fragrance, clears head lice and keeps hair healthy. Leave it on for five minutes and stay completely free of head lice. With regular use, hair becomes shiny and smooth.</p></p>`,
 
     longDescription: `<div class="text-justify">
-  <h1 class="text-xl lg:text-3xl font-bold text-blue-900 mb-4">Say Goodbye to Lice with English Shampoo</h1>
+  <h1 class="text-xl lg:text-3xl font-bold text-blue-900 mb-4">Say Goodbye to Head Lice with English Shampoo</h1>
   <p class="lg:text-lg lg:leading-relaxed">
-    Our specially formulated <span class="font-semibold text-blue-600">anti-lice shampoo</span> targets lice, gently cleansing your 
-    scalp and hair while leaving it fresh, clean, and lice-free. It’s a hassle-free, easy solution that works for both kids and adults.
+    <span class="font-semibold text-blue-600">English</span> is a head lice removal shampoo with dual action: it clears
+    head lice and keeps hair healthy. A conditioning shampoo for all types of hair, now in a new fragrance.
   </p>
   <p class="lg:text-lg lg:leading-relaxed mt-4">
-    Simply apply, massage, rinse—and let <span class="font-semibold text-blue-600">English Shampoo</span> do the rest! 
-    Say goodbye to lice and hello to confidence!
+    Apply, leave it on for five minutes, then rinse, and stay completely free of head lice. With regular use,
+    hair becomes free of head lice, shiny and smooth.
   </p>
   <p class="lg:text-lg lg:leading-relaxed mt-4">
     Available at leading stores near you.

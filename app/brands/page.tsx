@@ -1,11 +1,10 @@
 import BrandCard from "@/components/dashboard/brands/BrandCard";
+import { visibleBrands } from "@/lib/brands";
 import PageHero from "@/components/ui/PageHero";
 import UiButton from "@/components/ui/uiButton";
-import { allBrands } from "@/lib/constants";
 import { Brand } from "@/types/data";
-import Image from "next/image";
-import anfordsProductMockup from "@/assets/image/landing-page/anfordsProductMockup.svg";
-import { Stagger, StaggerItem, Reveal } from "@/components/motion/Reveal";
+import ProductShowcase from "@/components/dashboard/landing-page/ProductShowcase";
+import { Stagger, StaggerItem } from "@/components/motion/Reveal";
 
 import React from "react";
 
@@ -26,7 +25,7 @@ const BrandPage = () => {
 
       <section className="bg-brand-mist py-14 sm:py-20">
         <Stagger className="container grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4" stagger={0.07}>
-          {allBrands.map((item: Brand) => (
+          {visibleBrands.map((item: Brand) => (
             <StaggerItem key={item.id.toString()}>
               <BrandCard item={item} />
             </StaggerItem>
@@ -34,9 +33,7 @@ const BrandPage = () => {
         </Stagger>
       </section>
 
-      <Reveal direction="none" duration={1.2}>
-        <Image src={anfordsProductMockup} alt="Anfords product family" className="h-auto w-full" />
-      </Reveal>
+      <ProductShowcase />
     </>
   );
 };

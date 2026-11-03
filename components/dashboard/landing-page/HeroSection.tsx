@@ -1,15 +1,57 @@
 "use client";
 import React, { useRef } from "react";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, Smile } from "lucide-react";
 import hero from "@/assets/image/landing-page/hero.png";
-import groupMockUp from "@/assets/image/landing-page/groupMockUp.png";
+import heroCollage from "@/assets/image/landing-page/heroCollage.png";
+import toothbrush from "@/assets/image/products/toothbrush/toothbrush.png";
+import dentalFloss from "@/assets/image/products/dental floss/dentalfloss.png";
 import UiButton from "@/components/ui/uiButton";
 import Eyebrow from "@/components/ui/Eyebrow";
 import { WordReveal } from "@/components/motion/Reveal";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+
+// A card laid over an empty slot in the collage. Slots are % of the collage image and
+// sizes are in cqw, so the card scales exactly like the baked-in cards around it.
+const CollageCard = ({
+  left,
+  top,
+  className,
+  children,
+}: {
+  left: string;
+  top: string;
+  className?: string;
+  children: React.ReactNode;
+}) => (
+  <div
+    style={{ left, top }}
+    className={`absolute flex h-[34.4%] w-[14.66%] flex-col overflow-hidden rounded-[2.1cqw] shadow-[0.8cqw_0.8cqw_1.6cqw_rgba(0,0,0,0.45)] ${className ?? ""}`}
+  >
+    {children}
+  </div>
+);
+
+// product cutout card: shot on a lit brand-blue backdrop, name and stars below
+const ProductSlot = ({ left, top, src, alt, title }: { left: string; top: string; src: StaticImageData; alt: string; title: string }) => (
+  <CollageCard
+    left={left}
+    top={top}
+    className="items-center justify-end bg-[linear-gradient(160deg,#2E9EFF_0%,#005AAA_45%,#001F4E_100%)] pb-[1.6cqw]"
+  >
+    <div className="absolute left-1/2 top-[38%] h-[70%] w-[120%] -translate-x-1/2 -translate-y-1/2 rounded-full bg-white/25 blur-[2cqw]" />
+    <Image
+      src={src}
+      alt={alt}
+      sizes="200px"
+      className="absolute left-1/2 top-[6%] h-auto w-[105%] max-w-none -translate-x-1/2 drop-shadow-[0_1cqw_1cqw_rgba(0,0,0,0.35)]"
+    />
+    <p className="relative text-[1.55cqw] font-semibold italic leading-none text-white">{title}</p>
+    <p className="relative mt-[0.6cqw] text-[1.45cqw] leading-none tracking-[0.1em] text-white">★★★★★</p>
+  </CollageCard>
+);
 
 const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -56,16 +98,16 @@ const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
 
         <h1 className="mt-6 max-w-5xl text-balance text-[2.6rem] font-semibold leading-[1.05] tracking-tight text-brand-text sm:text-6xl lg:text-[5.5rem]">
           <WordReveal
-            text="Be good to your skin."
+            text="Be good to your smile."
             animateOnMount
             delay={0.15}
             wordClassName={(w) =>
-              w === "skin." ? "bg-gradient-to-r from-brand-blue via-brand-sky to-brand-green bg-clip-text text-transparent" : ""
+              w === "smile." ? "bg-gradient-to-r from-brand-blue via-brand-sky to-brand-green bg-clip-text text-transparent" : ""
             }
           />
         </h1>
         <p className="mt-4 text-xl font-light text-brand-text sm:text-3xl lg:text-[2.4rem]">
-          <WordReveal text="You will wear it everyday for you." animateOnMount delay={0.45} stagger={0.04} />
+          <WordReveal text="Brush it, love it, share it every day." animateOnMount delay={0.45} stagger={0.04} />
         </p>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
@@ -73,8 +115,8 @@ const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
           transition={{ duration: 0.8, delay: 0.8, ease: EASE }}
           className="mt-6 max-w-xl text-[15px] leading-relaxed text-slate-600 sm:text-lg"
         >
-          Anfords Bangladesh brings you premium quality oral and personal care
-          products, trusted by millions worldwide.
+          From toothpaste and toothbrushes to dental floss, Anfords Bangladesh
+          brings premium oral hygiene to families across Bangladesh.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -99,13 +141,39 @@ const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
         >
           <div className="pointer-events-none absolute inset-0 bg-grid opacity-50 [mask-image:linear-gradient(to_bottom,#000_40%,transparent_90%)]" />
           <div className="pointer-events-none absolute left-1/2 top-0 h-64 w-[60%] -translate-x-1/2 rounded-full bg-brand-sky/40 blur-[100px]" />
-          <Image
-            src={groupMockUp}
-            alt="Anfords products, customer reviews and highlights"
-            priority
-            sizes="(min-width: 1400px) 1320px, 140vw"
-            className="relative mx-auto h-auto w-full max-w-[1320px] drop-shadow-[0_30px_40px_rgba(0,0,0,0.35)]"
-          />
+          <div className="relative mx-auto w-full max-w-[1320px] [container-type:inline-size]">
+            <Image
+              src={heroCollage}
+              alt="Anfords products, customer reviews and highlights"
+              priority
+              sizes="(min-width: 1400px) 1320px, 140vw"
+              className="relative h-auto w-full drop-shadow-[0_30px_40px_rgba(0,0,0,0.35)]"
+            />
+            {/* oral care cards over the collage's cleared slots */}
+            {/* the photo's lettering is blurred out in the image; this label replaces "1M+ Customers" */}
+            <div className="absolute left-[1.04%] top-[24.7%] flex h-[34.4%] w-[14.66%] items-end justify-center overflow-hidden rounded-[2.1cqw] bg-[linear-gradient(to_bottom,transparent_45%,rgba(0,31,78,0.75)_100%)] pb-[2cqw]">
+              <p className="text-center text-[2.3cqw] font-bold uppercase leading-[1.05] text-white">
+                Happy
+                <br />
+                <span className="text-[1.75cqw] tracking-[0.04em]">Customers</span>
+              </p>
+            </div>
+            <ProductSlot left="19.5%" top="39.16%" src={dentalFloss} alt="Mediplus dental floss" title="Dental Floss" />
+            <CollageCard
+              left="65.84%"
+              top="39.16%"
+              className="justify-between bg-[linear-gradient(160deg,#1F416A_0%,#001F4E_100%)] p-[1.5cqw] ring-1 ring-white/10"
+            >
+              <span className="grid h-[3.2cqw] w-[3.2cqw] place-items-center rounded-full bg-brand-green text-white">
+                <Smile className="h-[60%] w-[60%]" />
+              </span>
+              <p className="text-[1.3cqw] font-medium leading-[1.35] text-white">
+                Healthy teeth, fresh breath and a confident smile, every single day.
+              </p>
+              <p className="text-[1.15cqw] font-semibold leading-tight text-brand-mint">Mediplus Oral Care</p>
+            </CollageCard>
+            <ProductSlot left="84.3%" top="24.7%" src={toothbrush} alt="Mediplus toothbrushes" title="Gum Care" />
+          </div>
 
           <button
             type="button"

@@ -1,4 +1,15 @@
 import { ProductCardProps } from "@/types/data";
+import { allBrands } from "@/lib/constants";
+import { allProducts } from "@/helpers/data/all-products-data";
+
+// brands flagged `hide` in constants are left off the site, along with their products
+export const visibleBrands = allBrands.filter((b) => !b.hide);
+const visibleBrandIds = new Set(visibleBrands.map((b) => b.id.toString()));
+const brandRank = new Map(visibleBrands.map((b, i) => [b.id.toString(), i]));
+// products follow the brand order, so oral care leads every product list too
+export const visibleProducts = allProducts
+  .filter((p: ProductCardProps) => visibleBrandIds.has(p.brand_id.toString()))
+  .sort((a: ProductCardProps, b: ProductCardProps) => brandRank.get(a.brand_id.toString())! - brandRank.get(b.brand_id.toString())!);
 
 // Each sub-brand's own pack colour, used only as tints behind its products
 export const brandAccent: Record<string, string> = {
