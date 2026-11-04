@@ -211,7 +211,7 @@ const BrandHero = ({
             <span className="grid h-8 w-8 place-items-center rounded-full bg-brand-green text-white">
               <Leaf size={16} />
             </span>
-            Health, Safety and Beauty
+            Oral Care, Health and Beauty
           </motion.div>
         </div>
       </div>
