@@ -85,7 +85,7 @@ const Collage = ({ hidden }: { hidden?: boolean }) => (
       <p className="text-[1.3cqw] font-medium leading-[1.35] text-white">
         Healthy teeth, fresh breath and a confident smile, every single day.
       </p>
-      <p className="text-[1.15cqw] font-semibold leading-tight text-brand-mint">Mediplus Oral Care</p>
+      <p className="text-[1.15cqw] font-semibold leading-tight text-brand-mint">Mediplus Oral Hygiene</p>
     </CollageCard>
     <ProductSlot left="84.3%" top="24.7%" src={toothbrush} alt="Mediplus toothbrushes" title="Gum Care" />
   </>
@@ -130,7 +130,7 @@ const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
           transition={{ duration: 0.7, ease: EASE }}
         >
           <Eyebrow variant="solid" className="normal-case tracking-wide">
-            Oral Care Specialists
+            Oral Hygiene Specialists
           </Eyebrow>
         </motion.div>
 

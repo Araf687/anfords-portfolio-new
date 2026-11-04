@@ -98,7 +98,7 @@ export const allBrands: Brand[] = [
       Experience next-level oral care with Mr. D Plus DS—the toothpaste designed for stronger teeth, healthier gums, and long-lasting freshness. Formulated with advanced dental science, it provides superior cavity protection, fights plaque and bacteria, and keeps your breath fresh all day.
     </p>
     <p>
-      From whitening and sensitivity relief to gum protection and enamel strengthening, there's a Mr. D Plus DS variant for every need.
+      From sensitivity relief to gum protection and enamel strengthening, there's a Mr. D Plus DS variant for every need.
     </p>
     <p>
       Globally trusted, Mr. D Plus DS incorporates clinically proven ingredients like fluoride, herbal extracts, and activated minerals to deliver a dentist-approved clean.
@@ -125,7 +125,7 @@ export const allBrands: Brand[] = [
      Daily Oral Care for a Brighter, Healthier Smile
     </p>
     <p>
-      Brush UP contains whitening agent which gently every time you brush. Its powerful fluoride strengthens the enamel. The new exciting fresh flavor & strong mouthwash makes your mouth cool & fresh.
+      Brush UP's powerful fluoride strengthens the enamel. The new exciting fresh flavor & strong mouthwash makes your mouth cool & fresh.
     </p>
     <p>
       Get a fresh start every morning with Brush Up Toothpaste! Brush Up fight’s plaque, protects against cavities, and keeps your breath fresh all day. Take the step towards a healthier, brighter smile—Brush Up and smile confidently!
@@ -136,7 +136,6 @@ export const allBrands: Brand[] = [
      <ul>
             <li><strong>Strong Fluoride System:</strong>  Gives stronger teeth </li>
             <li><strong>Fresh Breath:</strong>  Leaves your mouth feeling fresh and clean throughout the day.</li>
-            <li><strong>Gentle Whitening:</strong>  For shiny white teeth.</li>
             
           </ul>
     <p>

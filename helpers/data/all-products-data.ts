@@ -48,7 +48,7 @@ import everydaySensetiveBanner from "@/assets/image/products/everyday/everydaySe
 import mediplusDSBanner from "@/assets/image/products/mediplus Ds/mediplusDSBanner.png";
 import mediplusGelBanner from "@/assets/image/products/mediplus floride/mediplusGelBanner.png";
 import mediplusBanner from "@/assets/image/products/mediplus toothpaste/mediplusBanner.png";
-import mediplusToothBrushBanner from "@/assets/image/products/toothbrush/mediplusToothBrushBanner.png";
+import mediplusToothBrushBanner from "@/assets/image/products/toothbrush/mediplusToothBrushBannerGumCare.png";
 import envySoapBanner from "@/assets/image/products/envy/envySoapBanner.png";
 
 import roseSleekBanner from "@/assets/image/products/sleek/roseSleekBanner.png";
@@ -76,8 +76,7 @@ export const allProducts = [
     Start Your Day Fresh with Brush Up Toothpaste!
   </h2>
   <p class="lg:text-lg lg:leading-relaxed mb-4">
-    Brush Up contains a whitening agent that works gently every time you mediplusToothBrush.
-    Its powerful fluoride strengthens enamel, while the exciting fresh flavor
+    Brush Up's powerful fluoride strengthens enamel, while the exciting fresh flavor
     and strong mouthwash leave your mouth cool and fresh.
   </p>
   <p class="lg:text-lg lg:leading-relaxed">
@@ -100,9 +99,6 @@ export const allProducts = [
     </li>
     <li>
       <strong >Fresh Breath:</strong> Leaves your mouth feeling fresh and clean throughout the day.
-    </li>
-    <li>
-      <strong >Gentle Whitening:</strong> Removes surface stains to reveal a naturally brighter smile.
     </li>
   </ul>
   <p class="lg:text-lg lg:leading-relaxed mt-4">
@@ -430,7 +426,6 @@ export const allProducts = [
   </p>
   <ul class="lg:text-lg list-disc list-inside mt-4">
     <li><span class="font-semibold">Protection Against Sensitivity</span></li>
-    <li><span class="font-semibold">Gentle Whitening</span></li>
   </ul>
 </div>
 `,
