@@ -5,11 +5,11 @@ import Image from "next/image";
 import React from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import contactUsImg from "@/assets/image/contact us/banner.png";
-import hoverContactUsImg from "@/assets/image/contact us/banner2.png";
+import hoverContactUsImg from "@/assets/image/contact us/bannerHover.png";
 import SectionHeading from "@/components/ui/SectionHeading";
 import PageHero from "@/components/ui/PageHero";
 import UiButton from "@/components/ui/uiButton";
-import map from "@/assets/image/contact us/map.png";
+import map from "@/assets/image/contact us/mapDhaka.png";
 import question from "@/assets/image/contact us/question.png";
 import { MapPin, MessageCircleMore, Phone } from "lucide-react";
 import supportIcon from "@/assets/icons/contact-us/support.png";
@@ -26,15 +26,15 @@ const contactCards = [
     icon: <Image src={supportIcon} alt="" height={36} width={36} />,
     heading: "Support",
     desc: "Our friendly team is here to help.",
-    contact: "support@anfords.com",
-    href: "mailto:support@anfords.com",
+    contact: "info@anfordslimited.com",
+    href: "mailto:info@anfordslimited.com",
   },
   {
     icon: <MessageCircleMore size={28} />,
     heading: "Sales",
     desc: "Questions or queries? Get in touch!",
-    contact: "sales@anfords.com",
-    href: "mailto:sales@anfords.com",
+    contact: "info@anfordslimited.com",
+    href: "mailto:info@anfordslimited.com",
   },
   {
     icon: <Phone size={28} />,
@@ -93,7 +93,7 @@ const ContactForm: React.FC = () => {
 
       {/* Hover Image */}
       <Reveal className="container py-14 sm:py-20">
-        <div className="group relative mx-auto aspect-[1502/597] w-full max-w-5xl">
+        <div className="group relative mx-auto aspect-[1502/597] w-full max-w-5xl [container-type:inline-size]">
           <Image src={contactUsImg} alt="Contact Us" fill className="object-contain transition-opacity duration-500 group-hover:opacity-0" />
           <Image
             src={hoverContactUsImg}
@@ -101,6 +101,13 @@ const ContactForm: React.FC = () => {
             fill
             className="object-contain opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           />
+          {/* location tooltip over the Dhaka pin, shown with the hover map */}
+          <div className="pointer-events-none absolute left-[74.1%] top-[32.7%] -translate-x-1/2 -translate-y-full opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+            <p className="whitespace-nowrap rounded-[0.6cqw] bg-[#111827] px-[1.6cqw] py-[1cqw] text-[clamp(10px,1.2cqw,17px)] font-semibold text-white">
+              Dhaka, Bangladesh
+            </p>
+            <span className="mx-auto block h-0 w-0 border-x-[0.8cqw] border-t-[0.9cqw] border-x-transparent border-t-[#111827]" />
+          </div>
         </div>
       </Reveal>
 
@@ -112,18 +119,18 @@ const ContactForm: React.FC = () => {
             <p className="text-3xl font-semibold md:text-5xl">Visit our Head Office</p>
             <p className="text-lg text-white/70">Find us at these locations</p>
             <a
-              href="https://maps.google.com/?q=7/1+New+Eskaton+Road,+Dhaka-1000,+Bangladesh"
+              href="https://maps.google.com/?q=Dhaka,+Bangladesh"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-start gap-3 rounded-2xl bg-white/5 p-4 text-left text-sm text-white/85 ring-1 ring-white/10 transition-colors hover:bg-white/10"
             >
               <MapPin className="mt-0.5 shrink-0 text-brand-mint" size={18} />
-              7/1 New Eskaton Road, Ghaus Nagar, Dhaka-1000, Bangladesh
+              Dhaka, Bangladesh
             </a>
           </Reveal>
           <Reveal direction="left">
             <div className="overflow-hidden rounded-3xl ring-1 ring-white/10">
-              <Image src={map} alt="Map of Anfords head office" className="h-auto w-full" />
+              <Image src={map} alt="Anfords head office in Dhaka, Bangladesh" className="h-auto w-full" />
             </div>
           </Reveal>
         </div>

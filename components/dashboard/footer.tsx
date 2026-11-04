@@ -3,35 +3,15 @@ import { visibleBrands, visibleProducts } from "@/lib/brands";
 import Image from "next/image";
 import Link from "next/link";
 import ContactSection from "./landing-page/ContactSection";
-import footerImg from "@/assets/image/footer/footerImage2.png";
 import brandLogo from "@/assets/image/footer/brandLogo.png";
 import { Brand, ProductCardProps } from "@/types/data";
 import { Reveal } from "@/components/motion/Reveal";
-
-// Rendered height of the doodle artwork. Lower it for smaller doodles; the
-// pattern repeats vertically so the footer stays filled at any height.
-const DOODLE_HEIGHT = 630;
-const doodleStyle: React.CSSProperties = {
-  backgroundImage: `url(${footerImg.src})`,
-  backgroundSize: `auto ${DOODLE_HEIGHT}px`,
-};
 
 const Footer: React.FC = () => {
   return (
     <footer>
       <div className="relative overflow-hidden bg-brand-blue">
-        {/* doodle borders from the original artwork, on screens wide enough to keep them clear of the links */}
-        {/* Each side gets its own strip anchored to its edge, so the doodles are
-            never cropped no matter how wide the screen is. */}
-        <div
-          className="pointer-events-none absolute inset-y-0 left-0 hidden w-[170px] bg-left-top bg-repeat-y 2xl:block"
-          style={doodleStyle}
-        />
-        <div
-          className="pointer-events-none absolute inset-y-0 right-0 hidden w-[170px] bg-right-top bg-repeat-y 2xl:block"
-          style={doodleStyle}
-        />
-        <div className="pointer-events-none absolute inset-0 bg-grid opacity-40 2xl:hidden" />
+        <div className="pointer-events-none absolute inset-0 bg-grid opacity-40" />
 
         <div className="container relative py-14 sm:py-20">
           {/* Brand Logo */}
@@ -40,7 +20,7 @@ const Footer: React.FC = () => {
           </Reveal>
 
           {/* Product Grid */}
-          <div className="mx-auto grid max-w-5xl grid-cols-2 gap-x-6 gap-y-10 sm:grid-cols-3 lg:px-16">
+          <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 sm:gap-x-12 lg:gap-x-24 lg:gap-y-16">
             {visibleBrands.map((brandItem: Brand, i) => (
               <Reveal key={brandItem.id.toString()} delay={i * 0.04}>
                 <Link

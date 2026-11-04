@@ -35,8 +35,8 @@ const contactLinkData = [
     title: "Location",
     data: [
       {
-        label: "7/1 New Eskaton Road, Ghaus Nagar, Dhaka-1000, Bangladesh",
-        href: "https://maps.google.com/?q=7/1+New+Eskaton+Road,+Dhaka-1000,+Bangladesh",
+        label: "Dhaka, Bangladesh",
+        href: "https://maps.google.com/?q=Dhaka,+Bangladesh",
       },
     ],
   },
