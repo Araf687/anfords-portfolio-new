@@ -130,7 +130,7 @@ const HeroSection = ({ exploreFunc }: { exploreFunc: () => void }) => {
           transition={{ duration: 0.7, ease: EASE }}
         >
           <Eyebrow variant="solid" className="normal-case tracking-wide">
-            Oral Hygiene Specialists
+            Oral Hygiene · Hair Care · Skin Care
           </Eyebrow>
         </motion.div>
 
